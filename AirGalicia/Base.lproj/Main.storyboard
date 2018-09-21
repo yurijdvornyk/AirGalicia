@@ -43,7 +43,7 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="destination" translatesAutoresizingMaskIntoConstraints="NO" id="3BO-tR-aky">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="30"/>
                                                     </imageView>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ne-fa-YZ5">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ne-fa-YZ5">
                                                         <rect key="frame" x="32" y="0.0" width="311" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -51,16 +51,43 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-1F-omC">
+                                                <rect key="frame" x="48" y="84" width="311" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCF-c4-30c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbH-mS-CrQ">
+                                                        <rect key="frame" x="159.5" y="0.0" width="151.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-ym-BtK">
+                                                <rect key="frame" x="16" y="87" width="24" height="24"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="11" id="6M7-bZ-vgW"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="top" secondItem="dUQ-r0-f5W" secondAttribute="bottom" constant="8" id="Bov-yx-8de"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="FVd-BJ-oZc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mte-1F-omC" secondAttribute="trailing" constant="16" id="H9M-kP-a8P"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="8" id="RqB-JG-fkm"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="TOf-VQ-3vj"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="TrA-ew-hA6"/>
+                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="WyV-Qr-g2o"/>
                                             <constraint firstAttribute="trailing" secondItem="dUQ-r0-f5W" secondAttribute="trailing" constant="16" id="c9b-Z2-J4r"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="fEP-CQ-dtb"/>
+                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="hJn-lV-Pa4"/>
+                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="k2Y-Rq-uEJ"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="8" id="lxh-QT-goI"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="leading" secondItem="hdb-ym-BtK" secondAttribute="trailing" constant="8" id="psy-rZ-rs9"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="xia-kv-0er"/>
                                         </constraints>
                                     </view>
@@ -91,9 +118,11 @@
                     <connections>
                         <outlet property="destinationStackView" destination="Pot-PC-mtc" id="lkh-LQ-KC0"/>
                         <outlet property="destinationTextField" destination="5ne-fa-YZ5" id="8E5-jV-vOK"/>
+                        <outlet property="endDateTextField" destination="pbH-mS-CrQ" id="20G-y1-QgR"/>
                         <outlet property="originStackView" destination="dUQ-r0-f5W" id="jS9-H7-xrg"/>
                         <outlet property="originTextField" destination="GX0-YP-AQE" id="Q2l-S7-EUX"/>
                         <outlet property="searchDisplayController" destination="Fk5-5e-Kly" id="Bvy-P3-Aex"/>
+                        <outlet property="startDateTextField" destination="rCF-c4-30c" id="WnZ-Sh-r5q"/>
                         <segue destination="v3A-Oh-Tdc" kind="showDetail" id="tYS-oG-YKf"/>
                     </connections>
                 </viewController>
@@ -277,6 +306,7 @@
     </scenes>
     <resources>
         <image name="boarding_passes" width="36" height="36"/>
+        <image name="calendar" width="24" height="24"/>
         <image name="destination" width="24" height="24"/>
         <image name="origin" width="24" height="24"/>
         <image name="profile" width="36" height="36"/>

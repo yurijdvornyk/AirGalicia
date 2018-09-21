@@ -16,7 +16,9 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
     @IBOutlet private weak var originStackView: UIStackView!
     @IBOutlet private weak var originTextField: UITextField!
     @IBOutlet private weak var destinationStackView: UIStackView!
-    @IBOutlet weak var destinationTextField: UITextField!
+    @IBOutlet private weak var destinationTextField: UITextField!
+    @IBOutlet private weak var startDateTextField: UITextField!
+    @IBOutlet private weak var endDateTextField: UITextField!
     
     private var originAirport: String!
     private var destinationAirport: String!
@@ -44,6 +46,14 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         present(airportsViewController, animated: true, completion: nil)
     }
     
+    @objc func didStartDateTextFieldTapped(recognizer: UIGestureRecognizer) {
+        print("Select start date")
+    }
+    
+    @objc func didEndDateTextFieldTapped(recognizer: UIGestureRecognizer) {
+        print("Sleect return date")
+    }
+    
     func onSelected(routePoint: RoutePoint?, airport: String?) {
         if airport == nil {
             return
@@ -54,6 +64,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
             originAirport = airport
             originTextField.text = airport
             destinationStackView.isUserInteractionEnabled = true
+            destinationTextField.isEnabled = true
         case .destination?:
             destinationAirport = airport
             destinationTextField.text = airport
@@ -66,6 +77,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         originTextField.text = ""
         destinationTextField.text = ""
         destinationStackView.isUserInteractionEnabled = false
+        destinationTextField.isEnabled = false
     }
 }
 
