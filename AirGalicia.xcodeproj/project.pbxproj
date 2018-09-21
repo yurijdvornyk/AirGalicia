@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F421541BCF00114C39 /* AppDelegate.swift */; };
+		BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F621541BCF00114C39 /* SearchViewController.swift */; };
+		BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F821541BCF00114C39 /* TripsViewController.swift */; };
+		BCCB36FC21541BCF00114C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB36FA21541BCF00114C39 /* Main.storyboard */; };
+		BCCB370121541BD000114C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */; };
+		BCCB370C21541BD000114C39 /* AirGaliciaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB370B21541BD000114C39 /* AirGaliciaTests.swift */; };
+		BCCB371721541BD000114C39 /* AirGaliciaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB371621541BD000114C39 /* AirGaliciaUITests.swift */; };
+		BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB372421541C9000114C39 /* BaseViewController.swift */; };
+		BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */; };
+		BCCB37292154201600114C39 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* AccountViewController.swift */; };
+		BCCB372B215425F600114C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB372A215425F600114C39 /* Assets.xcassets */; };
+		BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4178E21545570001A71D2 /* AirportsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCCB370821541BD000114C39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCCB36E921541BCF00114C39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCCB36F021541BCF00114C39;
+			remoteInfo = AirGalicia;
+		};
+		BCCB371321541BD000114C39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCCB36E921541BCF00114C39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCCB36F021541BCF00114C39;
+			remoteInfo = AirGalicia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCCB36F121541BCF00114C39 /* AirGalicia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGalicia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCB36F421541BCF00114C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCCB36F621541BCF00114C39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BCCB36F821541BCF00114C39 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		BCCB36FB21541BCF00114C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCCB370021541BD000114C39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCCB370221541BD000114C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCB370721541BD000114C39 /* AirGaliciaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirGaliciaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCB370B21541BD000114C39 /* AirGaliciaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirGaliciaTests.swift; sourceTree = "<group>"; };
+		BCCB370D21541BD000114C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCB371221541BD000114C39 /* AirGaliciaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirGaliciaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCB371621541BD000114C39 /* AirGaliciaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirGaliciaUITests.swift; sourceTree = "<group>"; };
+		BCCB371821541BD000114C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCB372421541C9000114C39 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassesViewController.swift; sourceTree = "<group>"; };
+		BCCB37282154201600114C39 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BCCB372A215425F600114C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCE4178E21545570001A71D2 /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCCB36EE21541BCF00114C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB370421541BD000114C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB370F21541BD000114C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCCB36E821541BCF00114C39 = {
+			isa = PBXGroup;
+			children = (
+				BCCB36F321541BCF00114C39 /* AirGalicia */,
+				BCCB370A21541BD000114C39 /* AirGaliciaTests */,
+				BCCB371521541BD000114C39 /* AirGaliciaUITests */,
+				BCCB36F221541BCF00114C39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCCB36F221541BCF00114C39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB36F121541BCF00114C39 /* AirGalicia.app */,
+				BCCB370721541BD000114C39 /* AirGaliciaTests.xctest */,
+				BCCB371221541BD000114C39 /* AirGaliciaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCCB36F321541BCF00114C39 /* AirGalicia */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB36F421541BCF00114C39 /* AppDelegate.swift */,
+				BCCB372421541C9000114C39 /* BaseViewController.swift */,
+				BCCB36F621541BCF00114C39 /* SearchViewController.swift */,
+				BCE4178E21545570001A71D2 /* AirportsViewController.swift */,
+				BCCB36F821541BCF00114C39 /* TripsViewController.swift */,
+				BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */,
+				BCCB37282154201600114C39 /* AccountViewController.swift */,
+				BCCB36FA21541BCF00114C39 /* Main.storyboard */,
+				BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */,
+				BCCB372A215425F600114C39 /* Assets.xcassets */,
+				BCCB370221541BD000114C39 /* Info.plist */,
+			);
+			path = AirGalicia;
+			sourceTree = "<group>";
+		};
+		BCCB370A21541BD000114C39 /* AirGaliciaTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB370B21541BD000114C39 /* AirGaliciaTests.swift */,
+				BCCB370D21541BD000114C39 /* Info.plist */,
+			);
+			path = AirGaliciaTests;
+			sourceTree = "<group>";
+		};
+		BCCB371521541BD000114C39 /* AirGaliciaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB371621541BD000114C39 /* AirGaliciaUITests.swift */,
+				BCCB371821541BD000114C39 /* Info.plist */,
+			);
+			path = AirGaliciaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCCB36F021541BCF00114C39 /* AirGalicia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCCB371B21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGalicia" */;
+			buildPhases = (
+				BCCB36ED21541BCF00114C39 /* Sources */,
+				BCCB36EE21541BCF00114C39 /* Frameworks */,
+				BCCB36EF21541BCF00114C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirGalicia;
+			productName = AirGalicia;
+			productReference = BCCB36F121541BCF00114C39 /* AirGalicia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCCB370621541BD000114C39 /* AirGaliciaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCCB371E21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaTests" */;
+			buildPhases = (
+				BCCB370321541BD000114C39 /* Sources */,
+				BCCB370421541BD000114C39 /* Frameworks */,
+				BCCB370521541BD000114C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCCB370921541BD000114C39 /* PBXTargetDependency */,
+			);
+			name = AirGaliciaTests;
+			productName = AirGaliciaTests;
+			productReference = BCCB370721541BD000114C39 /* AirGaliciaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BCCB371121541BD000114C39 /* AirGaliciaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCCB372121541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaUITests" */;
+			buildPhases = (
+				BCCB370E21541BD000114C39 /* Sources */,
+				BCCB370F21541BD000114C39 /* Frameworks */,
+				BCCB371021541BD000114C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCCB371421541BD000114C39 /* PBXTargetDependency */,
+			);
+			name = AirGaliciaUITests;
+			productName = AirGaliciaUITests;
+			productReference = BCCB371221541BD000114C39 /* AirGaliciaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCCB36E921541BCF00114C39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Yurii Dvornyk";
+				TargetAttributes = {
+					BCCB36F021541BCF00114C39 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					BCCB370621541BD000114C39 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BCCB36F021541BCF00114C39;
+					};
+					BCCB371121541BD000114C39 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BCCB36F021541BCF00114C39;
+					};
+				};
+			};
+			buildConfigurationList = BCCB36EC21541BCF00114C39 /* Build configuration list for PBXProject "AirGalicia" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCCB36E821541BCF00114C39;
+			productRefGroup = BCCB36F221541BCF00114C39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCCB36F021541BCF00114C39 /* AirGalicia */,
+				BCCB370621541BD000114C39 /* AirGaliciaTests */,
+				BCCB371121541BD000114C39 /* AirGaliciaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCCB36EF21541BCF00114C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCB370121541BD000114C39 /* LaunchScreen.storyboard in Resources */,
+				BCCB372B215425F600114C39 /* Assets.xcassets in Resources */,
+				BCCB36FC21541BCF00114C39 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB370521541BD000114C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB371021541BD000114C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCCB36ED21541BCF00114C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
+				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
+				BCCB37292154201600114C39 /* AccountViewController.swift in Sources */,
+				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
+				BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */,
+				BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */,
+				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB370321541BD000114C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCB370C21541BD000114C39 /* AirGaliciaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCB370E21541BD000114C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCB371721541BD000114C39 /* AirGaliciaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCCB370921541BD000114C39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCCB36F021541BCF00114C39 /* AirGalicia */;
+			targetProxy = BCCB370821541BD000114C39 /* PBXContainerItemProxy */;
+		};
+		BCCB371421541BD000114C39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCCB36F021541BCF00114C39 /* AirGalicia */;
+			targetProxy = BCCB371321541BD000114C39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCCB36FA21541BCF00114C39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCCB36FB21541BCF00114C39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCCB370021541BD000114C39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCCB371921541BD000114C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCCB371A21541BD000114C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCCB371C21541BD000114C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGalicia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGalicia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCCB371D21541BD000114C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGalicia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGalicia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BCCB371F21541BD000114C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGaliciaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGaliciaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirGalicia.app/AirGalicia";
+			};
+			name = Debug;
+		};
+		BCCB372021541BD000114C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGaliciaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGaliciaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirGalicia.app/AirGalicia";
+			};
+			name = Release;
+		};
+		BCCB372221541BD000114C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGaliciaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGaliciaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AirGalicia;
+			};
+			name = Debug;
+		};
+		BCCB372321541BD000114C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LNKJ8Z7X6;
+				INFOPLIST_FILE = AirGaliciaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydvornyk.AirGaliciaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AirGalicia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCCB36EC21541BCF00114C39 /* Build configuration list for PBXProject "AirGalicia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCB371921541BD000114C39 /* Debug */,
+				BCCB371A21541BD000114C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCCB371B21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGalicia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCB371C21541BD000114C39 /* Debug */,
+				BCCB371D21541BD000114C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCCB371E21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCB371F21541BD000114C39 /* Debug */,
+				BCCB372021541BD000114C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCCB372121541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCB372221541BD000114C39 /* Debug */,
+				BCCB372321541BD000114C39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCCB36E921541BCF00114C39 /* Project object */;
+}
