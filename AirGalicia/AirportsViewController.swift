@@ -8,30 +8,30 @@
 
 import UIKit
 
+protocol AirportsSelectedProtocol {
+    func onSelected(routePoint: RoutePoint?, airport: String?)
+}
+
 class AirportsViewController: BaseViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    var selectionDelegate: AirportsSelectedProtocol?
+    var routePoint: RoutePoint?
     
-    let allAirports = ["ABC", "ADF", "GHI", "JKL"]
-    var foundAirports = [String]()
-    var isSearching = false
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private let allAirports = ["ABC", "ADF", "GHI", "JKL"]
+    private var foundAirports = [String]()
+    private var isSearching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        foundAirports = allAirports
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onDismissTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
-    */
 }
 
 extension AirportsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -43,6 +43,11 @@ extension AirportsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = isSearching ? foundAirports[indexPath.row] : allAirports[indexPath.row]
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectionDelegate?.onSelected(routePoint: routePoint, airport: foundAirports[indexPath.row])
+        dismiss(animated: true, completion: nil)
     }
 }
 
