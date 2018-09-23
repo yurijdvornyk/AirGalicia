@@ -51,43 +51,82 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-mz-m0A">
+                                                <rect key="frame" x="185.5" y="84" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="onTripTypeSwitchValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="4tT-dk-Zci"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One-Way Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY7-rU-sWN">
+                                                <rect key="frame" x="16" y="89" width="129.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" text="Return Trip" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuZ-GJ-vO2">
+                                                <rect key="frame" x="274.5" y="89" width="84.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-ym-BtK">
+                                                <rect key="frame" x="16" y="126" width="24" height="24"/>
+                                            </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mte-1F-omC">
-                                                <rect key="frame" x="48" y="84" width="311" height="30"/>
+                                                <rect key="frame" x="48" y="123" width="311" height="30"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCF-c4-30c">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-Ce-H7K">
                                                         <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbH-mS-CrQ">
+                                                        <subviews>
+                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCF-c4-30c">
+                                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vwo-GD-MeK">
                                                         <rect key="frame" x="159.5" y="0.0" width="151.5" height="30"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                        <subviews>
+                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbH-mS-CrQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-ym-BtK">
-                                                <rect key="frame" x="16" y="87" width="24" height="24"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="11" id="6M7-bZ-vgW"/>
+                                            <constraint firstAttribute="trailing" secondItem="TuZ-GJ-vO2" secondAttribute="trailing" constant="16" id="6uw-uD-BCZ"/>
+                                            <constraint firstItem="TuZ-GJ-vO2" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="13" id="Bkm-K6-kTg"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="top" secondItem="dUQ-r0-f5W" secondAttribute="bottom" constant="8" id="Bov-yx-8de"/>
+                                            <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="Bvv-R7-DEy"/>
+                                            <constraint firstItem="rY7-rU-sWN" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="F1J-xz-XIz"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="FVd-BJ-oZc"/>
                                             <constraint firstAttribute="trailing" secondItem="Mte-1F-omC" secondAttribute="trailing" constant="16" id="H9M-kP-a8P"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="top" secondItem="9dx-mz-m0A" secondAttribute="bottom" constant="8" symbolic="YES" id="Hf8-Ka-5FX"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="8" id="RqB-JG-fkm"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="TOf-VQ-3vj"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="TrA-ew-hA6"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mte-1F-omC" secondAttribute="trailing" constant="16" id="Wph-84-djj"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="WyV-Qr-g2o"/>
+                                            <constraint firstItem="9dx-mz-m0A" firstAttribute="leading" secondItem="rY7-rU-sWN" secondAttribute="trailing" constant="40" id="Y0M-RR-aBK"/>
+                                            <constraint firstItem="rY7-rU-sWN" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="Zz5-PY-FYW"/>
+                                            <constraint firstItem="rY7-rU-sWN" firstAttribute="baseline" secondItem="TuZ-GJ-vO2" secondAttribute="baseline" id="b2f-NG-qgt"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="centerY" secondItem="hdb-ym-BtK" secondAttribute="centerY" id="b4l-iB-YcY"/>
                                             <constraint firstAttribute="trailing" secondItem="dUQ-r0-f5W" secondAttribute="trailing" constant="16" id="c9b-Z2-J4r"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="fEP-CQ-dtb"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="hJn-lV-Pa4"/>
+                                            <constraint firstItem="TuZ-GJ-vO2" firstAttribute="leading" secondItem="9dx-mz-m0A" secondAttribute="trailing" constant="40" id="iJV-Kj-eBF"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="k2Y-Rq-uEJ"/>
-                                            <constraint firstItem="Mte-1F-omC" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="8" id="lxh-QT-goI"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="123" id="mwt-iz-Hif"/>
                                             <constraint firstItem="Mte-1F-omC" firstAttribute="leading" secondItem="hdb-ym-BtK" secondAttribute="trailing" constant="8" id="psy-rZ-rs9"/>
+                                            <constraint firstItem="Mte-1F-omC" firstAttribute="leading" secondItem="hdb-ym-BtK" secondAttribute="trailing" constant="8" id="uqS-Uq-LRn"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="xia-kv-0er"/>
                                         </constraints>
                                     </view>
@@ -118,10 +157,12 @@
                     <connections>
                         <outlet property="destinationStackView" destination="Pot-PC-mtc" id="lkh-LQ-KC0"/>
                         <outlet property="destinationTextField" destination="5ne-fa-YZ5" id="8E5-jV-vOK"/>
+                        <outlet property="endDateStackView" destination="Vwo-GD-MeK" id="bKH-7Z-sGq"/>
                         <outlet property="endDateTextField" destination="pbH-mS-CrQ" id="20G-y1-QgR"/>
                         <outlet property="originStackView" destination="dUQ-r0-f5W" id="jS9-H7-xrg"/>
                         <outlet property="originTextField" destination="GX0-YP-AQE" id="Q2l-S7-EUX"/>
                         <outlet property="searchDisplayController" destination="Fk5-5e-Kly" id="Bvy-P3-Aex"/>
+                        <outlet property="startDateStackView" destination="Dfx-Ce-H7K" id="eod-7M-T8N"/>
                         <outlet property="startDateTextField" destination="rCF-c4-30c" id="WnZ-Sh-r5q"/>
                         <segue destination="v3A-Oh-Tdc" kind="showDetail" id="tYS-oG-YKf"/>
                     </connections>

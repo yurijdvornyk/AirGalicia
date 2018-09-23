@@ -1,0 +1,32 @@
+[
+    {
+        "code": "LWO",
+        "city": "Lviv",
+        "country": "Ukraine",
+        "name": "Lviv Danylo Halytskyi International Airport"
+    },
+    {
+        "code": "TRF",
+        "city": "Oslo",
+        "country": "Norway",
+        "name": "Sandefjord Airport, Torp"
+    },
+    {
+        "code": "WAW",
+        "city": "Warsaw",
+        "country": "Poland",
+        "name": "Warszawa Chopin Airport"
+    },
+    {
+        "code": "BUD",
+        "city": "Budapest",
+        "country": "Hungary",
+        "name": "Budapest Ferenc Liszt International Airport"
+    },
+    {
+        "code": "VIE",
+        "city": "Budapest",
+        "country": "Hungary",
+        "name": "Vienna International Airport"
+    }
+]

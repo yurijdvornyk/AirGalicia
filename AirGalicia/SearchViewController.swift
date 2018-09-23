@@ -17,7 +17,9 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
     @IBOutlet private weak var originTextField: UITextField!
     @IBOutlet private weak var destinationStackView: UIStackView!
     @IBOutlet private weak var destinationTextField: UITextField!
+    @IBOutlet weak var startDateStackView: UIStackView!
     @IBOutlet private weak var startDateTextField: UITextField!
+    @IBOutlet weak var endDateStackView: UIStackView!
     @IBOutlet private weak var endDateTextField: UITextField!
     
     private var originAirport: String!
@@ -27,6 +29,8 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         super.viewDidLoad()
         originStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOriginStackViewTapped(recognizer:))))
         destinationStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didDestinationStackViewTapped(recognizer:))))
+        startDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didStartDateTapped(recognizer:))))
+        endDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didEndDateTapped(recognizer:))))
         clearSelection()
     }
     
@@ -46,12 +50,12 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         present(airportsViewController, animated: true, completion: nil)
     }
     
-    @objc func didStartDateTextFieldTapped(recognizer: UIGestureRecognizer) {
-        print("Select start date")
+    @objc func didStartDateTapped(recognizer: UIGestureRecognizer) {
+        print("Start date tapped")
     }
     
-    @objc func didEndDateTextFieldTapped(recognizer: UIGestureRecognizer) {
-        print("Sleect return date")
+    @objc func didEndDateTapped(recognizer: UIGestureRecognizer) {
+        print("End date tapped")
     }
     
     func onSelected(routePoint: RoutePoint?, airport: String?) {
@@ -78,6 +82,10 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         destinationTextField.text = ""
         destinationStackView.isUserInteractionEnabled = false
         destinationTextField.isEnabled = false
+    }
+    
+    @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
+        endDateTextField.isEnabled = sender.isOn
     }
 }
 
