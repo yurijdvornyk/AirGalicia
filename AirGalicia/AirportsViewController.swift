@@ -20,13 +20,21 @@ class AirportsViewController: BaseViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     
-    private let allAirports = ["ABC", "ADF", "GHI", "JKL"]
-    private var foundAirports = [String]()
+    private var allAirports = [Airport]()
+    private var foundAirports = [Airport]()
     private var isSearching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        foundAirports = allAirports
+        ApiManager.init().loadAirports(success: { (airports: [Airport]) in
+            self.allAirports = airports
+            self.foundAirports = airports
+            DispatchQueue.main.async() {
+                self.tableView.reloadData()
+            }
+        }) { (error: NSError) in
+            // TODO: Handle error
+        }
     }
     
     @IBAction func onDismissTapped(_ sender: UIButton) {
@@ -41,12 +49,12 @@ extension AirportsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = isSearching ? foundAirports[indexPath.row] : allAirports[indexPath.row]
+        cell?.textLabel?.text = isSearching ? foundAirports[indexPath.row].name : allAirports[indexPath.row].name
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectionDelegate?.onSelected(routePoint: routePoint, airport: foundAirports[indexPath.row])
+        selectionDelegate?.onSelected(routePoint: routePoint, airport: foundAirports[indexPath.row].name)
         dismiss(animated: true, completion: nil)
     }
 }
@@ -56,7 +64,7 @@ extension AirportsViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             foundAirports = allAirports
         } else {
-            foundAirports = allAirports.filter({$0.lowercased().contains(searchText.lowercased())})
+            foundAirports = allAirports.filter({$0.name.lowercased().contains(searchText.lowercased())})
         }
         isSearching = true
         tableView.reloadData()

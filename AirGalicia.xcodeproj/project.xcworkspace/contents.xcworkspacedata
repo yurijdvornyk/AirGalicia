@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../AirGalicia/Model">
+   </FileRef>
+   <FileRef
       location = "self:AirGalicia.xcodeproj">
    </FileRef>
 </Workspace>

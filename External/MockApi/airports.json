@@ -3,30 +3,91 @@
         "code": "LWO",
         "city": "Lviv",
         "country": "Ukraine",
-        "name": "Lviv Danylo Halytskyi International Airport"
+        "name": "Lviv Danylo Halytskyi International Airport",
+        "planes": ["AG01"]
+    },
+    {
+        "code": "KRK",
+        "city": "Krakow",
+        "country": "Poland",
+        "name": "Krakow John Paul II International Airport",
+        "planes": []
+    },
+    {
+        "code": "ZRH",
+        "city": "Zurich",
+        "country": "Switzerland",
+        "name": "Zurich",
+        "planes": []
+    },
+    {
+        "code": "MLA",
+        "city": "Gudja",
+        "country": "Malta",
+        "name": "Malta International Airport",
+        "planes": ["AG03"]
     },
     {
         "code": "TRF",
         "city": "Oslo",
         "country": "Norway",
-        "name": "Sandefjord Airport, Torp"
+        "name": "Oslo Torp",
+        "planes": []
     },
     {
-        "code": "WAW",
-        "city": "Warsaw",
-        "country": "Poland",
-        "name": "Warszawa Chopin Airport"
+        "code": "FAO",
+        "city": "Faro",
+        "country": "Portugal",
+        "name": "Faro",
+        "planes": []
     },
     {
-        "code": "BUD",
-        "city": "Budapest",
-        "country": "Hungary",
-        "name": "Budapest Ferenc Liszt International Airport"
+        "code": "SDR",
+        "city": "Santander",
+        "country": "Spain",
+        "name": "Seve Ballesteros-Santander",
+        "planes": ["AG04"]
     },
     {
-        "code": "VIE",
-        "city": "Budapest",
-        "country": "Hungary",
-        "name": "Vienna International Airport"
+        "code": "LGW",
+        "city": "London",
+        "country": "Unighted Kingdom",
+        "name": "London Gatwick",
+        "planes": []
+    },
+    {
+        "code": "ORY",
+        "city": "Paris",
+        "country": "France",
+        "name": "Paris Orly",
+        "planes": []
+    },
+    {
+        "code": "EIN",
+        "city": "Eindhoven",
+        "country": "Netherlands",
+        "name": "Eindhoven",
+        "planes": []
+    },
+    {
+        "code": "RIX",
+        "city": "Riga",
+        "country": "Latvia",
+        "name": "Riga",
+        "planes": []
+    }
+    {
+        "code": "KBP",
+        "city": "Kyiv",
+        "country": "Ukraine",
+        "name": "Kyiv Boryspil",
+        "planes": ["AG02"]
+    },
+    {
+        "code": "KHE",
+        "city": "Kherson",
+        "country": "Ukraine",
+        "name": "Kherson",
+        "planes": []
     }
 ]

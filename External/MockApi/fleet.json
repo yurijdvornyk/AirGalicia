@@ -1,0 +1,26 @@
+[
+    {
+        "id": "AG01",
+        "model": "Airbus A320neo",
+        "seats": 194,
+        "imageUrl": "a320neo.png"
+    },
+    {
+        "id": "AG02",
+        "model": "Airbus A320neo",
+        "seats": 194,
+        "imageUrl": "a320neo.png"
+    },
+    {
+        "id": "AG03",
+        "model": "Airbus A320neo",
+        "seats": 194,
+        "imageUrl": "a320neo.png"
+    },
+    {
+        "id": "AG04",
+        "model": "Embraer E195",
+        "seats": 124,
+        "imageUrl": "e195.png"
+    }
+]
