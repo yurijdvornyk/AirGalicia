@@ -9,13 +9,13 @@
 import UIKit
 
 protocol AirportsSelectedProtocol {
-    func onSelected(routePoint: RoutePoint?, airport: String?)
+    func onSelected(isUserSelectingOrigin: Bool, airport: Airport?)
 }
 
 class AirportsViewController: BaseViewController {
     
     var selectionDelegate: AirportsSelectedProtocol?
-    var routePoint: RoutePoint?
+    var originAirport: Airport?
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
@@ -48,13 +48,13 @@ extension AirportsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = isSearching ? foundAirports[indexPath.row].name : allAirports[indexPath.row].name
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AirportSearchCell
+        cell.configureWith(airport: foundAirports[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectionDelegate?.onSelected(routePoint: routePoint, airport: foundAirports[indexPath.row].name)
+        selectionDelegate?.onSelected(isUserSelectingOrigin: originAirport == nil, airport: foundAirports[indexPath.row])
         dismiss(animated: true, completion: nil)
     }
 }
@@ -64,7 +64,13 @@ extension AirportsViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             foundAirports = allAirports
         } else {
-            foundAirports = allAirports.filter({$0.name.lowercased().contains(searchText.lowercased())})
+            foundAirports = allAirports.filter({
+                let query = searchText.lowercased()
+                return $0.name.lowercased().contains(query) ||
+                $0.city.lowercased().contains(query) ||
+                $0.country.lowercased().contains(query) ||
+                $0.code.lowercased().contains(query)
+            })
         }
         isSearching = true
         tableView.reloadData()

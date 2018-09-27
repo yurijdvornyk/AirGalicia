@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* ApiManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
+		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
 		BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F421541BCF00114C39 /* AppDelegate.swift */; };
 		BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F621541BCF00114C39 /* SearchViewController.swift */; };
 		BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F821541BCF00114C39 /* TripsViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		BC20122E215AE21D00F98B7A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
 		BCCB36F121541BCF00114C39 /* AirGalicia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGalicia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB36F421541BCF00114C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB36F621541BCF00114C39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,60 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BC201233215D69E600F98B7A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB372421541C9000114C39 /* BaseViewController.swift */,
+				BC201238215D6AB200F98B7A /* Account */,
+				BC201235215D6A4700F98B7A /* Airports */,
+				BC201237215D6A7B00F98B7A /* BoardingPasses */,
+				BC201234215D69F900F98B7A /* Search */,
+				BC201236215D6A5F00F98B7A /* Trips */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BC201234215D69F900F98B7A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB36F621541BCF00114C39 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BC201235215D6A4700F98B7A /* Airports */ = {
+			isa = PBXGroup;
+			children = (
+				BCE4178E21545570001A71D2 /* AirportsViewController.swift */,
+				BC201239215D6B4200F98B7A /* AirportSearchCell.swift */,
+			);
+			path = Airports;
+			sourceTree = "<group>";
+		};
+		BC201236215D6A5F00F98B7A /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB36F821541BCF00114C39 /* TripsViewController.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		BC201237215D6A7B00F98B7A /* BoardingPasses */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */,
+			);
+			path = BoardingPasses;
+			sourceTree = "<group>";
+		};
+		BC201238215D6AB200F98B7A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB37282154201600114C39 /* AccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		BCCB36E821541BCF00114C39 = {
 			isa = PBXGroup;
 			children = (
@@ -120,18 +176,13 @@
 		BCCB36F321541BCF00114C39 /* AirGalicia */ = {
 			isa = PBXGroup;
 			children = (
-				BC20122D215AE20D00F98B7A /* Model */,
 				BCCB36F421541BCF00114C39 /* AppDelegate.swift */,
-				BCCB372421541C9000114C39 /* BaseViewController.swift */,
-				BCCB36F621541BCF00114C39 /* SearchViewController.swift */,
-				BCE4178E21545570001A71D2 /* AirportsViewController.swift */,
-				BCCB36F821541BCF00114C39 /* TripsViewController.swift */,
-				BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */,
-				BCCB37282154201600114C39 /* AccountViewController.swift */,
-				BCCB36FA21541BCF00114C39 /* Main.storyboard */,
-				BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */,
 				BCCB372A215425F600114C39 /* Assets.xcassets */,
 				BCCB370221541BD000114C39 /* Info.plist */,
+				BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */,
+				BCCB36FA21541BCF00114C39 /* Main.storyboard */,
+				BC20122D215AE20D00F98B7A /* Model */,
+				BC201233215D69E600F98B7A /* Presentation */,
 			);
 			path = AirGalicia;
 			sourceTree = "<group>";
@@ -288,6 +339,7 @@
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */,
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
+				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
 				BCCB37292154201600114C39 /* AccountViewController.swift in Sources */,
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,

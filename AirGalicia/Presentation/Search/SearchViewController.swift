@@ -22,8 +22,8 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
     @IBOutlet weak var endDateStackView: UIStackView!
     @IBOutlet private weak var endDateTextField: UITextField!
     
-    private var originAirport: String!
-    private var destinationAirport: String!
+    private var originAirport: Airport!
+    private var destinationAirport: Airport!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let airportsViewController = storyBoard.instantiateViewController(withIdentifier: "AirportsViewController") as! AirportsViewController
         airportsViewController.selectionDelegate = self
-        airportsViewController.routePoint = .origin
+        airportsViewController.originAirport = nil
         present(airportsViewController, animated: true, completion: nil)
     }
     
@@ -46,7 +46,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let airportsViewController = storyBoard.instantiateViewController(withIdentifier: "AirportsViewController") as! AirportsViewController
         airportsViewController.selectionDelegate = self
-        airportsViewController.routePoint = .destination
+        airportsViewController.originAirport = originAirport
         present(airportsViewController, animated: true, completion: nil)
     }
     
@@ -58,22 +58,19 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         print("End date tapped")
     }
     
-    func onSelected(routePoint: RoutePoint?, airport: String?) {
+    func onSelected(isUserSelectingOrigin: Bool, airport: Airport?) {
         if airport == nil {
             return
         }
         
-        switch routePoint {
-        case .origin?:
+        if isUserSelectingOrigin {
             originAirport = airport
-            originTextField.text = airport
+            originTextField.text = formatAirportForSearchField(airport: airport!)
             destinationStackView.isUserInteractionEnabled = true
             destinationTextField.isEnabled = true
-        case .destination?:
+        } else {
             destinationAirport = airport
-            destinationTextField.text = airport
-        case .none:
-            break
+            destinationTextField.text = formatAirportForSearchField(airport: airport!)
         }
     }
     
@@ -84,12 +81,11 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         destinationTextField.isEnabled = false
     }
     
+    func formatAirportForSearchField(airport: Airport) -> String {
+        return "\(airport.city), \(airport.country) (\(airport.name), \(airport.code))"
+    }
+    
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
         endDateTextField.isEnabled = sender.isOn
     }
-}
-
-enum RoutePoint {
-    case origin
-    case destination
 }

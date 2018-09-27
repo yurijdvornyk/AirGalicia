@@ -201,13 +201,51 @@
                                     <constraint firstAttribute="height" constant="535" id="sP4-dR-5dk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="J4d-Uz-KAO">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="J4d-Uz-KAO" customClass="AirportSearchCell" customModule="AirGalicia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J4d-Uz-KAO" id="1na-U5-foc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some International Airport Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-Tu-GVv">
+                                                    <rect key="frame" x="16" y="19" width="251" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="City, Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-t2-lyS">
+                                                    <rect key="frame" x="16" y="48.5" width="74" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WWW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emf-si-BTu">
+                                                    <rect key="frame" x="310" y="16" width="49" height="39.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m1e-Tu-GVv" secondAttribute="trailing" constant="8" symbolic="YES" id="PBg-gA-dgG"/>
+                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leadingMargin" constant="1" id="bgS-4O-VIo"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="topMargin" constant="5" id="lWX-vW-Yba"/>
+                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="top" secondItem="m1e-Tu-GVv" secondAttribute="bottom" constant="8" id="nJd-7U-fbY"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="centerY" secondItem="1na-U5-foc" secondAttribute="centerY" id="pSO-wt-sVg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m1e-Tu-GVv" secondAttribute="trailing" constant="20" symbolic="YES" id="rhZ-lK-oxT"/>
+                                                <constraint firstAttribute="bottom" secondItem="OxQ-t2-lyS" secondAttribute="bottom" constant="8" id="rrG-Ly-zKu"/>
+                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leading" constant="16" id="xgx-KZ-1Ay"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OxQ-t2-lyS" secondAttribute="trailing" constant="20" symbolic="YES" id="y0c-3E-2Eo"/>
+                                                <constraint firstAttribute="trailing" secondItem="emf-si-BTu" secondAttribute="trailing" constant="16" id="yIe-kT-BzN"/>
+                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="topMargin" constant="8" id="yrd-Dr-Nx6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="airportLabel" destination="m1e-Tu-GVv" id="bN9-e0-9RK"/>
+                                            <outlet property="codeLabel" destination="emf-si-BTu" id="Ivx-X6-KcY"/>
+                                            <outlet property="locationLabel" destination="OxQ-t2-lyS" id="2Ng-yy-cSv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
