@@ -4,6 +4,7 @@
         "city": "Lviv",
         "country": "Ukraine",
         "name": "Lviv Danylo Halytskyi International Airport",
+        "location": "49.8134554,23.9623552",
         "planes": ["AG01"]
     },
     {
@@ -11,6 +12,7 @@
         "city": "Krakow",
         "country": "Poland",
         "name": "Krakow John Paul II International Airport",
+        "location": "50.076981,19.7859248",
         "planes": []
     },
     {
@@ -18,6 +20,7 @@
         "city": "Zurich",
         "country": "Switzerland",
         "name": "Zurich",
+        "location": "47.4582201,8.5532815",
         "planes": []
     },
     {
@@ -25,6 +28,7 @@
         "city": "Gudja",
         "country": "Malta",
         "name": "Malta International Airport",
+        "location": "35.8541178,14.4810855",
         "planes": ["AG03"]
     },
     {
@@ -32,6 +36,7 @@
         "city": "Oslo",
         "country": "Norway",
         "name": "Oslo Torp",
+        "location": "59.1824485,10.2547181",
         "planes": []
     },
     {
@@ -39,6 +44,7 @@
         "city": "Faro",
         "country": "Portugal",
         "name": "Faro",
+        "location": "37.0175999,-7.971914",
         "planes": []
     },
     {
@@ -46,6 +52,7 @@
         "city": "Santander",
         "country": "Spain",
         "name": "Seve Ballesteros-Santander",
+        "location": "43.4263213,-3.8232471",
         "planes": ["AG04"]
     },
     {
@@ -53,6 +60,7 @@
         "city": "London",
         "country": "Unighted Kingdom",
         "name": "London Gatwick",
+        "location": "51.1536654,-0.1842569",
         "planes": []
     },
     {
@@ -60,6 +68,7 @@
         "city": "Paris",
         "country": "France",
         "name": "Paris Orly",
+        "location": "48.7262468,2.3630532",
         "planes": []
     },
     {
@@ -67,6 +76,7 @@
         "city": "Eindhoven",
         "country": "Netherlands",
         "name": "Eindhoven",
+        "location": "51.4583814,5.3898977",
         "planes": []
     },
     {
@@ -74,6 +84,7 @@
         "city": "Riga",
         "country": "Latvia",
         "name": "Riga",
+        "location": "56.9226583,23.9711189",
         "planes": []
     }
     {
@@ -81,6 +92,7 @@
         "city": "Kyiv",
         "country": "Ukraine",
         "name": "Kyiv Boryspil",
+        "location": "50.3382254,30.8917334",
         "planes": ["AG02"]
     },
     {
@@ -88,6 +100,7 @@
         "city": "Kherson",
         "country": "Ukraine",
         "name": "Kherson",
+        "location": "46.6722037,32.5062972",
         "planes": []
     }
 ]
