@@ -51,6 +51,17 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-Re-edf">
+                                                <rect key="frame" x="331" y="28" width="28" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="0rc-ie-KAN"/>
+                                                    <constraint firstAttribute="width" constant="28" id="O4N-tS-O20"/>
+                                                </constraints>
+                                                <state key="normal" image="swap_vertical"/>
+                                                <connections>
+                                                    <action selector="onSwapButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qmd-Gi-SNe"/>
+                                                </connections>
+                                            </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-mz-m0A">
                                                 <rect key="frame" x="185.5" y="84" width="51" height="31"/>
                                                 <connections>
@@ -102,6 +113,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="d1y-Re-edf" secondAttribute="trailing" constant="16" id="5gx-TI-ges"/>
                                             <constraint firstAttribute="trailing" secondItem="TuZ-GJ-vO2" secondAttribute="trailing" constant="16" id="6uw-uD-BCZ"/>
                                             <constraint firstItem="TuZ-GJ-vO2" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="13" id="Bkm-K6-kTg"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="top" secondItem="dUQ-r0-f5W" secondAttribute="bottom" constant="8" id="Bov-yx-8de"/>
@@ -110,6 +122,7 @@
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="FVd-BJ-oZc"/>
                                             <constraint firstAttribute="trailing" secondItem="Mte-1F-omC" secondAttribute="trailing" constant="16" id="H9M-kP-a8P"/>
                                             <constraint firstItem="Mte-1F-omC" firstAttribute="top" secondItem="9dx-mz-m0A" secondAttribute="bottom" constant="8" symbolic="YES" id="Hf8-Ka-5FX"/>
+                                            <constraint firstItem="d1y-Re-edf" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="28" id="Q8i-2J-AJf"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="8" id="RqB-JG-fkm"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="TOf-VQ-3vj"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="TrA-ew-hA6"/>
@@ -164,6 +177,7 @@
                         <outlet property="searchDisplayController" destination="Fk5-5e-Kly" id="Bvy-P3-Aex"/>
                         <outlet property="startDateStackView" destination="Dfx-Ce-H7K" id="eod-7M-T8N"/>
                         <outlet property="startDateTextField" destination="rCF-c4-30c" id="WnZ-Sh-r5q"/>
+                        <outlet property="swapDestinationsButton" destination="d1y-Re-edf" id="53x-4L-Fzc"/>
                         <segue destination="v3A-Oh-Tdc" kind="showDetail" id="tYS-oG-YKf"/>
                     </connections>
                 </viewController>
@@ -209,36 +223,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some International Airport Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-Tu-GVv">
-                                                    <rect key="frame" x="16" y="19" width="251" height="21.5"/>
+                                                    <rect key="frame" x="16" y="8" width="250.5" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="City, Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-t2-lyS">
-                                                    <rect key="frame" x="16" y="48.5" width="74" height="15"/>
+                                                    <rect key="frame" x="16" y="48.5" width="250.5" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WWW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emf-si-BTu">
-                                                    <rect key="frame" x="310" y="16" width="49" height="39.5"/>
+                                                    <rect key="frame" x="266.5" y="8" width="92.5" height="55.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Nwa-02-ceB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="emf-si-BTu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m1e-Tu-GVv" secondAttribute="trailing" constant="8" symbolic="YES" id="PBg-gA-dgG"/>
-                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leadingMargin" constant="1" id="bgS-4O-VIo"/>
-                                                <constraint firstItem="emf-si-BTu" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="topMargin" constant="5" id="lWX-vW-Yba"/>
-                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="top" secondItem="m1e-Tu-GVv" secondAttribute="bottom" constant="8" id="nJd-7U-fbY"/>
-                                                <constraint firstItem="emf-si-BTu" firstAttribute="centerY" secondItem="1na-U5-foc" secondAttribute="centerY" id="pSO-wt-sVg"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m1e-Tu-GVv" secondAttribute="trailing" constant="20" symbolic="YES" id="rhZ-lK-oxT"/>
-                                                <constraint firstAttribute="bottom" secondItem="OxQ-t2-lyS" secondAttribute="bottom" constant="8" id="rrG-Ly-zKu"/>
-                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leading" constant="16" id="xgx-KZ-1Ay"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OxQ-t2-lyS" secondAttribute="trailing" constant="20" symbolic="YES" id="y0c-3E-2Eo"/>
-                                                <constraint firstAttribute="trailing" secondItem="emf-si-BTu" secondAttribute="trailing" constant="16" id="yIe-kT-BzN"/>
-                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="topMargin" constant="8" id="yrd-Dr-Nx6"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="top" constant="8" id="0Td-df-jXV"/>
+                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leading" constant="16" id="5AK-v1-QkM"/>
+                                                <constraint firstAttribute="trailing" secondItem="emf-si-BTu" secondAttribute="trailing" constant="16" id="CaG-DN-8Hg"/>
+                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="leading" secondItem="1na-U5-foc" secondAttribute="leading" constant="16" id="L2Q-WN-pgS"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="leading" secondItem="m1e-Tu-GVv" secondAttribute="trailing" id="RBG-Fi-zLl"/>
+                                                <constraint firstItem="m1e-Tu-GVv" firstAttribute="top" secondItem="1na-U5-foc" secondAttribute="top" constant="8" id="WJG-r4-UdZ"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="leading" secondItem="m1e-Tu-GVv" secondAttribute="trailing" id="bpJ-yi-m6d"/>
+                                                <constraint firstItem="OxQ-t2-lyS" firstAttribute="top" secondItem="m1e-Tu-GVv" secondAttribute="bottom" constant="8" id="cOS-ir-v7L"/>
+                                                <constraint firstItem="emf-si-BTu" firstAttribute="leading" secondItem="OxQ-t2-lyS" secondAttribute="trailing" id="kER-EF-sGb"/>
+                                                <constraint firstAttribute="bottom" secondItem="OxQ-t2-lyS" secondAttribute="bottom" constant="8" id="nPe-6n-dUx"/>
+                                                <constraint firstAttribute="bottom" secondItem="emf-si-BTu" secondAttribute="bottom" constant="8" id="ygs-0R-qQz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -390,6 +407,7 @@
         <image name="origin" width="24" height="24"/>
         <image name="profile" width="36" height="36"/>
         <image name="search" width="36" height="36"/>
+        <image name="swap_vertical" width="36" height="36"/>
         <image name="trips" width="36" height="36"/>
     </resources>
 </document>

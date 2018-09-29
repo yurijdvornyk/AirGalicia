@@ -17,6 +17,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
     @IBOutlet private weak var originTextField: UITextField!
     @IBOutlet private weak var destinationStackView: UIStackView!
     @IBOutlet private weak var destinationTextField: UITextField!
+    @IBOutlet private weak var swapDestinationsButton: UIButton!
     @IBOutlet weak var startDateStackView: UIStackView!
     @IBOutlet private weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateStackView: UIStackView!
@@ -65,16 +66,17 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         
         if isUserSelectingOrigin {
             originAirport = airport
-            originTextField.text = formatAirportForSearchField(airport: airport!)
+            destinationAirport = nil
             destinationStackView.isUserInteractionEnabled = true
             destinationTextField.isEnabled = true
-            destinationTextField.text = ""
+            startDateTextField.text = ""
+            endDateTextField.text = ""
+            swapDestinationsButton.isEnabled = false
         } else {
             destinationAirport = airport
-            destinationTextField.text = formatAirportForSearchField(airport: airport!)
+            swapDestinationsButton.isEnabled = true
         }
-        startDateTextField.text = ""
-        endDateTextField.text = ""
+        updateAirportTextFields()
     }
     
     func clearSelection() {
@@ -84,11 +86,27 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         destinationTextField.isEnabled = false
     }
     
-    func formatAirportForSearchField(airport: Airport) -> String {
-        return "\(airport.city), \(airport.country) (\(airport.name), \(airport.code))"
+    func formatAirportForSearchField(airport: Airport?) -> String {
+        if airport == nil {
+            return ""
+        } else {
+            return "\(airport!.city), \(airport!.country) (\(airport!.name), \(airport!.code))"
+        }
+    }
+    
+    @IBAction func onSwapButtonTapped(_ sender: UIButton) {
+        let tempAirport = originAirport
+        originAirport = destinationAirport
+        destinationAirport = tempAirport
+        updateAirportTextFields()
     }
     
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
         endDateTextField.isEnabled = sender.isOn
+    }
+    
+    func updateAirportTextFields() {
+        originTextField.text = formatAirportForSearchField(airport: originAirport)
+        destinationTextField.text = formatAirportForSearchField(airport: destinationAirport)
     }
 }
