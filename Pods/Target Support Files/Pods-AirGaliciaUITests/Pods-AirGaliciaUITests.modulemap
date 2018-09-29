@@ -1,0 +1,6 @@
+framework module Pods_AirGaliciaUITests {
+  umbrella header "Pods-AirGaliciaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85169D5E1E88AA20F434FB60 /* Pods_AirGaliciaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA29296FABF98D1276B22C1 /* Pods_AirGaliciaTests.framework */; };
+		93CE2303132FC9D8DA76451F /* Pods_AirGaliciaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */; };
 		BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* ApiManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
 		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
 		BC20123C215D7E2900F98B7A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20123B215D7E2900F98B7A /* Schedule.swift */; };
 		BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20123D215D7F8900F98B7A /* Timetable.swift */; };
+		BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BC268BB8215F9A1800FE9FD4 /* Podfile */; };
 		BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F421541BCF00114C39 /* AppDelegate.swift */; };
 		BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F621541BCF00114C39 /* SearchViewController.swift */; };
 		BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F821541BCF00114C39 /* TripsViewController.swift */; };
@@ -24,6 +27,7 @@
 		BCCB37292154201600114C39 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* AccountViewController.swift */; };
 		BCCB372B215425F600114C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB372A215425F600114C39 /* Assets.xcassets */; };
 		BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4178E21545570001A71D2 /* AirportsViewController.swift */; };
+		CEECBF18A1308B2F4A787422 /* Pods_AirGalicia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CB9D546F387E9F872080B4 /* Pods_AirGalicia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +48,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28CB9D546F387E9F872080B4 /* Pods_AirGalicia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirGalicia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36649AEFF41B50993C35DA8D /* Pods-AirGaliciaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaUITests/Pods-AirGaliciaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4CA29296FABF98D1276B22C1 /* Pods_AirGaliciaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirGaliciaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DAC3301A2893EE17823577B /* Pods-AirGalicia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGalicia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia.debug.xcconfig"; sourceTree = "<group>"; };
+		50F1EABFA048A46B9E6D03F9 /* Pods-AirGalicia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGalicia.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia.release.xcconfig"; sourceTree = "<group>"; };
+		8419A39DD15142B5F6B1E14C /* Pods-AirGaliciaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaUITests/Pods-AirGaliciaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		87C95D3067890ECF5D334AEF /* Pods-AirGaliciaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
 		BC20123B215D7E2900F98B7A /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BC20123D215D7F8900F98B7A /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		BC268BB8215F9A1800FE9FD4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BCCB36F121541BCF00114C39 /* AirGalicia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGalicia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB36F421541BCF00114C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB36F621541BCF00114C39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +79,8 @@
 		BCCB37282154201600114C39 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		BCCB372A215425F600114C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE4178E21545570001A71D2 /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
+		C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirGaliciaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D77605D15EEF7DAAF362B1 /* Pods-AirGaliciaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEECBF18A1308B2F4A787422 /* Pods_AirGalicia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85169D5E1E88AA20F434FB60 /* Pods_AirGaliciaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +104,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93CE2303132FC9D8DA76451F /* Pods_AirGaliciaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CA930BAD10DAA0C259C17FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28CB9D546F387E9F872080B4 /* Pods_AirGalicia.framework */,
+				4CA29296FABF98D1276B22C1 /* Pods_AirGaliciaTests.framework */,
+				C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F9F5DF392D2168B1EE61F8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DAC3301A2893EE17823577B /* Pods-AirGalicia.debug.xcconfig */,
+				50F1EABFA048A46B9E6D03F9 /* Pods-AirGalicia.release.xcconfig */,
+				87C95D3067890ECF5D334AEF /* Pods-AirGaliciaTests.debug.xcconfig */,
+				D3D77605D15EEF7DAAF362B1 /* Pods-AirGaliciaTests.release.xcconfig */,
+				8419A39DD15142B5F6B1E14C /* Pods-AirGaliciaUITests.debug.xcconfig */,
+				36649AEFF41B50993C35DA8D /* Pods-AirGaliciaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BC20122D215AE20D00F98B7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +202,13 @@
 		BCCB36E821541BCF00114C39 = {
 			isa = PBXGroup;
 			children = (
+				BC268BB8215F9A1800FE9FD4 /* Podfile */,
 				BCCB36F321541BCF00114C39 /* AirGalicia */,
 				BCCB370A21541BD000114C39 /* AirGaliciaTests */,
 				BCCB371521541BD000114C39 /* AirGaliciaUITests */,
 				BCCB36F221541BCF00114C39 /* Products */,
+				8F9F5DF392D2168B1EE61F8C /* Pods */,
+				2CA930BAD10DAA0C259C17FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCB371B21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGalicia" */;
 			buildPhases = (
+				7A01EDE341B7721B852DE256 /* [CP] Check Pods Manifest.lock */,
 				BCCB36ED21541BCF00114C39 /* Sources */,
 				BCCB36EE21541BCF00114C39 /* Frameworks */,
 				BCCB36EF21541BCF00114C39 /* Resources */,
+				BED6AD14AC0075BFF35F7E74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCB371E21541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaTests" */;
 			buildPhases = (
+				0C891FE9C131F502C09CC835 /* [CP] Check Pods Manifest.lock */,
 				BCCB370321541BD000114C39 /* Sources */,
 				BCCB370421541BD000114C39 /* Frameworks */,
 				BCCB370521541BD000114C39 /* Resources */,
@@ -253,6 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCB372121541BD000114C39 /* Build configuration list for PBXNativeTarget "AirGaliciaUITests" */;
 			buildPhases = (
+				FF01F6100F1E35857B92C676 /* [CP] Check Pods Manifest.lock */,
 				BCCB370E21541BD000114C39 /* Sources */,
 				BCCB370F21541BD000114C39 /* Frameworks */,
 				BCCB371021541BD000114C39 /* Resources */,
@@ -317,6 +364,7 @@
 			files = (
 				BCCB370121541BD000114C39 /* LaunchScreen.storyboard in Resources */,
 				BCCB372B215425F600114C39 /* Assets.xcassets in Resources */,
+				BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */,
 				BCCB36FC21541BCF00114C39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +384,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C891FE9C131F502C09CC835 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirGaliciaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A01EDE341B7721B852DE256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirGalicia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED6AD14AC0075BFF35F7E74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF01F6100F1E35857B92C676 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirGaliciaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCCB36ED21541BCF00114C39 /* Sources */ = {
@@ -526,6 +665,7 @@
 		};
 		BCCB371C21541BD000114C39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DAC3301A2893EE17823577B /* Pods-AirGalicia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +684,7 @@
 		};
 		BCCB371D21541BD000114C39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F1EABFA048A46B9E6D03F9 /* Pods-AirGalicia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -562,6 +703,7 @@
 		};
 		BCCB371F21541BD000114C39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C95D3067890ECF5D334AEF /* Pods-AirGaliciaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +725,7 @@
 		};
 		BCCB372021541BD000114C39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3D77605D15EEF7DAAF362B1 /* Pods-AirGaliciaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +747,7 @@
 		};
 		BCCB372221541BD000114C39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8419A39DD15142B5F6B1E14C /* Pods-AirGaliciaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,6 +768,7 @@
 		};
 		BCCB372321541BD000114C39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36649AEFF41B50993C35DA8D /* Pods-AirGaliciaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
