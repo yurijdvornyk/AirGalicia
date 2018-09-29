@@ -14,9 +14,11 @@ class AirportSearchCell: UITableViewCell {
     @IBOutlet private weak var codeLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
     
-    func configureWith(airport: Airport) {
-        airportLabel.text = airport.name
-        locationLabel.text = "\(airport.city), \(airport.country)"
-        codeLabel.text = airport.code
+    func configureWith(airport: Airport?) {
+        if airport != nil {
+            airportLabel.text = airport!.name
+            locationLabel.text = "\(airport!.city), \(airport!.country)"
+            codeLabel.text = airport?.code
+        }
     }
 }

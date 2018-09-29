@@ -9,13 +9,14 @@
 import UIKit
 
 protocol AirportsSelectedProtocol {
-    func onSelected(isUserSelectingOrigin: Bool, airport: Airport?)
+    func onAirportSelected(isUserSelectingOrigin: Bool, airport: Airport?)
 }
 
 class AirportsViewController: BaseViewController {
     
     var selectionDelegate: AirportsSelectedProtocol?
     var originAirport: Airport?
+    var apiManager: ApiManager?
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
@@ -26,6 +27,32 @@ class AirportsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiManager = ApiManager()
+        if originAirport != nil {
+            apiManager?.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
+                self.allAirports = airports
+                self.foundAirports = airports
+                DispatchQueue.main.async() {
+                    self.tableView.reloadData()
+                }
+            }, error: { (NSError) in
+                print("Error")
+                // TODO: Handle error
+            })
+        } else {
+            apiManager?.loadAirports(success: { (airports: [Airport]) in
+                self.allAirports = airports
+                self.foundAirports = airports
+                DispatchQueue.main.async() {
+                    self.tableView.reloadData()
+                }
+            }) { (error: NSError) in
+                // TODO: Handle error
+            }
+        }
+    }
+    
+    func loadAllAirports() {
         ApiManager.init().loadAirports(success: { (airports: [Airport]) in
             self.allAirports = airports
             self.foundAirports = airports
@@ -49,12 +76,14 @@ extension AirportsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! AirportSearchCell
-        cell.configureWith(airport: foundAirports[indexPath.row])
+        if indexPath.row < foundAirports.count {
+            cell.configureWith(airport: foundAirports[indexPath.row])
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectionDelegate?.onSelected(isUserSelectingOrigin: originAirport == nil, airport: foundAirports[indexPath.row])
+        selectionDelegate?.onAirportSelected(isUserSelectingOrigin: originAirport == nil, airport: foundAirports[indexPath.row])
         dismiss(animated: true, completion: nil)
     }
 }

@@ -58,7 +58,7 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
         print("End date tapped")
     }
     
-    func onSelected(isUserSelectingOrigin: Bool, airport: Airport?) {
+    func onAirportSelected(isUserSelectingOrigin: Bool, airport: Airport?) {
         if airport == nil {
             return
         }
@@ -68,10 +68,13 @@ class SearchViewController: BaseViewController, AirportsSelectedProtocol {
             originTextField.text = formatAirportForSearchField(airport: airport!)
             destinationStackView.isUserInteractionEnabled = true
             destinationTextField.isEnabled = true
+            destinationTextField.text = ""
         } else {
             destinationAirport = airport
             destinationTextField.text = formatAirportForSearchField(airport: airport!)
         }
+        startDateTextField.text = ""
+        endDateTextField.text = ""
     }
     
     func clearSelection() {
