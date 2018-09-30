@@ -15,6 +15,11 @@
 		BC20123C215D7E2900F98B7A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20123B215D7E2900F98B7A /* Schedule.swift */; };
 		BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20123D215D7F8900F98B7A /* Timetable.swift */; };
 		BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BC268BB8215F9A1800FE9FD4 /* Podfile */; };
+		BC414CCA2161003900649D6F /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CC92161003900649D6F /* Passenger.swift */; };
+		BC414CCC2161025000649D6F /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCB2161025000649D6F /* Booking.swift */; };
+		BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCD2161028A00649D6F /* BoardingPass.swift */; };
+		BC414CD22161036100649D6F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD12161036100649D6F /* Util.swift */; };
+		BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD421611AA000649D6F /* FlightDateViewController.swift */; };
 		BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F421541BCF00114C39 /* AppDelegate.swift */; };
 		BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F621541BCF00114C39 /* SearchViewController.swift */; };
 		BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB36F821541BCF00114C39 /* TripsViewController.swift */; };
@@ -61,6 +66,11 @@
 		BC20123B215D7E2900F98B7A /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BC20123D215D7F8900F98B7A /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		BC268BB8215F9A1800FE9FD4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		BC414CC92161003900649D6F /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		BC414CCB2161025000649D6F /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Booking.swift; path = AirGalicia/Model/Booking.swift; sourceTree = SOURCE_ROOT; };
+		BC414CCD2161028A00649D6F /* BoardingPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPass.swift; sourceTree = "<group>"; };
+		BC414CD12161036100649D6F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BC414CD421611AA000649D6F /* FlightDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewController.swift; sourceTree = "<group>"; };
 		BCCB36F121541BCF00114C39 /* AirGalicia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGalicia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB36F421541BCF00114C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB36F621541BCF00114C39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -139,8 +149,12 @@
 			children = (
 				BC20122E215AE21D00F98B7A /* ApiManager.swift */,
 				BC201230215AE24F00F98B7A /* Airport.swift */,
+				BC414CCB2161025000649D6F /* Booking.swift */,
 				BC20123B215D7E2900F98B7A /* Schedule.swift */,
 				BC20123D215D7F8900F98B7A /* Timetable.swift */,
+				BC414CC92161003900649D6F /* Passenger.swift */,
+				BC414CCD2161028A00649D6F /* BoardingPass.swift */,
+				BC414CD12161036100649D6F /* Util.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,10 +162,11 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201238215D6AB200F98B7A /* Account */,
 				BC201235215D6A4700F98B7A /* Airports */,
+				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
+				BC414CD32161113000649D6F /* FlightDate */,
 				BC201234215D69F900F98B7A /* Search */,
 				BC201236215D6A5F00F98B7A /* Trips */,
 			);
@@ -197,6 +212,14 @@
 				BCCB37282154201600114C39 /* AccountViewController.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		BC414CD32161113000649D6F /* FlightDate */ = {
+			isa = PBXGroup;
+			children = (
+				BC414CD421611AA000649D6F /* FlightDateViewController.swift */,
+			);
+			path = FlightDate;
 			sourceTree = "<group>";
 		};
 		BCCB36E821541BCF00114C39 = {
@@ -484,14 +507,19 @@
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */,
 				BC20123C215D7E2900F98B7A /* Schedule.swift in Sources */,
+				BC414CD22161036100649D6F /* Util.swift in Sources */,
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
+				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,
+				BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
 				BCCB37292154201600114C39 /* AccountViewController.swift in Sources */,
+				BC414CCA2161003900649D6F /* Passenger.swift in Sources */,
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
 				BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */,
 				BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */,
+				BC414CCC2161025000649D6F /* Booking.swift in Sources */,
 				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol AirportsSelectedProtocol {
+protocol AirportsSelectionDelegate {
     func onAirportSelected(isUserSelectingOrigin: Bool, airport: Airport?)
 }
 
 class AirportsViewController: BaseViewController {
     
-    var selectionDelegate: AirportsSelectedProtocol?
+    var selectionDelegate: AirportsSelectionDelegate?
     var originAirport: Airport?
     var apiManager: ApiManager?
     

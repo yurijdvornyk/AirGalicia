@@ -75,4 +75,15 @@ class ApiManager: NSObject {
             }
             }.resume()
     }
+    
+    func loadFlight(from: String, to: String, success: @escaping (Schedule?) -> Void, fail: (NSError) -> Void) {
+        loadSchedule(success: { (schedule: [Schedule]) in
+            let result = schedule.filter({ (flight: Schedule) -> Bool in
+                return flight.from == from && flight.to == to
+            })
+            success(result.count < 1 ? nil : result[0])
+        }) { (error: NSError) in
+            fail(error)
+        }
+    }
 }
