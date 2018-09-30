@@ -19,32 +19,62 @@ class FlightDateViewController: BaseViewController {
     var apiManager: ApiManager?
     var origin: String?
     var destination: String?
-    var schedule: Schedule?
+    var outSchedule: Schedule?
+    var backSchedule: Schedule?
     var defaultPage: Int = 0
+    var outDate: Date?
+    var backDate: Date?
 
+    @IBOutlet private weak var dateControl: UISegmentedControl!
     @IBOutlet private weak var calendarView: FSCalendar!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         apiManager = ApiManager()
+        dateControl.selectedSegmentIndex = defaultPage
         calendarView.scrollDirection = .vertical
         calendarView.delegate = self
         calendarView.dataSource = self
         if origin != nil && destination != nil {
-            apiManager?.loadFlight(from: origin!, to: destination!, success: { (schedule: Schedule?) in
-                self.onLoadFlight(schedule: schedule)
+            spinner.isHidden = false
+            spinner.startAnimating()
+            apiManager?.loadFlight(from: origin!, to: destination!, success: { (outSchedule: Schedule?) in
+                self.apiManager?.loadFlight(from: self.destination!, to: self.origin!, success: { (backSchedule: Schedule?) in
+                    DispatchQueue.main.async() {
+                        self.onLoadFlight(outSchedule: outSchedule, backSchedule: backSchedule)
+                        self.spinner.stopAnimating()
+                    }
+                }, fail: { (error: NSError) in
+                    DispatchQueue.main.async() {
+                        self.spinner.stopAnimating()
+                    }
+                    // TODO: Handle error
+                })
             }, fail: { (error: NSError) in
+                DispatchQueue.main.async() {
+                    self.spinner.stopAnimating()
+                }
                 // TODO: Handle error
             })
         }
     }
     
-    func onLoadFlight(schedule: Schedule?) {
-        self.schedule = schedule
+    func onLoadFlight(outSchedule: Schedule?, backSchedule: Schedule?) {
+        self.outSchedule = outSchedule
+        self.backSchedule = backSchedule
+        calendarView.reloadData()
+    }
+    
+    @IBAction func onDateControlToggled(_ sender: UISegmentedControl) {
         calendarView.reloadData()
     }
     
     @IBAction func onDoneTapped(_ sender: UIButton) {
+        if selectionDelegate != nil {
+            selectionDelegate!.flightDateSelected(outDate: outDate, backDate: backDate)
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onDismissTapped(_ sender: UIButton) {
@@ -55,7 +85,7 @@ class FlightDateViewController: BaseViewController {
 extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date()
+        return dateControl.selectedSegmentIndex == 0 || outDate == nil ? Date() : outDate!
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
@@ -64,6 +94,7 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         let weekday = Calendar.current.component(.weekday, from: date)
+        let schedule = dateControl.selectedSegmentIndex == 0 ? outSchedule : backSchedule
         let doesFlightExist: Bool = schedule?.timetable?.contains(where: { (timetable: Timetable) -> Bool in
             return weekday == timetable.day
         }) ?? false
@@ -71,6 +102,14 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
         cell.titleLabel.textColor = doesFlightExist ? .black : .lightGray
         if doesFlightExist {
             cell.subtitle = "\(getFlightPrice(forDate: date)) €"
+        }
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if dateControl.selectedSegmentIndex == 0 {
+            outDate = date
+        } else {
+            backDate = date
         }
     }
     
