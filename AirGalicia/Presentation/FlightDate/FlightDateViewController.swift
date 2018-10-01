@@ -13,6 +13,10 @@ protocol FlightDateSelectionDelegate {
     func flightDateSelected(outDate: Date?, backDate: Date?)
 }
 
+enum TripType {
+    case OneWay, Return
+}
+
 class FlightDateViewController: BaseViewController {
     
     var selectionDelegate: FlightDateSelectionDelegate?
@@ -85,7 +89,7 @@ class FlightDateViewController: BaseViewController {
 extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return dateControl.selectedSegmentIndex == 0 || outDate == nil ? Date() : outDate!
+        return Date()
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
@@ -99,6 +103,7 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
             return weekday == timetable.day
         }) ?? false
         cell.isUserInteractionEnabled = doesFlightExist
+        cell.isSelected = dateControl.selectedSegmentIndex == 0 ? date == outDate : date == backDate
         cell.titleLabel.textColor = doesFlightExist ? .black : .lightGray
         if doesFlightExist {
             cell.subtitle = "\(getFlightPrice(forDate: date)) €"

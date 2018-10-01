@@ -19,11 +19,12 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     @IBOutlet private weak var destinationStackView: UIStackView!
     @IBOutlet private weak var destinationTextField: UITextField!
     @IBOutlet private weak var swapDestinationsButton: UIButton!
+    @IBOutlet weak var tripTypeSwitch: UISwitch!
     @IBOutlet private weak var outDateTextField: UITextField!
     @IBOutlet private weak var outDateStackView: UIStackView!
     @IBOutlet private weak var backDateTextField: UITextField!
     @IBOutlet weak var backDateStackView: UIStackView!
-    
+
     private var apiManager: ApiManager!
     
     private var originAirport: Airport!
@@ -39,6 +40,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         outDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOutDateViewTapped(recognizer:))))
         backDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didBackDateViewTapped(recognizer:))))
         clearAirports()
+        updateTripDateFields()
     }
     
     @objc func didOriginStackViewTapped(recognizer: UIGestureRecognizer) {
@@ -65,6 +67,28 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         presentflightDateViewController(defaultPage: 1)
     }
     
+    func updateTripDateFields() {
+        outDateTextField.isEnabled = originAirport != nil && destinationAirport != nil
+        outDateStackView.isUserInteractionEnabled = outDateTextField.isEnabled
+        backDateTextField.isEnabled = outDateTextField.isEnabled && tripTypeSwitch.isOn
+        backDateStackView.isUserInteractionEnabled = backDateTextField.isEnabled
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        if flightOutDate != nil {
+            outDateTextField.text = formatter.string(from: flightOutDate)
+            if flightBackDate != nil && flightBackDate > flightOutDate {
+                backDateTextField.text = ""
+            }
+        }
+        if flightBackDate != nil {
+            backDateTextField.text = formatter.string(from: flightBackDate)
+            if flightOutDate != nil && flightBackDate < flightOutDate {
+                outDateTextField.text = ""
+            }
+        }
+    }
+    
     func presentflightDateViewController(defaultPage: Int) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let flightDateViewController = storyBoard.instantiateViewController(withIdentifier: "FlightDateViewController") as! FlightDateViewController
@@ -72,6 +96,8 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         flightDateViewController.origin = originAirport.code
         flightDateViewController.destination = destinationAirport.code
         flightDateViewController.defaultPage = defaultPage
+        flightDateViewController.outDate = flightOutDate
+        flightDateViewController.backDate = flightBackDate
         present(flightDateViewController, animated: true, completion: nil)
     }
     
@@ -92,6 +118,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
             setDatePickEnabled(true)
         }
         updateAirportTextFields()
+        updateTripDateFields()
     }
     
     func setDatePickEnabled(_ isEnabled: Bool) {
@@ -126,6 +153,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
+        updateTripDateFields()
     }
     
     func updateAirportTextFields() {
@@ -136,37 +164,6 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     func flightDateSelected(outDate: Date?, backDate: Date?) {
         flightOutDate = outDate
         flightBackDate = backDate
-        updateDates()
-    }
-    
-    private func updateDates() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        outDateTextField.text = flightOutDate == nil ? "" : formatter.string(from: flightOutDate)
-        backDateTextField.text = flightBackDate == nil ? "" : formatter.string(from: flightBackDate)
+        updateTripDateFields()
     }
 }
-
-//extension SearchViewController: FSCalendarDelegate, FSCalendarDataSource {
-//
-//    private var isOriginDateSelecting: Bool {
-//        get {
-//            return tripDatesControl.selectedSegmentIndex == 0
-//        }
-//    }
-//
-////    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-////    }
-//
-//    func minimumDate(for calendar: FSCalendar) -> Date {
-//        return Date.init()
-//    }
-//
-//    func maximumDate(for calendar: FSCalendar) -> Date {
-//        return Calendar.current.date(byAdding: .month, value: 8, to: Date.init())!
-//    }
-//
-//    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-//        return "24 €"
-//    }
-//}
