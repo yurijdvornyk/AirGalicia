@@ -114,6 +114,6 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func getFlightPrice(forDate: Date) -> Double {
-        return 24
+        return (dateControl.selectedSegmentIndex == 0 ? outSchedule?.basicPrice : backSchedule?.basicPrice)!
     }
 }

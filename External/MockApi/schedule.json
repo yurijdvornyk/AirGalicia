@@ -2,6 +2,7 @@
 		"from": "LWO",
 		"to": "KRK",
 		"plane": "AG01",
+		"basicPrice": 30,
 		"schedule": [{
 			"day": 0,
 			"time": ["7:30", "7:30"]
@@ -29,6 +30,7 @@
 		"from": "KRK",
 		"to": "LWO",
 		"plane": "AG01",
+		"basicPrice": 30,
 		"schedule": [{
 			"day": 0,
 			"time": ["8:10", "10:10"]
@@ -56,6 +58,7 @@
 		"from": "LWO",
 		"to": "ZRH",
 		"plane": "AG01",
+		"basicPrice": 80,
 		"schedule": [{
 			"day": 0,
 			"time": ["10:50", "13:50"]
@@ -71,6 +74,7 @@
 		"from": "ZRH",
 		"to": "LWO",
 		"plane": "AG01",
+		"basicPrice": 80,
 		"schedule": [{
 			"day": 0,
 			"time": ["14:30", "19:30"]
@@ -86,6 +90,7 @@
 		"from": "LWO",
 		"to": "MLA",
 		"plane": "AG01",
+		"basicPrice": 40,
 		"schedule": [{
 			"day": 1,
 			"time": ["10:50", "13:50"]
@@ -104,6 +109,7 @@
 		"from": "MLA",
 		"to": "LWO",
 		"plane": "AG01",
+		"basicPrice": 40,
 		"schedule": [{
 			"day": 1,
 			"time": ["14:30", "19:30"]
@@ -122,6 +128,7 @@
 		"from": "LWO",
 		"to": "FAO",
 		"plane": "AG01",
+		"basicPrice": 80,
 		"schedule": [{
 			"day": 0,
 			"time": ["20:10", "23:10"]
@@ -140,6 +147,7 @@
 		"from": "FAO",
 		"to": "LWO",
 		"plane": "AG01",
+		"basicPrice": 80,
 		"schedule": [{
 			"day": 0,
 			"time": ["23:50", "5:50"]
@@ -158,6 +166,7 @@
 		"from": "LWO",
 		"to": "TRF",
 		"plane": "AG01",
+		"basicPrice": 40,
 		"schedule": [{
 			"day": 1,
 			"time": ["20:10", "21:10"]
@@ -173,6 +182,7 @@
 		"from": "TRF",
 		"to": "LWO",
 		"plane": "AG01",
+		"basicPrice": 40,
 		"schedule": [{
 			"day": 1,
 			"time": ["21:50", "0:50"]
@@ -191,6 +201,7 @@
 		"from": "KBP",
 		"to": "LWO",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 0,
 			"time": ["7:00", "8:00"]
@@ -209,6 +220,7 @@
 		"from": "KBP",
 		"to": "KHE",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 1,
 			"time": ["7:00", "8:00"]
@@ -224,6 +236,7 @@
 		"from": "LWO",
 		"to": "KHE",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 0,
 			"time": ["8:40", "9:40"]
@@ -242,6 +255,7 @@
 		"from": "KHE",
 		"to": "LWO",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 1,
 			"time": ["8:40", "9:40"]
@@ -257,6 +271,7 @@
 		"from": "KHE",
 		"to": "KBP",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 0,
 			"time": ["10:20", "11:20"]
@@ -275,6 +290,7 @@
 		"from": "LWO",
 		"to": "KBP",
 		"plane": "AG02",
+		"basicPrice": 15,
 		"schedule": [{
 			"day": 1,
 			"time": ["10:20", "11:20"]
@@ -290,6 +306,7 @@
 		"from": "KBP",
 		"to": "RIX",
 		"plane": "AG02",
+		"basicPrice": 36,
 		"schedule": [{
 			"day": 1,
 			"time": ["12:00", "14:00"]
@@ -305,6 +322,7 @@
 		"from": "RIX",
 		"to": "TRF",
 		"plane": "AG02",
+		"basicPrice": 44,
 		"schedule": [{
 			"day": 1,
 			"time": ["14:40", "15:40"]
@@ -320,6 +338,7 @@
 		"from": "TRF",
 		"to": "EIN",
 		"plane": "AG02",
+		"basicPrice": 45,
 		"schedule": [{
 			"day": 1,
 			"time": ["16:20", "18:20"]
@@ -335,6 +354,7 @@
 		"from": "EIN",
 		"to": "TRF",
 		"plane": "AG02",
+		"basicPrice": 45,
 		"schedule": [{
 			"day": 1,
 			"time": ["19:00", "21:00"]
@@ -350,6 +370,7 @@
 		"from": "TRF",
 		"to": "RIX",
 		"plane": "AG02",
+		"basicPrice": 44,
 		"schedule": [{
 			"day": 1,
 			"time": ["21:40", "00:40"]
@@ -365,6 +386,7 @@
 		"from": "RIX",
 		"to": "KBP",
 		"plane": "AG02",
+		"basicPrice": 36,
 		"schedule": [{
 			"day": 2,
 			"time": ["1:00", "3:00"]
@@ -380,6 +402,7 @@
 		"from": "KBP",
 		"to": "SDR",
 		"plane": "AG02",
+		"basicPrice": 64,
 		"schedule": [{
 			"day": 0,
 			"time": ["12:00", "16:00"]
@@ -398,6 +421,7 @@
 		"from": "SDR",
 		"to": "MLA",
 		"plane": "AG02",
+		"basicPrice": 48,
 		"schedule": [{
 			"day": 0,
 			"time": ["16:40", "18:40"]
@@ -416,6 +440,7 @@
 		"from": "MLA",
 		"to": "SDR",
 		"plane": "AG02",
+		"basicPrice": 48,
 		"schedule": [{
 			"day": 0,
 			"time": ["19:20", "21:20"]
@@ -434,6 +459,7 @@
 		"from": "SDR",
 		"to": "KBP",
 		"plane": "AG02",
+		"basicPrice": 64,
 		"schedule": [{
 			"day": 0,
 			"time": ["22:00", "3:00"]
@@ -455,6 +481,7 @@
 		"from": "MLA",
 		"to": "FAO",
 		"plane": "AG03",
+		"basicPrice": 47,
 		"schedule": [{
 			"day": 0,
 			"time": ["7:00", "9:00"]
@@ -473,6 +500,7 @@
 		"from": "FAO",
 		"to": "LGW",
 		"plane": "AG03",
+		"basicPrice": 45,
 		"schedule": [{
 			"day": 0,
 			"time": ["9:40", "11:40"]
@@ -491,6 +519,7 @@
 		"from": "LGW",
 		"to": "KRK",
 		"plane": "AG03",
+		"basicPrice": 38,
 		"schedule": [{
 			"day": 0,
 			"time": ["12:20", "16:20"]
@@ -509,6 +538,7 @@
 		"from": "KRK",
 		"to": "LGW",
 		"plane": "AG03",
+		"basicPrice": 38,
 		"schedule": [{
 			"day": 0,
 			"time": ["17:00", "23:00"]
@@ -527,6 +557,7 @@
 		"from": "LGW",
 		"to": "FAO",
 		"plane": "AG03",
+		"basicPrice": 45,
 		"schedule": [{
 			"day": 0,
 			"time": ["23:40", "1:40"]
@@ -545,6 +576,7 @@
 		"from": "FAO",
 		"to": "MLA",
 		"plane": "AG03",
+		"basicPrice": 47,
 		"schedule": [{
 			"day": 0,
 			"time": ["2:20", "4:20"]
@@ -563,6 +595,7 @@
 		"from": "MLA",
 		"to": "LGW",
 		"plane": "AG03",
+		"basicPrice": 53,
 		"schedule": [{
 			"day": 2,
 			"time": ["7:00", "9:00"]
@@ -578,6 +611,7 @@
 		"from": "LGW",
 		"to": "ORY",
 		"plane": "AG03",
+		"basicPrice": 32,
 		"schedule": [{
 			"day": 2,
 			"time": ["9:40", "11:40"]
@@ -593,6 +627,7 @@
 		"from": "ORY",
 		"to": "LGW",
 		"plane": "AG03",
+		"basicPrice": 32,
 		"schedule": [{
 			"day": 2,
 			"time": ["12:20", "12:20"]
@@ -608,6 +643,7 @@
 		"from": "LGW",
 		"to": "KHE",
 		"plane": "AG03",
+		"basicPrice": 48,
 		"schedule": [{
 			"day": 2,
 			"time": ["13:00", "19:00"]
@@ -623,6 +659,7 @@
 		"from": "KHE",
 		"to": "LGW",
 		"plane": "AG03",
+		"basicPrice": 48,
 		"schedule": [{
 			"day": 2,
 			"time": ["19:40", "21:40"]
@@ -638,6 +675,7 @@
 		"from": "LGW",
 		"to": "MLA",
 		"plane": "AG03",
+		"basicPrice": 53,
 		"schedule": [{
 			"day": 2,
 			"time": ["22:20", "1:20"]
@@ -656,6 +694,7 @@
 		"from": "SDR",
 		"to": "EIN",
 		"plane": "AG04",
+		"basicPrice": 32,
 		"schedule": [{
 			"day": 0,
 			"time": ["7:00", "10:00"]
@@ -668,6 +707,7 @@
 		"from": "EIN",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 32,
 		"schedule": [{
 			"day": 0,
 			"time": ["10:40", "13:40"]
@@ -680,6 +720,7 @@
 		"from": "SDR",
 		"to": "FAO",
 		"plane": "AG04",
+		"basicPrice": 27,
 		"schedule": [{
 			"day": 0,
 			"time": ["14:20", "16:20"]
@@ -692,6 +733,7 @@
 		"from": "FAO",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 27,
 		"schedule": [{
 			"day": 0,
 			"time": ["17:00", "19:00"]
@@ -704,6 +746,7 @@
 		"from": "SDR",
 		"to": "ZRH",
 		"plane": "AG04",
+		"basicPrice": 53,
 		"schedule": [{
 			"day": 0,
 			"time": ["19:40", "22:40"]
@@ -716,6 +759,7 @@
 		"from": "ZRH",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 53,
 		"schedule": [{
 			"day": 0,
 			"time": ["23:20", "2:20"]
@@ -728,6 +772,7 @@
 		"from": "SDR",
 		"to": "LGW",
 		"plane": "AG04",
+		"basicPrice": 36,
 		"schedule": [{
 			"day": 1,
 			"time": ["8:20", "9:20"]
@@ -743,6 +788,7 @@
 		"from": "LGW",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 36,
 		"schedule": [{
 			"day": 1,
 			"time": ["10:00", "13:00"]
@@ -758,6 +804,7 @@
 		"from": "SDR",
 		"to": "ORY",
 		"plane": "AG04",
+		"basicPrice": 29,
 		"schedule": [{
 			"day": 1,
 			"time": ["13:40", "14:40"]
@@ -773,6 +820,7 @@
 		"from": "ORY",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 29,
 		"schedule": [{
 			"day": 1,
 			"time": ["15:20", "16:20"]
@@ -788,6 +836,7 @@
 		"from": "SDR",
 		"to": "TRF",
 		"plane": "AG04",
+		"basicPrice": 34,
 		"schedule": [{
 			"day": 1,
 			"time": ["17:00", "20:00"]
@@ -803,6 +852,7 @@
 		"from": "TRF",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 34,
 		"schedule": [{
 			"day": 1,
 			"time": ["20:40", "23:40"]
@@ -818,6 +868,7 @@
 		"from": "SDR",
 		"to": "KHE",
 		"plane": "AG04",
+		"basicPrice": 42,
 		"schedule": [{
 			"day": 2,
 			"time": ["8:30", "14:30"]
@@ -830,6 +881,7 @@
 		"from": "SDR",
 		"to": "KHE",
 		"plane": "AG04",
+		"basicPrice": 42,
 		"schedule": [{
 			"day": 2,
 			"time": ["15:10", "19:10"]
@@ -842,6 +894,7 @@
 		"from": "SDR",
 		"to": "MLA",
 		"plane": "AG04",
+		"basicPrice": 46,
 		"schedule": [{
 			"day": 2,
 			"time": ["19:50", "21:50"]
@@ -854,6 +907,7 @@
 		"from": "MLA",
 		"to": "SDR",
 		"plane": "AG04",
+		"basicPrice": 46,
 		"schedule": [{
 			"day": 2,
 			"time": ["22:30", "0:30"]
