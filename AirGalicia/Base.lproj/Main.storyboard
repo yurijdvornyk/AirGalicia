@@ -110,42 +110,130 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mdj-8d-ZRI">
+                                                <rect key="frame" x="209" y="197" width="150" height="72"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyh-N3-pyp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="72"/>
+                                                        <state key="normal" image="remove_framed"/>
+                                                        <connections>
+                                                            <action selector="onMinusTicketTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zvr-ic-c6c"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCp-LL-dkC">
+                                                        <rect key="frame" x="51.5" y="0.0" width="47" height="72"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhI-eq-BCJ">
+                                                        <rect key="frame" x="103.5" y="0.0" width="46.5" height="72"/>
+                                                        <state key="normal" image="add_framed"/>
+                                                        <connections>
+                                                            <action selector="onPlusTicketTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MLi-AR-2Sz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="8eY-xA-kes"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1R-x5-XJZ">
+                                                <rect key="frame" x="16" y="218" width="84.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipD-oL-XcK">
+                                                <rect key="frame" x="16" y="277" width="343" height="57.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZI-G2-YDm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="57.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 €" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-dh-AeB">
+                                                        <rect key="frame" x="143" y="0.0" width="200" height="57.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="kU2-qB-ogF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ipD-oL-XcK" secondAttribute="trailing" constant="16" id="08c-6T-9T9"/>
+                                            <constraint firstItem="mdj-8d-ZRI" firstAttribute="top" secondItem="GJ8-rJ-7M7" secondAttribute="bottom" constant="8" id="0Dr-Na-6Ps"/>
                                             <constraint firstAttribute="trailing" secondItem="d1y-Re-edf" secondAttribute="trailing" constant="16" id="5gx-TI-ges"/>
                                             <constraint firstAttribute="trailing" secondItem="TuZ-GJ-vO2" secondAttribute="trailing" constant="16" id="6uw-uD-BCZ"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="top" secondItem="rY7-rU-sWN" secondAttribute="bottom" constant="13" id="901-15-vOr"/>
+                                            <constraint firstItem="mdj-8d-ZRI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P1R-x5-XJZ" secondAttribute="trailing" constant="8" symbolic="YES" id="9e9-N4-Ned"/>
                                             <constraint firstItem="TuZ-GJ-vO2" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="13" id="Bkm-K6-kTg"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="top" secondItem="dUQ-r0-f5W" secondAttribute="bottom" constant="8" id="Bov-yx-8de"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="Bvv-R7-DEy"/>
+                                            <constraint firstItem="ipD-oL-XcK" firstAttribute="top" secondItem="mdj-8d-ZRI" secondAttribute="bottom" constant="8" id="EA4-jA-Dsq"/>
                                             <constraint firstItem="rY7-rU-sWN" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="F1J-xz-XIz"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="FVd-BJ-oZc"/>
+                                            <constraint firstItem="P1R-x5-XJZ" firstAttribute="leading" secondItem="hdb-ym-BtK" secondAttribute="leading" id="Hfp-Lu-B5g"/>
                                             <constraint firstItem="d1y-Re-edf" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="28" id="Q8i-2J-AJf"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="top" secondItem="7QO-wo-tKI" secondAttribute="top" constant="8" id="RqB-JG-fkm"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="TOf-VQ-3vj"/>
                                             <constraint firstItem="dUQ-r0-f5W" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="TrA-ew-hA6"/>
                                             <constraint firstAttribute="trailing" secondItem="GJ8-rJ-7M7" secondAttribute="trailing" constant="16" id="WEn-TB-cAd"/>
                                             <constraint firstItem="9dx-mz-m0A" firstAttribute="leading" secondItem="rY7-rU-sWN" secondAttribute="trailing" constant="40" id="Y0M-RR-aBK"/>
+                                            <constraint firstItem="P1R-x5-XJZ" firstAttribute="centerY" secondItem="mdj-8d-ZRI" secondAttribute="centerY" id="Y3Q-ek-ZPE"/>
                                             <constraint firstItem="rY7-rU-sWN" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="Zz5-PY-FYW"/>
                                             <constraint firstItem="rY7-rU-sWN" firstAttribute="baseline" secondItem="TuZ-GJ-vO2" secondAttribute="baseline" id="b2f-NG-qgt"/>
                                             <constraint firstAttribute="trailing" secondItem="dUQ-r0-f5W" secondAttribute="trailing" constant="16" id="c9b-Z2-J4r"/>
+                                            <constraint firstItem="ipD-oL-XcK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="eln-dD-3gN"/>
                                             <constraint firstItem="9dx-mz-m0A" firstAttribute="top" secondItem="Pot-PC-mtc" secondAttribute="bottom" constant="8" symbolic="YES" id="f4A-gt-4kH"/>
                                             <constraint firstAttribute="trailing" secondItem="Pot-PC-mtc" secondAttribute="trailing" constant="16" id="fEP-CQ-dtb"/>
                                             <constraint firstItem="TuZ-GJ-vO2" firstAttribute="leading" secondItem="9dx-mz-m0A" secondAttribute="trailing" constant="40" id="iJV-Kj-eBF"/>
                                             <constraint firstItem="hdb-ym-BtK" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="jba-PR-Nkc"/>
                                             <constraint firstItem="GJ8-rJ-7M7" firstAttribute="top" secondItem="9dx-mz-m0A" secondAttribute="bottom" constant="8" id="lef-Kw-q1y"/>
+                                            <constraint firstAttribute="trailing" secondItem="mdj-8d-ZRI" secondAttribute="trailing" constant="16" id="sqI-qv-fzi"/>
                                             <constraint firstItem="GJ8-rJ-7M7" firstAttribute="leading" secondItem="hdb-ym-BtK" secondAttribute="trailing" constant="8" id="wWu-j5-4lG"/>
                                             <constraint firstItem="Pot-PC-mtc" firstAttribute="leading" secondItem="7QO-wo-tKI" secondAttribute="leading" constant="16" id="xia-kv-0er"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvu-Pt-j5i">
+                                        <rect key="frame" x="16" y="550" width="343" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="MEz-EN-pJn"/>
+                                        </constraints>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="onResetTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="P4S-e4-DdG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPj-AI-iyb">
+                                        <rect key="frame" x="16" y="494" width="343" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="7wH-iy-uOx"/>
+                                        </constraints>
+                                        <state key="normal" title="Buy"/>
+                                        <connections>
+                                            <action selector="onBuyTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Yk5-eb-c9D"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7QO-wo-tKI" firstAttribute="centerX" secondItem="aTE-LT-Zc1" secondAttribute="centerX" id="5Uv-pn-67l"/>
+                                    <constraint firstItem="tvu-Pt-j5i" firstAttribute="leading" secondItem="aTE-LT-Zc1" secondAttribute="leading" constant="16" id="CPE-Yr-GFv"/>
                                     <constraint firstItem="7QO-wo-tKI" firstAttribute="centerY" secondItem="aTE-LT-Zc1" secondAttribute="centerY" id="GCt-rS-rsV"/>
+                                    <constraint firstItem="tvu-Pt-j5i" firstAttribute="top" secondItem="PPj-AI-iyb" secondAttribute="bottom" constant="8" id="HCD-1L-KDe"/>
+                                    <constraint firstItem="PPj-AI-iyb" firstAttribute="leading" secondItem="aTE-LT-Zc1" secondAttribute="leading" constant="16" id="HrO-VG-hK7"/>
+                                    <constraint firstAttribute="bottom" secondItem="tvu-Pt-j5i" secondAttribute="bottom" id="KeQ-X0-Ho8"/>
                                     <constraint firstItem="7QO-wo-tKI" firstAttribute="leading" secondItem="aTE-LT-Zc1" secondAttribute="leading" id="KgO-Xc-XCC"/>
+                                    <constraint firstAttribute="trailing" secondItem="tvu-Pt-j5i" secondAttribute="trailing" constant="16" id="TIu-VK-K9W"/>
                                     <constraint firstItem="7QO-wo-tKI" firstAttribute="top" secondItem="aTE-LT-Zc1" secondAttribute="top" id="UGv-2w-JhY"/>
                                     <constraint firstAttribute="trailing" secondItem="7QO-wo-tKI" secondAttribute="trailing" id="VrT-Dh-sWI"/>
+                                    <constraint firstAttribute="trailing" secondItem="PPj-AI-iyb" secondAttribute="trailing" constant="16" id="W0v-uN-lum"/>
                                     <constraint firstAttribute="bottom" secondItem="7QO-wo-tKI" secondAttribute="bottom" id="YXT-ol-OaP"/>
                                 </constraints>
                             </scrollView>
@@ -166,15 +254,18 @@
                     <connections>
                         <outlet property="backDateStackView" destination="SvY-2r-aJ8" id="rl1-fG-9ZG"/>
                         <outlet property="backDateTextField" destination="AB7-Gm-dlu" id="8vG-9W-PDt"/>
+                        <outlet property="buyTicketsButton" destination="PPj-AI-iyb" id="K2r-Pe-dha"/>
                         <outlet property="destinationStackView" destination="Pot-PC-mtc" id="lkh-LQ-KC0"/>
                         <outlet property="destinationTextField" destination="5ne-fa-YZ5" id="8E5-jV-vOK"/>
                         <outlet property="originStackView" destination="dUQ-r0-f5W" id="jS9-H7-xrg"/>
                         <outlet property="originTextField" destination="GX0-YP-AQE" id="Q2l-S7-EUX"/>
                         <outlet property="outDateStackView" destination="a9f-Zb-k6I" id="qfB-Ui-F3z"/>
                         <outlet property="outDateTextField" destination="Bj5-Vm-aoe" id="eeH-rI-Tmd"/>
+                        <outlet property="priceLabel" destination="xK0-dh-AeB" id="gxY-Mo-3Iy"/>
                         <outlet property="searchDisplayController" destination="Fk5-5e-Kly" id="Bvy-P3-Aex"/>
                         <outlet property="swapDestinationsButton" destination="d1y-Re-edf" id="53x-4L-Fzc"/>
-                        <outlet property="tripTypeSwitch" destination="9dx-mz-m0A" id="2WG-sL-mzD"/>
+                        <outlet property="ticketsCountLabel" destination="PCp-LL-dkC" id="Rtu-zE-8Z0"/>
+                        <outlet property="tripTypeSwitch" destination="9dx-mz-m0A" id="5O4-Fo-AWG"/>
                         <segue destination="v3A-Oh-Tdc" kind="showDetail" identifier="airportSearchSegue" id="tYS-oG-YKf"/>
                         <segue destination="YoP-ON-Lfi" kind="show" identifier="flightDateSearchSegue" id="GwW-Dc-aeG"/>
                     </connections>
@@ -189,7 +280,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="785" y="-1088"/>
+            <point key="canvasLocation" x="784.79999999999995" y="-1088.0059970014993"/>
         </scene>
         <!--Airports View Controller-->
         <scene sceneID="YyD-j7-x4T">
@@ -485,11 +576,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_framed" width="72" height="72"/>
         <image name="boarding_passes" width="72" height="72"/>
         <image name="calendar" width="48" height="48"/>
         <image name="destination" width="48" height="48"/>
         <image name="origin" width="48" height="48"/>
         <image name="profile" width="72" height="72"/>
+        <image name="remove_framed" width="72" height="72"/>
         <image name="search" width="72" height="72"/>
         <image name="swap_vertical" width="72" height="72"/>
         <image name="trips" width="72" height="72"/>

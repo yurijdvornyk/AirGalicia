@@ -10,16 +10,18 @@ import UIKit
 
 class Booking {
     let id: String
-    var origin: Airport?
-    var destination: Airport?
-    var flight: Schedule?
-    var startDate: Date?
-    var endDate: Date?
-    var price: Double?
-    var Passengers: [Passenger]?
-    var boardingPass: BoardingPass?
+    var origin: Airport!
+    var destination: Airport!
+    var flight: Schedule!
+    var outDate: Date!
+    var returnDate: Date!
+    var singlePrice: Double!
+    var totalPrice: Double!
+    var passengers: [Passenger]!
+    var boardingPasses: [BoardingPass]!
     
     init() {
         id = generateId()
+        passengers = [Passenger]()
     }
 }

@@ -19,18 +19,25 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     @IBOutlet private weak var destinationStackView: UIStackView!
     @IBOutlet private weak var destinationTextField: UITextField!
     @IBOutlet private weak var swapDestinationsButton: UIButton!
-    @IBOutlet weak var tripTypeSwitch: UISwitch!
+    @IBOutlet private weak var tripTypeSwitch: UISwitch!
     @IBOutlet private weak var outDateTextField: UITextField!
     @IBOutlet private weak var outDateStackView: UIStackView!
     @IBOutlet private weak var backDateTextField: UITextField!
-    @IBOutlet weak var backDateStackView: UIStackView!
-
+    @IBOutlet private weak var backDateStackView: UIStackView!
+    @IBOutlet private weak var ticketsCountLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var buyTicketsButton: UIButton!
+    
     private var apiManager: ApiManager!
     
-    private var originAirport: Airport!
-    private var destinationAirport: Airport!
-    private var flightOutDate: Date!
-    private var flightBackDate: Date!
+    private var booking: Booking!
+    
+//    private var originAirport: Airport!
+//    private var destinationAirport: Airport!
+//    private var flightOutDate: Date!
+//    private var flightBackDate: Date!
+//    private var ticketsCount: Int!
+//    private var flightPrice: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +46,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         destinationStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didDestinationStackViewTapped(recognizer:))))
         outDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOutDateViewTapped(recognizer:))))
         backDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didBackDateViewTapped(recognizer:))))
-        clearAirports()
-        updateTripDateFields()
+        setUpDefaultScreenData()
     }
     
     @objc func didOriginStackViewTapped(recognizer: UIGestureRecognizer) {
@@ -55,7 +61,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let airportsViewController = storyBoard.instantiateViewController(withIdentifier: "AirportsViewController") as! AirportsViewController
         airportsViewController.selectionDelegate = self as AirportsSelectionDelegate
-        airportsViewController.originAirport = originAirport
+        airportsViewController.originAirport = booking.origin
         present(airportsViewController, animated: true, completion: nil)
     }
     
@@ -67,23 +73,33 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         presentflightDateViewController(defaultPage: 1)
     }
     
+    func setUpDefaultScreenData() {
+        clearAirports()
+        booking = Booking()
+        booking.passengers?.append(Passenger())
+        outDateTextField.text = ""
+        backDateTextField.text = ""
+        onTicketsCountUpdated()
+        updateTotalPrice()
+    }
+    
     func updateTripDateFields() {
-        outDateTextField.isEnabled = originAirport != nil && destinationAirport != nil
+        outDateTextField.isEnabled = booking.origin != nil && booking.destination != nil
         outDateStackView.isUserInteractionEnabled = outDateTextField.isEnabled
         backDateTextField.isEnabled = outDateTextField.isEnabled && tripTypeSwitch.isOn
         backDateStackView.isUserInteractionEnabled = backDateTextField.isEnabled
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        if flightOutDate != nil {
-            outDateTextField.text = formatter.string(from: flightOutDate)
-            if flightBackDate != nil && flightBackDate > flightOutDate {
+        if booking.outDate != nil {
+            outDateTextField.text = formatter.string(from: booking.outDate!)
+            if booking.returnDate != nil && booking.returnDate! > booking.outDate! {
                 backDateTextField.text = ""
             }
         }
-        if flightBackDate != nil {
-            backDateTextField.text = formatter.string(from: flightBackDate)
-            if flightOutDate != nil && flightBackDate < flightOutDate {
+        if booking.returnDate != nil {
+            backDateTextField.text = formatter.string(from: booking.returnDate!)
+            if booking.outDate != nil && booking.returnDate! < booking.outDate! {
                 outDateTextField.text = ""
             }
         }
@@ -93,11 +109,11 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let flightDateViewController = storyBoard.instantiateViewController(withIdentifier: "FlightDateViewController") as! FlightDateViewController
         flightDateViewController.selectionDelegate = self
-        flightDateViewController.origin = originAirport.code
-        flightDateViewController.destination = destinationAirport.code
+        flightDateViewController.origin = booking.origin!.code
+        flightDateViewController.destination = booking.destination!.code
         flightDateViewController.defaultPage = defaultPage
-        flightDateViewController.outDate = flightOutDate
-        flightDateViewController.backDate = flightBackDate
+        flightDateViewController.outDate = booking.outDate
+        flightDateViewController.backDate = booking.returnDate
         present(flightDateViewController, animated: true, completion: nil)
     }
     
@@ -107,14 +123,14 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         }
         
         if isUserSelectingOrigin {
-            originAirport = airport
-            destinationAirport = nil
+            booking.origin = airport
+            booking.destination = nil
             destinationStackView.isUserInteractionEnabled = true
             destinationTextField.isEnabled = true
             swapDestinationsButton.isEnabled = false
             setDatePickEnabled(false)
         } else {
-            destinationAirport = airport
+            booking.destination = airport
             setDatePickEnabled(true)
         }
         updateAirportTextFields()
@@ -130,8 +146,8 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     func clearAirports() {
-        originAirport = nil
-        destinationAirport = nil
+        booking?.origin = nil
+        booking?.destination = nil
         updateAirportTextFields()
         destinationStackView.isUserInteractionEnabled = false
         destinationTextField.isEnabled = false
@@ -146,9 +162,9 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     @IBAction func onSwapButtonTapped(_ sender: UIButton) {
-        let tempAirport = originAirport
-        originAirport = destinationAirport
-        destinationAirport = tempAirport
+        let tempAirport = booking.origin
+        booking.origin = booking.destination
+        booking.destination = tempAirport
         updateAirportTextFields()
     }
     
@@ -157,13 +173,53 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     func updateAirportTextFields() {
-        originTextField.text = formatAirportForSearchField(airport: originAirport)
-        destinationTextField.text = formatAirportForSearchField(airport: destinationAirport)
+        originTextField.text = formatAirportForSearchField(airport: booking?.origin)
+        destinationTextField.text = formatAirportForSearchField(airport: booking?.destination)
     }
     
-    func flightDateSelected(outDate: Date?, backDate: Date?) {
-        flightOutDate = outDate
-        flightBackDate = backDate
+    func flightDateSelected(outDate: Date?, backDate: Date?, price: Double) {
+        booking.outDate = outDate
+        booking.returnDate = backDate
+        booking.singlePrice = price
         updateTripDateFields()
+        updateTotalPrice()
+    }
+    
+    @IBAction func onMinusTicketTapped(_ sender: UIButton) {
+        if (booking.passengers?.count)! > 1 {
+            booking.passengers?.removeLast()
+            onTicketsCountUpdated()
+        }
+    }
+    
+    @IBAction func onPlusTicketTapped(_ sender: UIButton) {
+        if (booking.passengers?.count)! < 10 {
+            booking.passengers?.append(Passenger())
+            onTicketsCountUpdated()
+        }
+    }
+    
+    func onTicketsCountUpdated() {
+        updateTotalPrice()
+        ticketsCountLabel.text = String((booking.passengers?.count)!)
+    }
+    
+    func updateTotalPrice() {
+        var result: Int
+        if booking.origin == nil || booking.singlePrice == nil {
+            result = 0
+        } else {
+            result = Int(booking.singlePrice!) * (booking.passengers?.count)!
+        }
+        
+        priceLabel.text = "\(String(result)) €"
+        buyTicketsButton.isEnabled = result > 0
+    }
+    
+    @IBAction func onBuyTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func onResetTapped(_ sender: UIButton) {
+        setUpDefaultScreenData()
     }
 }

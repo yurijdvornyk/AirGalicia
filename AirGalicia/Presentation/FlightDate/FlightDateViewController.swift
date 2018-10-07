@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 
 protocol FlightDateSelectionDelegate {
-    func flightDateSelected(outDate: Date?, backDate: Date?)
+    func flightDateSelected(outDate: Date?, backDate: Date?, price: Double)
 }
 
 enum TripType {
@@ -76,7 +76,8 @@ class FlightDateViewController: BaseViewController {
     
     @IBAction func onDoneTapped(_ sender: UIButton) {
         if selectionDelegate != nil {
-            selectionDelegate!.flightDateSelected(outDate: outDate, backDate: backDate)
+            let totalPrice = getFlightPrice(forDate: outDate) + getFlightPrice(forDate: backDate)
+            selectionDelegate!.flightDateSelected(outDate: outDate, backDate: backDate, price: totalPrice)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -118,7 +119,11 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
-    func getFlightPrice(forDate: Date) -> Double {
-        return (dateControl.selectedSegmentIndex == 0 ? outSchedule?.basicPrice : backSchedule?.basicPrice)!
+    func getFlightPrice(forDate date: Date?) -> Double {
+        if date == nil {
+            return 0
+        } else {
+            return (dateControl.selectedSegmentIndex == 0 ? outSchedule?.basicPrice : backSchedule?.basicPrice)!
+        }
     }
 }
