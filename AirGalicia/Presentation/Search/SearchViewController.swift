@@ -11,6 +11,7 @@ import FSCalendar
 
 class SearchViewController: BaseViewController, AirportsSelectionDelegate, FlightDateSelectionDelegate {
     
+    
     // TODO: Implementing search bar https://www.youtube.com/watch?v=bWQhhKwPMo4
     // https://www.youtube.com/watch?v=wVeX68Iu43E
 
@@ -29,15 +30,9 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     @IBOutlet private weak var buyTicketsButton: UIButton!
     
     private var apiManager: ApiManager!
-    
     private var booking: Booking!
-    
-//    private var originAirport: Airport!
-//    private var destinationAirport: Airport!
-//    private var flightOutDate: Date!
-//    private var flightBackDate: Date!
-//    private var ticketsCount: Int!
-//    private var flightPrice: Double!
+    private var outPrice: Double!
+    private var backPrice: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +61,11 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     @objc func didOutDateViewTapped(recognizer: UIGestureRecognizer) {
-        presentflightDateViewController(defaultPage: 0)
+        presentFlightDateViewController(dateType: .Out)
     }
     
     @objc func didBackDateViewTapped(recognizer: UIGestureRecognizer) {
-        presentflightDateViewController(defaultPage: 1)
+        presentFlightDateViewController(dateType: .Back)
     }
     
     func setUpDefaultScreenData() {
@@ -105,13 +100,13 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         }
     }
     
-    func presentflightDateViewController(defaultPage: Int) {
+    func presentFlightDateViewController(dateType: FlightDateType) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let flightDateViewController = storyBoard.instantiateViewController(withIdentifier: "FlightDateViewController") as! FlightDateViewController
         flightDateViewController.selectionDelegate = self
         flightDateViewController.origin = booking.origin!.code
         flightDateViewController.destination = booking.destination!.code
-        flightDateViewController.defaultPage = defaultPage
+        flightDateViewController.dateType = dateType
         flightDateViewController.outDate = booking.outDate
         flightDateViewController.backDate = booking.returnDate
         present(flightDateViewController, animated: true, completion: nil)
@@ -177,10 +172,16 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         destinationTextField.text = formatAirportForSearchField(airport: booking?.destination)
     }
     
-    func flightDateSelected(outDate: Date?, backDate: Date?, price: Double) {
-        booking.outDate = outDate
-        booking.returnDate = backDate
-        booking.singlePrice = price
+    func onOutDateSelected(date: Date?, price: Double) {
+        booking.outDate = date
+        outPrice = price
+        updateTripDateFields()
+        updateTotalPrice()
+    }
+    
+    func onBackDateSelected(date: Date?, price: Double) {
+        booking.returnDate = date
+        backPrice = price
         updateTripDateFields()
         updateTotalPrice()
     }
@@ -205,15 +206,12 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     func updateTotalPrice() {
-        var result: Int
-        if booking.origin == nil || booking.singlePrice == nil {
-            result = 0
-        } else {
-            result = Int(booking.singlePrice!) * (booking.passengers?.count)!
-        }
-        
-        priceLabel.text = "\(String(result)) €"
-        buyTicketsButton.isEnabled = result > 0
+        let singlePrice = (outPrice != nil ? outPrice : 0) + (backPrice != nil ? backPrice : 0)
+        booking.singlePrice = singlePrice
+        let ticketsCount = booking.passengers.count
+        let totalPrice = singlePrice * Double(ticketsCount)
+        priceLabel.text = "\(String(totalPrice)) €"
+        buyTicketsButton.isEnabled = totalPrice > 0
     }
     
     @IBAction func onBuyTapped(_ sender: UIButton) {
