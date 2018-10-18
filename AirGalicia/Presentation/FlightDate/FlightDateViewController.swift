@@ -92,7 +92,11 @@ class FlightDateViewController: BaseViewController {
 extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date()
+        if dateType == .Back {
+            return outDate != nil ? outDate! : Date()
+        } else {
+            return Date()
+        }
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {

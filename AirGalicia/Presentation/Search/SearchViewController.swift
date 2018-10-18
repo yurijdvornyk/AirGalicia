@@ -74,6 +74,8 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
         booking.passengers?.append(Passenger())
         outDateTextField.text = ""
         backDateTextField.text = ""
+        outPrice = 0
+        backPrice = 0
         onTicketsCountUpdated()
         updateTotalPrice()
     }
@@ -91,12 +93,16 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
             if booking.returnDate != nil && booking.returnDate! > booking.outDate! {
                 backDateTextField.text = ""
             }
+        } else {
+            outDateTextField.text = ""
         }
         if booking.returnDate != nil {
             backDateTextField.text = formatter.string(from: booking.returnDate!)
             if booking.outDate != nil && booking.returnDate! < booking.outDate! {
                 outDateTextField.text = ""
             }
+        } else {
+            backDateTextField.text = ""
         }
     }
     
@@ -164,7 +170,12 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Fligh
     }
     
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
+        if !sender.isOn {
+            booking.returnDate = nil
+            backPrice = nil
+        }
         updateTripDateFields()
+        updateTotalPrice()
     }
     
     func updateAirportTextFields() {
