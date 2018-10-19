@@ -100,7 +100,11 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Calendar.current.date(byAdding: .month, value: 8, to: Date())!
+        if dateType == .Out && backDate != nil {
+            return backDate!
+        } else {
+            return Calendar.current.date(byAdding: .month, value: 8, to: Date())!
+        }
     }
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
