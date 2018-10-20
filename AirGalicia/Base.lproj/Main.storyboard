@@ -560,23 +560,130 @@
             </objects>
             <point key="canvasLocation" x="2271" y="-1088"/>
         </scene>
-        <!--View Controller-->
+        <!--Passengers View Controller-->
         <scene sceneID="xbS-ad-I8g">
             <objects>
-                <viewController id="Y34-sh-8ET" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PassengersViewController" id="Y34-sh-8ET" customClass="PassengersViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bt9-hz-rNa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-uY-6am">
-                                <rect key="frame" x="16" y="20" width="343" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-uY-6am">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Nv-Fh-63p" id="pCZ-mD-HCq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hHf-tS-u1Y">
+                                                    <rect key="frame" x="15" y="11" width="257" height="30"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-dj-R3L">
+                                                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBM-JA-Chf">
+                                                            <rect key="frame" x="132.5" y="0.0" width="124.5" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="75J-FY-6U2">
+                                                    <rect key="frame" x="15" y="49" width="345" height="30"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1p-s6-ggc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168.5" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-Gj-iUg">
+                                                            <rect key="frame" x="176.5" y="0.0" width="168.5" height="30"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-at-lIP">
+                                                    <rect key="frame" x="280" y="11" width="80" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="P6z-1l-P6k"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Mr"/>
+                                                        <segment title="Ms"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ghj-at-lIP" firstAttribute="leading" secondItem="hHf-tS-u1Y" secondAttribute="trailing" constant="8" id="1bY-QA-enV"/>
+                                                <constraint firstItem="ghj-at-lIP" firstAttribute="top" secondItem="pCZ-mD-HCq" secondAttribute="topMargin" id="44W-Db-N1U"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="Cdt-go-yMA"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="hHf-tS-u1Y" secondAttribute="bottom" constant="8" id="FYy-uL-Dpl"/>
+                                                <constraint firstItem="hHf-tS-u1Y" firstAttribute="top" secondItem="pCZ-mD-HCq" secondAttribute="topMargin" id="MDe-4l-xTR"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="bottom" secondItem="pCZ-mD-HCq" secondAttribute="bottomMargin" id="MIg-o5-wSi"/>
+                                                <constraint firstItem="ghj-at-lIP" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="Ort-D4-evc"/>
+                                                <constraint firstItem="hHf-tS-u1Y" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="V6A-XR-Wfq"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="XDw-dN-SaC"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="ghj-at-lIP" secondAttribute="bottom" constant="8" id="mVW-55-poa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailTextField" destination="LbF-Gj-iUg" id="b23-Nz-Tut"/>
+                                            <outlet property="firstNameTextField" destination="h5b-dj-R3L" id="ySz-oC-PDJ"/>
+                                            <outlet property="genderSwitch" destination="ghj-at-lIP" id="97W-gF-Wgv"/>
+                                            <outlet property="lastNameTextField" destination="cBM-JA-Chf" id="SnD-3v-zcf"/>
+                                            <outlet property="passportTextField" destination="t1p-s6-ggc" id="qzl-BP-eBl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y34-sh-8ET" id="E4w-d2-J3z"/>
+                                    <outlet property="delegate" destination="Y34-sh-8ET" id="nmg-tz-oed"/>
+                                </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-QP-AKF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Type passenger information" id="l9R-7w-KUL">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="sUa-vn-7r5">
+                                            <connections>
+                                                <action selector="onBackTapped:" destination="Y34-sh-8ET" id="hK7-11-jkH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Proceed" id="xaa-pj-hq3"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W3G-PI-f9d" firstAttribute="bottom" secondItem="hMl-uY-6am" secondAttribute="bottom" id="0wh-ZW-UNJ"/>
+                            <constraint firstItem="W3G-PI-f9d" firstAttribute="bottom" secondItem="hMl-uY-6am" secondAttribute="bottom" id="BLq-GC-sgl"/>
+                            <constraint firstItem="hMl-uY-6am" firstAttribute="leading" secondItem="W3G-PI-f9d" secondAttribute="leading" id="HkG-hK-FCJ"/>
+                            <constraint firstItem="OZX-QP-AKF" firstAttribute="trailing" secondItem="W3G-PI-f9d" secondAttribute="trailing" id="PaO-NV-FW1"/>
+                            <constraint firstItem="OZX-QP-AKF" firstAttribute="top" secondItem="W3G-PI-f9d" secondAttribute="top" id="Q6p-mB-SPQ"/>
+                            <constraint firstItem="OZX-QP-AKF" firstAttribute="leading" secondItem="W3G-PI-f9d" secondAttribute="leading" id="UTF-uI-Ji3"/>
+                            <constraint firstItem="hMl-uY-6am" firstAttribute="top" secondItem="OZX-QP-AKF" secondAttribute="bottom" id="bab-FA-s28"/>
+                            <constraint firstItem="hMl-uY-6am" firstAttribute="leading" secondItem="W3G-PI-f9d" secondAttribute="leading" id="dof-gv-bpN"/>
+                            <constraint firstItem="hMl-uY-6am" firstAttribute="top" secondItem="OZX-QP-AKF" secondAttribute="bottom" id="fqw-ha-ZVo"/>
+                            <constraint firstItem="W3G-PI-f9d" firstAttribute="trailing" secondItem="hMl-uY-6am" secondAttribute="trailing" id="mRs-TI-OiM"/>
+                            <constraint firstItem="W3G-PI-f9d" firstAttribute="trailing" secondItem="hMl-uY-6am" secondAttribute="trailing" id="oxB-xm-7Vn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="W3G-PI-f9d"/>
                     </view>
+                    <connections>
+                        <outlet property="passengersTableView" destination="hMl-uY-6am" id="YlM-hc-mnw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-ex-e4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

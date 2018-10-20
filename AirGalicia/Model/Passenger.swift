@@ -12,10 +12,15 @@ class Passenger {
     let id: String
     var firstName: String?
     var lastName: String?
+    var gender: Gender?
+    var passport: String?
     var email: String?
-    var phoneNumber: String?
     
     init() {
         id = generateId()
     }
+}
+
+enum Gender {
+    case Mr, Ms
 }

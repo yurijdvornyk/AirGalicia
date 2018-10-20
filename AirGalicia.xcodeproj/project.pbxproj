@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		85169D5E1E88AA20F434FB60 /* Pods_AirGaliciaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA29296FABF98D1276B22C1 /* Pods_AirGaliciaTests.framework */; };
 		93CE2303132FC9D8DA76451F /* Pods_AirGaliciaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */; };
+		BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */; };
 		BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* ApiManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
 		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
@@ -31,6 +32,7 @@
 		BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */; };
 		BCCB37292154201600114C39 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* AccountViewController.swift */; };
 		BCCB372B215425F600114C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB372A215425F600114C39 /* Assets.xcassets */; };
+		BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE38232217A32F700C37C21 /* PassengersViewController.swift */; };
 		BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4178E21545570001A71D2 /* AirportsViewController.swift */; };
 		CEECBF18A1308B2F4A787422 /* Pods_AirGalicia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CB9D546F387E9F872080B4 /* Pods_AirGalicia.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,7 @@
 		50F1EABFA048A46B9E6D03F9 /* Pods-AirGalicia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGalicia.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia.release.xcconfig"; sourceTree = "<group>"; };
 		8419A39DD15142B5F6B1E14C /* Pods-AirGaliciaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaUITests/Pods-AirGaliciaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		87C95D3067890ECF5D334AEF /* Pods-AirGaliciaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassesViewController.swift; sourceTree = "<group>"; };
 		BCCB37282154201600114C39 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		BCCB372A215425F600114C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCE38232217A32F700C37C21 /* PassengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
 		BCE4178E21545570001A71D2 /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
 		C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirGaliciaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D77605D15EEF7DAAF362B1 /* Pods-AirGaliciaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
 				BC414CD32161113000649D6F /* FlightDate */,
+				BCE38231217A32D000C37C21 /* Passengers */,
 				BC201234215D69F900F98B7A /* Search */,
 				BC201236215D6A5F00F98B7A /* Trips */,
 			);
@@ -275,6 +280,15 @@
 				BCCB371821541BD000114C39 /* Info.plist */,
 			);
 			path = AirGaliciaUITests;
+			sourceTree = "<group>";
+		};
+		BCE38231217A32D000C37C21 /* Passengers */ = {
+			isa = PBXGroup;
+			children = (
+				BCE38232217A32F700C37C21 /* PassengersViewController.swift */,
+				BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */,
+			);
+			path = Passengers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,12 +519,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
+				BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */,
 				BC20123C215D7E2900F98B7A /* Schedule.swift in Sources */,
 				BC414CD22161036100649D6F /* Util.swift in Sources */,
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
+				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,
 				BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
