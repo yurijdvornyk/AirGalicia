@@ -572,49 +572,73 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="202" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Nv-Fh-63p" id="pCZ-mD-HCq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="201.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Passenger #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-zP-dyY">
+                                                    <rect key="frame" x="15" y="11" width="128" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hHf-tS-u1Y">
-                                                    <rect key="frame" x="15" y="11" width="257" height="30"/>
+                                                    <rect key="frame" x="15" y="45.5" width="257" height="30"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-dj-R3L">
                                                             <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" textContentType="name"/>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBM-JA-Chf">
                                                             <rect key="frame" x="132.5" y="0.0" width="124.5" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" textContentType="name"/>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="75J-FY-6U2">
-                                                    <rect key="frame" x="15" y="49" width="345" height="30"/>
+                                                    <rect key="frame" x="15" y="83.5" width="345" height="30"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1p-s6-ggc">
                                                             <rect key="frame" x="0.0" y="0.0" width="168.5" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" textContentType="username"/>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-Gj-iUg">
                                                             <rect key="frame" x="176.5" y="0.0" width="168.5" height="30"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cl-A3-dcV">
+                                                    <rect key="frame" x="311" y="121.5" width="51" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional baggage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2N-qn-9u5">
+                                                    <rect key="frame" x="15" y="126.5" width="148" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority boarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNR-Yf-xY9">
+                                                    <rect key="frame" x="15" y="170.5" width="127" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-1i-aJZ">
+                                                    <rect key="frame" x="311" y="160.5" width="51" height="30.5"/>
+                                                </switch>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-at-lIP">
-                                                    <rect key="frame" x="280" y="11" width="80" height="31"/>
+                                                    <rect key="frame" x="280" y="47.5" width="80" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="P6z-1l-P6k"/>
                                                     </constraints>
@@ -625,24 +649,45 @@
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="ghj-at-lIP" secondAttribute="bottom" constant="8" id="1FM-fm-mLp"/>
                                                 <constraint firstItem="ghj-at-lIP" firstAttribute="leading" secondItem="hHf-tS-u1Y" secondAttribute="trailing" constant="8" id="1bY-QA-enV"/>
-                                                <constraint firstItem="ghj-at-lIP" firstAttribute="top" secondItem="pCZ-mD-HCq" secondAttribute="topMargin" id="44W-Db-N1U"/>
+                                                <constraint firstItem="hHf-tS-u1Y" firstAttribute="top" secondItem="f3f-zP-dyY" secondAttribute="bottom" constant="8" id="3al-Az-NlX"/>
+                                                <constraint firstItem="eNR-Yf-xY9" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="3dR-5O-pW0"/>
+                                                <constraint firstItem="8cl-A3-dcV" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="4u2-Bv-NrF"/>
                                                 <constraint firstItem="75J-FY-6U2" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="Cdt-go-yMA"/>
+                                                <constraint firstItem="D2N-qn-9u5" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="CjB-hD-MCv"/>
+                                                <constraint firstItem="8cl-A3-dcV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D2N-qn-9u5" secondAttribute="trailing" constant="8" symbolic="YES" id="Dbb-Kk-MqQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zKl-1i-aJZ" secondAttribute="trailing" id="F55-YV-OdL"/>
                                                 <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="hHf-tS-u1Y" secondAttribute="bottom" constant="8" id="FYy-uL-Dpl"/>
-                                                <constraint firstItem="hHf-tS-u1Y" firstAttribute="top" secondItem="pCZ-mD-HCq" secondAttribute="topMargin" id="MDe-4l-xTR"/>
-                                                <constraint firstItem="75J-FY-6U2" firstAttribute="bottom" secondItem="pCZ-mD-HCq" secondAttribute="bottomMargin" id="MIg-o5-wSi"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f3f-zP-dyY" secondAttribute="trailing" constant="20" symbolic="YES" id="LFS-s1-g57"/>
+                                                <constraint firstItem="zKl-1i-aJZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eNR-Yf-xY9" secondAttribute="trailing" constant="8" symbolic="YES" id="Lff-Hx-kv4"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="M8M-Gc-VL2"/>
+                                                <constraint firstItem="f3f-zP-dyY" firstAttribute="top" secondItem="pCZ-mD-HCq" secondAttribute="topMargin" id="N85-fD-W0Q"/>
+                                                <constraint firstItem="eNR-Yf-xY9" firstAttribute="bottom" secondItem="pCZ-mD-HCq" secondAttribute="bottomMargin" id="Oku-8e-uh6"/>
                                                 <constraint firstItem="ghj-at-lIP" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="Ort-D4-evc"/>
+                                                <constraint firstItem="zKl-1i-aJZ" firstAttribute="bottom" secondItem="pCZ-mD-HCq" secondAttribute="bottomMargin" id="TXe-6j-12N"/>
                                                 <constraint firstItem="hHf-tS-u1Y" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="V6A-XR-Wfq"/>
                                                 <constraint firstItem="75J-FY-6U2" firstAttribute="trailing" secondItem="pCZ-mD-HCq" secondAttribute="trailingMargin" id="XDw-dN-SaC"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="YVE-UL-2hz"/>
+                                                <constraint firstItem="zKl-1i-aJZ" firstAttribute="top" secondItem="8cl-A3-dcV" secondAttribute="bottom" constant="8" id="cUB-yy-Wyc"/>
+                                                <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="ghj-at-lIP" secondAttribute="bottom" constant="8" id="cvn-oU-7bs"/>
+                                                <constraint firstItem="f3f-zP-dyY" firstAttribute="leading" secondItem="pCZ-mD-HCq" secondAttribute="leadingMargin" id="eCg-kA-Dxv"/>
                                                 <constraint firstItem="75J-FY-6U2" firstAttribute="top" secondItem="ghj-at-lIP" secondAttribute="bottom" constant="8" id="mVW-55-poa"/>
+                                                <constraint firstItem="eNR-Yf-xY9" firstAttribute="top" secondItem="D2N-qn-9u5" secondAttribute="bottom" constant="23.5" id="mbo-Ie-OrR"/>
+                                                <constraint firstItem="8cl-A3-dcV" firstAttribute="top" secondItem="75J-FY-6U2" secondAttribute="bottom" constant="8" id="nwk-5g-Y9V"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="baggageLabel" destination="D2N-qn-9u5" id="2UB-Kj-uw5"/>
+                                            <outlet property="baggageSwitch" destination="8cl-A3-dcV" id="Hff-cX-nJB"/>
                                             <outlet property="emailTextField" destination="LbF-Gj-iUg" id="b23-Nz-Tut"/>
                                             <outlet property="firstNameTextField" destination="h5b-dj-R3L" id="ySz-oC-PDJ"/>
                                             <outlet property="genderSwitch" destination="ghj-at-lIP" id="97W-gF-Wgv"/>
                                             <outlet property="lastNameTextField" destination="cBM-JA-Chf" id="SnD-3v-zcf"/>
+                                            <outlet property="passengerLabel" destination="f3f-zP-dyY" id="YGc-5F-TlX"/>
                                             <outlet property="passportTextField" destination="t1p-s6-ggc" id="qzl-BP-eBl"/>
+                                            <outlet property="priorityLabel" destination="eNR-Yf-xY9" id="lkV-sB-7Hr"/>
+                                            <outlet property="prioritySwitch" destination="zKl-1i-aJZ" id="t1e-KW-cZn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

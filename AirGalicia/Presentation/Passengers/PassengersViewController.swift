@@ -10,6 +10,9 @@ import UIKit
 
 class PassengersViewController: BaseViewController, BookingUpdateDelegate {
     
+    let BAGGAGE_PRICE = 25.0
+    let PRIORITY_PRICE = 10.0
+    
     @IBOutlet private weak var passengersTableView: UITableView!
     
     var booking: Booking!
@@ -47,7 +50,7 @@ extension PassengersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PassengerTableViewCell
         if indexPath.row < booking.passengers.count {
-            cell.configureWith(passenger: booking.passengers[indexPath.row], bookingUpdateDelegate: self)
+            cell.configureWith(passenger: booking.passengers[indexPath.row], passengerPosition: indexPath.row + 1, baggagePrice: BAGGAGE_PRICE, priorityPrice: PRIORITY_PRICE, bookingUpdateDelegate: self)
         }
         return cell
     }

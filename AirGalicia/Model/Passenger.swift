@@ -12,9 +12,11 @@ class Passenger {
     let id: String
     var firstName: String?
     var lastName: String?
-    var gender: Gender?
+    var gender: Gender = .Mr
     var passport: String?
     var email: String?
+    var hasAdditionalBaggage: Bool = false
+    var hasPriority: Bool = false
     
     init() {
         id = generateId()
