@@ -10,23 +10,24 @@ import UIKit
 
 class PassengersViewController: BaseViewController, BookingUpdateDelegate {
     
-    let BAGGAGE_PRICE = 25.0
-    let PRIORITY_PRICE = 10.0
-    
     @IBOutlet private weak var passengersTableView: UITableView!
     
     var booking: Booking!
     var delegate: BookingUpdateDelegate?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         updatePassangers()
         delegate?.onBookingUpdated(booking: booking)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onProceedTapped(_ sender: UIBarButtonItem) {
+        updatePassangers()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "BookingSummaryViewController") as! BookingSummaryViewController
+        viewController.booking = booking
+        viewController.delegate = self
+        present(viewController, animated: true, completion: nil)
     }
     
     func onBookingUpdated(booking: Booking?) {
@@ -50,7 +51,7 @@ extension PassengersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PassengerTableViewCell
         if indexPath.row < booking.passengers.count {
-            cell.configureWith(passenger: booking.passengers[indexPath.row], passengerPosition: indexPath.row + 1, baggagePrice: BAGGAGE_PRICE, priorityPrice: PRIORITY_PRICE, bookingUpdateDelegate: self)
+            cell.configureWith(passenger: booking.passengers[indexPath.row], passengerPosition: indexPath.row + 1, baggagePrice: CHECKED_BAGGAGE_PRICE, priorityPrice: PRIORITY_BOARDING_PRICE, bookingUpdateDelegate: self)
         }
         return cell
     }

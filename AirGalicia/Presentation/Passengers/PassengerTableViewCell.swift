@@ -24,11 +24,6 @@ class PassengerTableViewCell: UITableViewCell {
     private var passenger: Passenger!
     private var bookingUpdateDelegate: BookingUpdateDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configureWith(passenger: Passenger?, passengerPosition: Int, baggagePrice: Double, priorityPrice: Double, bookingUpdateDelegate: BookingUpdateDelegate?) {
         self.passenger = passenger
         passengerLabel.text = "Passenger #\(passengerPosition)"
@@ -44,7 +39,7 @@ class PassengerTableViewCell: UITableViewCell {
         genderSwitch.selectedSegmentIndex = passenger?.gender == .Mr ? 0 : 1
         passportTextField.text = passenger?.passport
         emailTextField.text = passenger?.email
-        baggageSwitch.isOn = (passenger?.hasAdditionalBaggage)!
+        baggageSwitch.isOn = (passenger?.hasCheckedBaggage)!
         prioritySwitch.isOn = (passenger?.hasPriority)!
     }
     
@@ -54,7 +49,7 @@ class PassengerTableViewCell: UITableViewCell {
         passenger?.gender = genderSwitch.selectedSegmentIndex == 0 ? .Mr : .Ms
         passenger?.passport = passportTextField.text
         passenger?.email = emailTextField.text
-        passenger?.hasAdditionalBaggage = baggageSwitch.isOn
+        passenger?.hasCheckedBaggage = baggageSwitch.isOn
         passenger?.hasPriority = prioritySwitch.isOn
         return passenger
     }

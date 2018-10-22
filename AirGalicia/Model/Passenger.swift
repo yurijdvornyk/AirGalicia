@@ -15,7 +15,7 @@ class Passenger {
     var gender: Gender = .Mr
     var passport: String?
     var email: String?
-    var hasAdditionalBaggage: Bool = false
+    var hasCheckedBaggage: Bool = false
     var hasPriority: Bool = false
     
     init() {

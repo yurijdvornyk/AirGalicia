@@ -9,26 +9,20 @@
 import UIKit
 import FSCalendar
 
-protocol FlightDateSelectionDelegate {
-    func onOutDateSelected(date: Date?, price: Double)
-    func onBackDateSelected(date: Date?, price: Double)
-}
-
 enum FlightDateType {
     case Out, Back
 }
 
 class FlightDateViewController: BaseViewController {
     
-    var selectionDelegate: FlightDateSelectionDelegate?
+    var delegate: BookingUpdateDelegate?
+    var booking: Booking?
     var apiManager: ApiManager?
     var origin: String?
     var destination: String?
     var outSchedule: Schedule?
     var backSchedule: Schedule?
     var dateType: FlightDateType?
-    var outDate: Date?
-    var backDate: Date?
 
     @IBOutlet private weak var calendarView: FSCalendar!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
@@ -74,12 +68,8 @@ class FlightDateViewController: BaseViewController {
     }
     
     @IBAction func onDoneTapped(_ sender: UIButton) {
-        if selectionDelegate != nil {
-            if dateType == .Out {
-                selectionDelegate!.onOutDateSelected(date: outDate, price: getFlightPrice(forDate: outDate))
-            } else {
-                selectionDelegate!.onBackDateSelected(date: backDate, price: getFlightPrice(forDate: backDate))
-            }
+        if delegate != nil {
+            delegate!.onBookingUpdated(booking: booking)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -93,15 +83,15 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
         if dateType == .Back {
-            return outDate != nil ? outDate! : Date()
+            return booking!.outDate != nil ? booking!.outDate : Date()
         } else {
             return Date()
         }
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        if dateType == .Out && backDate != nil {
-            return backDate!
+        if dateType == .Out && booking!.returnDate != nil {
+            return booking!.returnDate
         } else {
             return Calendar.current.date(byAdding: .month, value: 8, to: Date())!
         }
@@ -114,7 +104,7 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
             return weekday == timetable.day
         }) ?? false
         cell.isUserInteractionEnabled = doesFlightExist
-        cell.isSelected = dateType == .Out ? date == outDate : date == backDate
+        cell.isSelected = dateType == .Out ? date == booking!.outDate : date == booking!.returnDate
         cell.titleLabel.textColor = doesFlightExist ? .black : .lightGray
         if doesFlightExist {
             cell.subtitle = "\(getFlightPrice(forDate: date)) €"
@@ -122,10 +112,19 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let weekday = Calendar.current.component(.weekday, from: date)
+        let timetable = outSchedule?.timetable?.filter({
+            return $0.day == weekday
+        }).first
+        let time = (parseFligtTime(timetable!.departureTime), parseFligtTime(timetable!.arrivalTime))
         if dateType == .Out {
-            outDate = date
+            booking!.outDate = date
+            booking!.outTime = time
+            booking!.outPrice = getFlightPrice(forDate: date)
         } else {
-            backDate = date
+            booking!.returnDate = date
+            booking!.returnTime = time
+            booking!.returnPrice = getFlightPrice(forDate: date)
         }
     }
     

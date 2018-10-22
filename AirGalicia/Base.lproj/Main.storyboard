@@ -304,7 +304,7 @@
                                     <constraint firstAttribute="height" constant="535" id="sP4-dR-5dk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="J4d-Uz-KAO" customClass="AirportSearchCell" customModule="AirGalicia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="J4d-Uz-KAO" customClass="AirportSearchCell" customModule="AirGalicia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J4d-Uz-KAO" id="1na-U5-foc">
@@ -572,7 +572,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="202" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="202" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Nv-Fh-63p" id="pCZ-mD-HCq">
@@ -699,13 +699,17 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-QP-AKF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Type passenger information" id="l9R-7w-KUL">
+                                    <navigationItem title="Passengers" id="l9R-7w-KUL">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="sUa-vn-7r5">
                                             <connections>
                                                 <action selector="onBackTapped:" destination="Y34-sh-8ET" id="hK7-11-jkH"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Proceed" id="xaa-pj-hq3"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Proceed" id="xaa-pj-hq3">
+                                            <connections>
+                                                <action selector="onProceedTapped:" destination="Y34-sh-8ET" id="BME-Pl-whw"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -733,6 +737,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-ex-e4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3012" y="-1088.0059970014993"/>
+        </scene>
+        <!--Booking Summary View Controller-->
+        <scene sceneID="XYD-rz-MLS">
+            <objects>
+                <viewController storyboardIdentifier="BookingSummaryViewController" id="p3M-Wi-9IF" customClass="BookingSummaryViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tiC-Ie-3o1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOZ-uu-9qj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Booking Summary" id="eEb-gE-M58">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="E3M-lK-g8Z">
+                                            <connections>
+                                                <action selector="onBackTapped:" destination="p3M-Wi-9IF" id="dOo-wu-hRh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13J-dO-r1H">
+                                <rect key="frame" x="0.0" y="64" width="375" height="555"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dk-y3-Lq9">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="xZ3-Lx-vuf"/>
+                                </constraints>
+                                <state key="normal" title="Confirm &amp; Pay"/>
+                                <connections>
+                                    <action selector="onConfirmTapped:" destination="p3M-Wi-9IF" eventType="touchUpInside" id="EhY-XP-B8A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="AIi-uq-jDN"/>
+                            <constraint firstItem="13J-dO-r1H" firstAttribute="top" secondItem="tOZ-uu-9qj" secondAttribute="bottom" id="BgS-jy-EpL"/>
+                            <constraint firstItem="13J-dO-r1H" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="ECK-jm-yGS"/>
+                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="top" secondItem="13J-dO-r1H" secondAttribute="bottom" id="NuX-bT-TRL"/>
+                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="bottom" secondItem="NOu-i7-pML" secondAttribute="bottom" id="Sui-cP-PmU"/>
+                            <constraint firstItem="tOZ-uu-9qj" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="T2U-uP-N2w"/>
+                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="rjZ-yR-LJe"/>
+                            <constraint firstItem="13J-dO-r1H" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="u2m-Xj-SV2"/>
+                            <constraint firstItem="tOZ-uu-9qj" firstAttribute="top" secondItem="NOu-i7-pML" secondAttribute="top" id="w2O-lp-PhA"/>
+                            <constraint firstItem="tOZ-uu-9qj" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="yq3-bE-UYd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NOu-i7-pML"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="13J-dO-r1H" id="5Ky-Oi-Qex"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7w-bY-MJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3688.8000000000002" y="-1088.0059970014993"/>
         </scene>
     </scenes>
     <resources>
