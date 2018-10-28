@@ -304,7 +304,7 @@
                                     <constraint firstAttribute="height" constant="535" id="sP4-dR-5dk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="J4d-Uz-KAO" customClass="AirportSearchCell" customModule="AirGalicia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="72" id="J4d-Uz-KAO" customClass="AirportSearchCell" customModule="AirGalicia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J4d-Uz-KAO" id="1na-U5-foc">
@@ -359,9 +359,6 @@
                                     <outlet property="delegate" destination="v3A-Oh-Tdc" id="TKx-5l-GhI"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-hQ-2j3">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppo-0q-Ng4">
                                 <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <constraints>
@@ -379,7 +376,6 @@
                             <constraint firstItem="Cn6-DJ-YmY" firstAttribute="top" secondItem="lJx-Gh-PtY" secondAttribute="top" id="9B8-hp-kZg"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="top" secondItem="Cn6-DJ-YmY" secondAttribute="bottom" id="AY9-YJ-HDc"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="top" secondItem="Cn6-DJ-YmY" secondAttribute="bottom" id="BJl-kb-Juh"/>
-                            <constraint firstItem="fyv-hQ-2j3" firstAttribute="centerY" secondItem="IyE-eV-yqD" secondAttribute="centerY" id="Ci8-ha-ppT"/>
                             <constraint firstItem="Ppo-0q-Ng4" firstAttribute="top" secondItem="U05-0e-qWt" secondAttribute="bottom" constant="8" symbolic="YES" id="EwT-x0-oFK"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="leading" secondItem="lJx-Gh-PtY" secondAttribute="leading" id="HRF-Pr-Y7m"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="trailing" secondItem="lJx-Gh-PtY" secondAttribute="trailing" id="ImK-WP-tbH"/>
@@ -389,7 +385,6 @@
                             <constraint firstItem="Cn6-DJ-YmY" firstAttribute="leading" secondItem="lJx-Gh-PtY" secondAttribute="leading" id="fCY-Wa-AO1"/>
                             <constraint firstItem="Ppo-0q-Ng4" firstAttribute="trailing" secondItem="U05-0e-qWt" secondAttribute="trailing" id="fx2-n2-8v8"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="leading" secondItem="lJx-Gh-PtY" secondAttribute="leading" id="ifb-sy-rWP"/>
-                            <constraint firstItem="fyv-hQ-2j3" firstAttribute="centerX" secondItem="IyE-eV-yqD" secondAttribute="centerX" id="kxK-Ks-y5v"/>
                             <constraint firstItem="Cn6-DJ-YmY" firstAttribute="trailing" secondItem="lJx-Gh-PtY" secondAttribute="trailing" id="vZ8-QO-9B7"/>
                             <constraint firstItem="U05-0e-qWt" firstAttribute="trailing" secondItem="lJx-Gh-PtY" secondAttribute="trailing" id="zT4-d7-uDp"/>
                         </constraints>
@@ -397,7 +392,6 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="Cn6-DJ-YmY" id="whe-uO-wBn"/>
-                        <outlet property="spinner" destination="fyv-hQ-2j3" id="WUD-bS-Q8C"/>
                         <outlet property="tableView" destination="U05-0e-qWt" id="PwN-it-qD0"/>
                     </connections>
                 </viewController>
@@ -572,7 +566,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="202" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="202" id="8Nv-Fh-63p" customClass="PassengerTableViewCell" customModule="AirGalicia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Nv-Fh-63p" id="pCZ-mD-HCq">
@@ -755,37 +749,29 @@
                                                 <action selector="onBackTapped:" destination="p3M-Wi-9IF" id="dOo-wu-hRh"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="zG2-kP-LWP">
+                                            <connections>
+                                                <action selector="onConfirmTapped:" destination="p3M-Wi-9IF" id="Ch9-6o-tCj"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13J-dO-r1H">
-                                <rect key="frame" x="0.0" y="64" width="375" height="555"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dk-y3-Lq9">
-                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="xZ3-Lx-vuf"/>
-                                </constraints>
-                                <state key="normal" title="Confirm &amp; Pay"/>
-                                <connections>
-                                    <action selector="onConfirmTapped:" destination="p3M-Wi-9IF" eventType="touchUpInside" id="EhY-XP-B8A"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="AIi-uq-jDN"/>
                             <constraint firstItem="13J-dO-r1H" firstAttribute="top" secondItem="tOZ-uu-9qj" secondAttribute="bottom" id="BgS-jy-EpL"/>
                             <constraint firstItem="13J-dO-r1H" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="ECK-jm-yGS"/>
-                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="top" secondItem="13J-dO-r1H" secondAttribute="bottom" id="NuX-bT-TRL"/>
-                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="bottom" secondItem="NOu-i7-pML" secondAttribute="bottom" id="Sui-cP-PmU"/>
                             <constraint firstItem="tOZ-uu-9qj" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="T2U-uP-N2w"/>
-                            <constraint firstItem="7Dk-y3-Lq9" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="rjZ-yR-LJe"/>
+                            <constraint firstItem="13J-dO-r1H" firstAttribute="bottom" secondItem="NOu-i7-pML" secondAttribute="bottom" id="cDT-Yf-LTh"/>
                             <constraint firstItem="13J-dO-r1H" firstAttribute="trailing" secondItem="NOu-i7-pML" secondAttribute="trailing" id="u2m-Xj-SV2"/>
                             <constraint firstItem="tOZ-uu-9qj" firstAttribute="top" secondItem="NOu-i7-pML" secondAttribute="top" id="w2O-lp-PhA"/>
                             <constraint firstItem="tOZ-uu-9qj" firstAttribute="leading" secondItem="NOu-i7-pML" secondAttribute="leading" id="yq3-bE-UYd"/>
@@ -799,6 +785,118 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7w-bY-MJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3688.8000000000002" y="-1088.0059970014993"/>
+        </scene>
+        <!--Pay View Controller-->
+        <scene sceneID="s0u-EQ-OVy">
+            <objects>
+                <viewController storyboardIdentifier="PayViewController" id="wKR-mt-TCj" customClass="PayViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="83S-qv-IUr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-Qz-d8A">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Booking Payment" id="60Y-4Y-WhP">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="eWK-hO-SSk">
+                                            <connections>
+                                                <action selector="onBackTapped:" destination="wKR-mt-TCj" id="8g0-Xz-36t"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total price:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dt-AI-vhe">
+                                <rect key="frame" x="16" y="72" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-Pg-2Aa">
+                                <rect key="frame" x="16" y="100.5" width="343" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Fy-kI-THA">
+                                <rect key="frame" x="16" y="166" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Use my default card"/>
+                                    <segment title="Use another card"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rr0-BR-Cdf">
+                                <rect key="frame" x="16" y="202" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="N6L-rm-hxV">
+                                <rect key="frame" x="16" y="240" width="343" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jky-fL-aGY">
+                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IN2-j0-1bx">
+                                        <rect key="frame" x="179.5" y="0.0" width="163.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7H-9E-yRs">
+                                <rect key="frame" x="16" y="278" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="8IG-MR-ocM"/>
+                                    <constraint firstAttribute="height" constant="48" id="dXm-HP-rCh"/>
+                                </constraints>
+                                <state key="normal" title="Pay"/>
+                                <connections>
+                                    <action selector="onPayTapped:" destination="wKR-mt-TCj" eventType="touchUpInside" id="ifi-Cs-Vod"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="1Fy-kI-THA" secondAttribute="trailing" constant="16" id="042-q6-uRo"/>
+                            <constraint firstItem="K7H-9E-yRs" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="5O7-Ba-gjB"/>
+                            <constraint firstItem="fNK-Pg-2Aa" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="7fZ-rD-h6K"/>
+                            <constraint firstItem="ba5-Qz-d8A" firstAttribute="trailing" secondItem="Poj-3G-QrV" secondAttribute="trailing" id="857-XC-VYT"/>
+                            <constraint firstItem="ba5-Qz-d8A" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" id="FAU-hG-WjE"/>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="fNK-Pg-2Aa" secondAttribute="trailing" constant="16" id="FWt-Ql-kah"/>
+                            <constraint firstItem="N6L-rm-hxV" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="NQH-qg-Obi"/>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="K7H-9E-yRs" secondAttribute="trailing" constant="16" id="Pjy-aj-jSP"/>
+                            <constraint firstItem="N6L-rm-hxV" firstAttribute="top" secondItem="rr0-BR-Cdf" secondAttribute="bottom" constant="8" id="RHX-Wg-Lxf"/>
+                            <constraint firstItem="1Fy-kI-THA" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="SEg-Kq-U18"/>
+                            <constraint firstItem="7Dt-AI-vhe" firstAttribute="top" secondItem="ba5-Qz-d8A" secondAttribute="bottom" constant="8" id="SOe-O4-INF"/>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="7Dt-AI-vhe" secondAttribute="trailing" constant="16" id="Whk-w1-avN"/>
+                            <constraint firstItem="7Dt-AI-vhe" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="Yje-xN-cEa"/>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="rr0-BR-Cdf" secondAttribute="trailing" constant="16" id="bUI-wZ-qjB"/>
+                            <constraint firstItem="ba5-Qz-d8A" firstAttribute="top" secondItem="Poj-3G-QrV" secondAttribute="top" id="fFj-Pd-Pwx"/>
+                            <constraint firstItem="rr0-BR-Cdf" firstAttribute="top" secondItem="1Fy-kI-THA" secondAttribute="bottom" constant="8" id="i85-3n-dOG"/>
+                            <constraint firstItem="K7H-9E-yRs" firstAttribute="top" secondItem="N6L-rm-hxV" secondAttribute="bottom" constant="8" id="oMr-R2-a3O"/>
+                            <constraint firstItem="1Fy-kI-THA" firstAttribute="top" secondItem="fNK-Pg-2Aa" secondAttribute="bottom" constant="8" id="st6-r2-aD2"/>
+                            <constraint firstItem="rr0-BR-Cdf" firstAttribute="leading" secondItem="Poj-3G-QrV" secondAttribute="leading" constant="16" id="tHa-l4-QXo"/>
+                            <constraint firstItem="fNK-Pg-2Aa" firstAttribute="top" secondItem="7Dt-AI-vhe" secondAttribute="bottom" constant="8" id="z5F-PB-Bvo"/>
+                            <constraint firstItem="Poj-3G-QrV" firstAttribute="trailing" secondItem="N6L-rm-hxV" secondAttribute="trailing" constant="16" id="zkq-CP-9MH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Poj-3G-QrV"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardNumberTextField" destination="rr0-BR-Cdf" id="mXE-D4-bLg"/>
+                        <outlet property="cardToggle" destination="1Fy-kI-THA" id="Xrs-tk-MsK"/>
+                        <outlet property="cvvTextField" destination="IN2-j0-1bx" id="b6D-yS-u7T"/>
+                        <outlet property="expireDateTextField" destination="Jky-fL-aGY" id="DNn-Jf-aTi"/>
+                        <outlet property="totalPriceLabel" destination="fNK-Pg-2Aa" id="Gfa-a3-gMn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlS-Q0-Bpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4389.6000000000004" y="-1088.0059970014993"/>
         </scene>
     </scenes>
     <resources>

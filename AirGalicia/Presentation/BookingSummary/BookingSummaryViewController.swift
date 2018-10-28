@@ -1,5 +1,5 @@
 //
-//  PayViewController.swift
+//  BookingSummaryViewController.swift
 //  AirGalicia
 //
 //  Created by Yurii Dvornyk on 10/20/18.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class BookingSummaryViewController: BaseViewController {
+class BookingSummaryViewController: BaseViewController, BookingUpdateDelegate {
     
     @IBOutlet private weak var webView: WKWebView!
     var booking: Booking?
@@ -18,15 +18,11 @@ class BookingSummaryViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateBookingView()
+    }
+    
+    func updateBookingView() {
         webView.loadHTMLString(createBookingSummaryHtml(), baseURL: nil)
-//        content = []
-//        if booking != nil {
-//            content?.append("From: \(formatAirportFullString(airport: booking?.origin))")
-//            content?.append("To: \(formatAirportFullString(airport: booking?.destination))")
-//            content?.append(booking?.returnDate != nil ? "Return Trip" : "One-Way Trip")
-//            content?.append(formatFlightDate(booking: booking))
-//            content?.append("Passengers: \n\(formatPassengers(passengers: booking?.passengers))")
-//        }
     }
     
     func createBookingSummaryHtml() -> String {
@@ -66,10 +62,20 @@ class BookingSummaryViewController: BaseViewController {
         return content
     }
     
+    func onBookingUpdated(booking: Booking?) {
+        self.booking = booking
+        updateBookingView()
+    }
+    
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func onConfirmTapped(_ sender: UIButton) {
+    @IBAction func onConfirmTapped(_ sender: UIBarItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "PayViewController") as! PayViewController
+        viewController.booking = booking
+        viewController.delegate = self
+        present(viewController, animated: true, completion: nil)
     }
 }

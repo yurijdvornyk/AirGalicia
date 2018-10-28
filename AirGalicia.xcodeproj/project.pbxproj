@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		85169D5E1E88AA20F434FB60 /* Pods_AirGaliciaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA29296FABF98D1276B22C1 /* Pods_AirGaliciaTests.framework */; };
 		93CE2303132FC9D8DA76451F /* Pods_AirGaliciaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */; };
+		BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B89218112C0005C1DFD /* PayViewController.swift */; };
+		BC014B8C21825D01005C1DFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B8B21825D01005C1DFD /* User.swift */; };
+		BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B8D21825D86005C1DFD /* PaymentInfo.swift */; };
 		BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */; };
 		BC0410C0217BCADC00EE2C01 /* BookingSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0410BF217BCADC00EE2C01 /* BookingSummaryViewController.swift */; };
 		BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* ApiManager.swift */; };
@@ -67,6 +70,9 @@
 		50F1EABFA048A46B9E6D03F9 /* Pods-AirGalicia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGalicia.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGalicia/Pods-AirGalicia.release.xcconfig"; sourceTree = "<group>"; };
 		8419A39DD15142B5F6B1E14C /* Pods-AirGaliciaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaUITests/Pods-AirGaliciaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		87C95D3067890ECF5D334AEF /* Pods-AirGaliciaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC014B89218112C0005C1DFD /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		BC014B8B21825D01005C1DFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BC014B8D21825D86005C1DFD /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		BC0410BF217BCADC00EE2C01 /* BookingSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSummaryViewController.swift; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BC014B8821811296005C1DFD /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				BC014B89218112C0005C1DFD /* PayViewController.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
 		BC0410BE217BCA9700EE2C01 /* BookingSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +192,8 @@
 				BC414CC92161003900649D6F /* Passenger.swift */,
 				BC414CCD2161028A00649D6F /* BoardingPass.swift */,
 				BC414CD12161036100649D6F /* Util.swift */,
+				BC014B8B21825D01005C1DFD /* User.swift */,
+				BC014B8D21825D86005C1DFD /* PaymentInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +201,7 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BC014B8821811296005C1DFD /* Pay */,
 				BC201238215D6AB200F98B7A /* Account */,
 				BC201235215D6A4700F98B7A /* Airports */,
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
@@ -549,7 +566,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC014B8C21825D01005C1DFD /* User.swift in Sources */,
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
+				BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */,
 				BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* ApiManager.swift in Sources */,
 				BCBEE5A8217CA95800CABB5C /* DateUtils.swift in Sources */,
@@ -559,6 +578,7 @@
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
 				BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */,
+				BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
 				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,

@@ -192,9 +192,8 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
     }
     
     func updateTotalPrice() {
-        let totalPrice = booking.totalPrice
-        priceLabel.text = "\(String(totalPrice)) €"
-        buyTicketsButton.isEnabled = totalPrice > 0
+        priceLabel.text = formatTotalPrice(booking.totalPrice)
+        buyTicketsButton.isEnabled = booking.totalPrice > 0
     }
     
     @IBAction func onBuyTapped(_ sender: UIButton) {

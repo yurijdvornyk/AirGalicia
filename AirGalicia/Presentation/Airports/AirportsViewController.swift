@@ -20,7 +20,6 @@ class AirportsViewController: BaseViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     private var allAirports = [Airport]()
     private var foundAirports = [Airport]()
@@ -29,19 +28,21 @@ class AirportsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         apiManager = ApiManager()
-        spinner.isHidden = false
-        spinner.startAnimating()
+        //spinner.startAnimating()
+        showLoading()
         if originAirport != nil {
             apiManager?.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
                 self.allAirports = airports
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
                     self.tableView.reloadData()
-                    self.spinner.stopAnimating()
+                    //self.spinner.stopAnimating()
+                    self.hideLoading()
                 }
             }, error: { (NSError) in
                 DispatchQueue.main.async() {
-                    self.spinner.stopAnimating()
+                    //self.spinner.stopAnimating()
+                    self.hideLoading()
                 }
                 // TODO: Handle error
             })
@@ -51,11 +52,13 @@ class AirportsViewController: BaseViewController {
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
                     self.tableView.reloadData()
-                    self.spinner.stopAnimating()
+                    //self.spinner.stopAnimating()
+                    self.hideLoading()
                 }
             }) { (error: NSError) in
                 DispatchQueue.main.async() {
-                    self.spinner.stopAnimating()
+                    //self.spinner.stopAnimating()
+                    self.hideLoading()
                 }
                 // TODO: Handle error
             }

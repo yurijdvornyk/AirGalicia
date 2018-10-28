@@ -38,3 +38,11 @@ func formatPassengers(passengers: [Passenger]?) -> String {
     }
     return result
 }
+
+func formatTotalPrice(_ totalPrice: Double?) -> String {
+    if totalPrice == nil {
+        return ""
+    } else {
+        return "\(String(totalPrice!)) €"
+    }
+}
