@@ -9,11 +9,11 @@
 import UIKit
 import WebKit
 
-class BookingSummaryViewController: BaseViewController, BookingUpdateDelegate {
+class BookingSummaryViewController: BaseViewController, TripUpdateDelegate {
     
     @IBOutlet private weak var webView: WKWebView!
-    var booking: Booking?
-    var delegate: BookingUpdateDelegate?
+    var booking: Trip?
+    var delegate: TripUpdateDelegate?
     var content: [String]?
 
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class BookingSummaryViewController: BaseViewController, BookingUpdateDelegate {
         return content
     }
     
-    func onBookingUpdated(booking: Booking?) {
+    func onBookingUpdated(booking: Trip?) {
         self.booking = booking
         updateBookingView()
     }

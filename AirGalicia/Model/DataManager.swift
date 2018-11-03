@@ -15,8 +15,64 @@ class DataManager {
     let baseDataUrl = "https://raw.githubusercontent.com/yurijdvornyk/AirGalicia/master/External/MockApi/"
     let userDefaults: UserDefaults
     
+    var trips: [Trip]
+    
     private init() {
         userDefaults = UserDefaults.init(suiteName: "defaultUser")!
+        trips = [Trip]()
+        
+        // TODO: Temporary code; remove
+        let origin = Airport(code: "LWO", city: "Lviv", country: "Ukraine", name: "Lviv Danylo Halytskyi International Airport", location: "49.8134554,23.9623552", planes: ["AG01"])
+        
+        let destination = Airport(code: "ZRH", city: "Zurich", country: "Switzerland", name: "Zurich", location: "47.4582201,8.5532815", planes: [])
+        
+        let flight: Schedule? = nil
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let outDate = dateFormatter.date(from: "2018-11-20 20:00")
+        let outTime = FlightTime(ScheduleTime(timeString: "20:00"), ScheduleTime(timeString: "22:00"))
+        let returnDate = dateFormatter.date(from: "2018-11-22 16:00")
+        let returnTime =  FlightTime(ScheduleTime(timeString: "16:00"), ScheduleTime(timeString: "19:00"))
+        
+        let price = 80.0
+        
+        var passengers = [Passenger]()
+        let passenger0 = Passenger()
+        passenger0.firstName = "Homer"
+        passenger0.lastName = "Simpson"
+        passenger0.passport = "HS0824"
+        passenger0.email = "hsimpson@yahoo.com"
+        passenger0.gender = .Mr
+        passenger0.hasCheckedBaggage = true
+        passenger0.hasPriority = true
+        passengers.append(passenger0)
+        
+        let passenger1 = Passenger()
+        passenger0.firstName = "Homer"
+        passenger0.lastName = "Simpson"
+        passenger0.passport = "HS0824"
+        passenger0.email = "hsimpson@yahoo.com"
+        passenger0.gender = .Mr
+        passenger0.hasCheckedBaggage = true
+        passenger0.hasPriority = true
+        passengers.append(passenger1)
+        
+        let trip: Trip = Trip()
+        trip.origin = origin
+        trip.destination = destination
+        trip.flight = flight
+        trip.outDate = outDate
+        trip.outTime = outTime
+        trip.returnDate = returnDate
+        trip.returnTime = returnTime
+        trip.outPrice = price
+        trip.returnPrice = price
+        trip.passengers = passengers
+        trip.boardingPasses = nil
+        
+        trips.append(trip)
     }
     
     func loadAirports(success: @escaping ([Airport]) -> Void, error: (Error) -> Void) {
@@ -76,31 +132,37 @@ class DataManager {
         }
     }
     
-    func loadTrips(success: @escaping ([Booking]?) -> Void, fail: (Error) -> Void) {
-        let trips = userDefaults.array(forKey: "trips") as! [Booking]?
-        if trips != nil {
-            success(trips)
-        } else {
-            success([])
-            // TODO: Handle error
-        }
+    func loadTrips(success: @escaping ([Trip]?) -> Void, fail: (Error) -> Void) {
+        // TODO: Use real data source
+        success(trips)
+//        let trips = userDefaults.array(forKey: "trips") as! [Booking]?
+//        if trips != nil {
+//            success(trips)
+//        } else {
+//            success([])
+//            // TODO: Handle error
+//        }
     }
     
-    func updateTrips(value: [Booking?], success: @escaping () -> Void, fail: (Error) -> Void) {
-        userDefaults.set(value, forKey: "trips")
-        success()
+    func updateTrips(value: [Trip], success: @escaping () -> Void, fail: (Error) -> Void) {
+        // TODO: Use real data source
+        trips = value
+//        userDefaults.set(value, forKey: "trips")
+//        success()
     }
     
-    func addTrip(trip: Booking, success: @escaping () -> Void, fail: (Error) -> Void) {
-        if (userDefaults.array(forKey: "trips") == nil) {
-            userDefaults.set([], forKey: "trips")
-        }
-        var trips = userDefaults.array(forKey: "trips") as! [Booking]?
-        trips?.append(trip)
-        updateTrips(value: trips!, success: {
-            success()
-        }, fail: { (Error) in
-            // TODO: Handle
-        })
+    func addTrip(trip: Trip, success: @escaping () -> Void, fail: (Error) -> Void) {
+        // TODO: Use real data source
+        trips.append(trip)
+//        if (userDefaults.array(forKey: "trips") == nil) {
+//            userDefaults.set([], forKey: "trips")
+//        }
+//        var trips = userDefaults.array(forKey: "trips") as! [Trip]?
+//        trips?.append(trip)
+//        updateTrips(value: trips!, success: {
+//            success()
+//        }, fail: { (Error) in
+//            // TODO: Handle
+//        })
     }
 }

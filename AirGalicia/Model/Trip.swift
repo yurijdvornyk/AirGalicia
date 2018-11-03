@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Booking: Codable {
+class Trip: Codable {
     var id: String
     var origin: Airport!
     var destination: Airport!

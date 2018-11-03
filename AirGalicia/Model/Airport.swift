@@ -21,6 +21,15 @@ class Airport: Codable {
         case code, city, country, name, location, planes
     }
     
+    init(code: String, city: String, country: String, name: String, location: String, planes: [String]?) {
+        self.code = code
+        self.city = city
+        self.country = country
+        self.name = name
+        self.location = location
+        self.planes = planes
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         code = try container.decode(String.self, forKey: .code)

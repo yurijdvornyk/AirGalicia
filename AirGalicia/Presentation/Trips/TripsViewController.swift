@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TripsViewController: BaseViewController {
+class TripsViewController: BaseViewController, TripUpdateDelegate {
     
     @IBOutlet weak var tripsTableView: UITableView!
     
-    var trips: [Booking]?
+    var trips: [Trip]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,17 @@ class TripsViewController: BaseViewController {
             trips in
             self.trips = trips
             self.tripsTableView.reloadData()
+            self.hideLoading()
         }, fail: {
             error in
             self.trips = []
             self.tripsTableView.reloadData()
+            self.hideLoading()
         })
+    }
+    
+    func onBookingUpdated(booking: Trip?) {
+        tripsTableView.reloadData()
     }
 }
 
@@ -40,5 +46,13 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureWith(trip: trips![indexPath.row])
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tripDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "TripDetailsViewController") as! TripDetailsViewController
+        tripDetailsViewController.delegate = self
+        tripDetailsViewController.trip = trips![indexPath.row]
+        present(tripDetailsViewController, animated: true, completion: nil)
     }
 }

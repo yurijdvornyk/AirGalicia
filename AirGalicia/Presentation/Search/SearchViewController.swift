@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class SearchViewController: BaseViewController, AirportsSelectionDelegate, BookingUpdateDelegate {
+class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripUpdateDelegate {
     
     // TODO: Implementing search bar https://www.youtube.com/watch?v=bWQhhKwPMo4
     // https://www.youtube.com/watch?v=wVeX68Iu43E
@@ -28,7 +28,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var buyTicketsButton: UIButton!
     
-    private var booking: Booking!
+    private var booking: Trip!
     private var outPrice: Double!
     private var backPrice: Double!
 
@@ -67,7 +67,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
     
     func setUpDefaultScreenData() {
         clearAirports()
-        booking = Booking()
+        booking = Trip()
         booking.passengers?.append(Passenger())
         outDateTextField.text = ""
         backDateTextField.text = ""
@@ -209,13 +209,13 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
         setUpDefaultScreenData()
     }
     
-    func onBookingUpdated(booking: Booking?) {
+    func onBookingUpdated(booking: Trip?) {
         self.booking = booking
         updateTripDateFields()
         updateTotalPrice()
     }
 }
 
-protocol BookingUpdateDelegate {
-    func onBookingUpdated(booking: Booking?)
+protocol TripUpdateDelegate {
+    func onBookingUpdated(booking: Trip?)
 }

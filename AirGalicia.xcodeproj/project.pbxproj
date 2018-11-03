@@ -25,7 +25,7 @@
 		BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20123D215D7F8900F98B7A /* Timetable.swift */; };
 		BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BC268BB8215F9A1800FE9FD4 /* Podfile */; };
 		BC414CCA2161003900649D6F /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CC92161003900649D6F /* Passenger.swift */; };
-		BC414CCC2161025000649D6F /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCB2161025000649D6F /* Booking.swift */; };
+		BC414CCC2161025000649D6F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCB2161025000649D6F /* Trip.swift */; };
 		BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCD2161028A00649D6F /* BoardingPass.swift */; };
 		BC414CD22161036100649D6F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD12161036100649D6F /* Util.swift */; };
 		BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD421611AA000649D6F /* FlightDateViewController.swift */; };
@@ -90,7 +90,7 @@
 		BC20123D215D7F8900F98B7A /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		BC268BB8215F9A1800FE9FD4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BC414CC92161003900649D6F /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
-		BC414CCB2161025000649D6F /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Booking.swift; path = AirGalicia/Model/Booking.swift; sourceTree = SOURCE_ROOT; };
+		BC414CCB2161025000649D6F /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = AirGalicia/Model/Trip.swift; sourceTree = SOURCE_ROOT; };
 		BC414CCD2161028A00649D6F /* BoardingPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPass.swift; sourceTree = "<group>"; };
 		BC414CD12161036100649D6F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BC414CD421611AA000649D6F /* FlightDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 				BC02876A218DC4920082F5AB /* Time */,
 				BC20122E215AE21D00F98B7A /* DataManager.swift */,
 				BC201230215AE24F00F98B7A /* Airport.swift */,
-				BC414CCB2161025000649D6F /* Booking.swift */,
+				BC414CCB2161025000649D6F /* Trip.swift */,
 				BC20123B215D7E2900F98B7A /* Schedule.swift */,
 				BC20123D215D7F8900F98B7A /* Timetable.swift */,
 				BC414CC92161003900649D6F /* Passenger.swift */,
@@ -623,7 +623,7 @@
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
 				BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */,
 				BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */,
-				BC414CCC2161025000649D6F /* Booking.swift in Sources */,
+				BC414CCC2161025000649D6F /* Trip.swift in Sources */,
 				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

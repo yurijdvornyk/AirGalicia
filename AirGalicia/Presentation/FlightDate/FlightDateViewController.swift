@@ -15,8 +15,8 @@ enum FlightDateType {
 
 class FlightDateViewController: BaseViewController {
     
-    var delegate: BookingUpdateDelegate?
-    var booking: Booking?
+    var delegate: TripUpdateDelegate?
+    var booking: Trip?
     var origin: String?
     var destination: String?
     var outSchedule: Schedule?

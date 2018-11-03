@@ -15,13 +15,9 @@ class TripTableViewCell: UITableViewCell {
     @IBOutlet private weak var checkInOutButton: UIButton!
     @IBOutlet private weak var checkInReturnButton: UIButton!
     
-    var trip: Booking?
+    var trip: Trip?
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    func configureWith(trip: Booking) {
+    func configureWith(trip: Trip) {
         self.trip = trip
         destinationsLabel.text = formatTripDestinations(trip)
         tripDetailsLabel.text = formatTripDetails(trip)

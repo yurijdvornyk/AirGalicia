@@ -17,7 +17,7 @@ class User {
     var dateOfBirth: Date?
     var phoneNumber: String?
     var paymentInfo: PaymentInfo?
-    var bookiongs: [Booking]?
+    var bookiongs: [Trip]?
     
     init() {
         id = generateId()

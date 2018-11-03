@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PassengersViewController: BaseViewController, BookingUpdateDelegate {
+class PassengersViewController: BaseViewController, TripUpdateDelegate {
     
     @IBOutlet private weak var passengersTableView: UITableView!
     
-    var booking: Booking!
-    var delegate: BookingUpdateDelegate?
+    var booking: Trip!
+    var delegate: TripUpdateDelegate?
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         updatePassangers()
@@ -30,7 +30,7 @@ class PassengersViewController: BaseViewController, BookingUpdateDelegate {
         present(viewController, animated: true, completion: nil)
     }
     
-    func onBookingUpdated(booking: Booking?) {
+    func onBookingUpdated(booking: Trip?) {
         self.booking = booking
     }
     

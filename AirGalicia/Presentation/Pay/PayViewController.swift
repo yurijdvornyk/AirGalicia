@@ -16,8 +16,8 @@ class PayViewController: BaseViewController {
     @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var cvvTextField: UITextField!
     
-    var booking: Booking?
-    var delegate: BookingUpdateDelegate?
+    var booking: Trip?
+    var delegate: TripUpdateDelegate?
     var user: User?
     
     override func viewDidLoad() {
