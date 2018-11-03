@@ -37,7 +37,10 @@ class BaseViewController: UIViewController {
     }
 
     func createLoadingView() {
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        let size = 50.0
+        let x = (Double(view.frame.size.width) - size) / 2.0
+        let y = (Double(view.frame.size.height) - size) / 2.0
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: x, y: y, width: size, height: size))
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.style = UIActivityIndicatorView.Style.gray
         activityIndicator?.hidesWhenStopped = true
