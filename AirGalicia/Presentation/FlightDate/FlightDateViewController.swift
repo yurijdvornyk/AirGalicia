@@ -17,7 +17,6 @@ class FlightDateViewController: BaseViewController {
     
     var delegate: BookingUpdateDelegate?
     var booking: Booking?
-    var apiManager: ApiManager?
     var origin: String?
     var destination: String?
     var outSchedule: Schedule?
@@ -29,26 +28,25 @@ class FlightDateViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiManager = ApiManager()
         calendarView.scrollDirection = .vertical
         calendarView.delegate = self
         calendarView.dataSource = self
         if origin != nil && destination != nil {
             spinner.isHidden = false
             spinner.startAnimating()
-            apiManager?.loadFlight(from: origin!, to: destination!, success: { (outSchedule: Schedule?) in
-                self.apiManager?.loadFlight(from: self.destination!, to: self.origin!, success: { (backSchedule: Schedule?) in
+            DataManager.shared.loadFlight(from: origin!, to: destination!, success: { (outSchedule: Schedule?) in
+                DataManager.shared.loadFlight(from: self.destination!, to: self.origin!, success: { (backSchedule: Schedule?) in
                     DispatchQueue.main.async() {
                         self.onLoadFlight(outSchedule: outSchedule, backSchedule: backSchedule)
                         self.spinner.stopAnimating()
                     }
-                }, fail: { (error: NSError) in
+                }, fail: { (error: Error) in
                     DispatchQueue.main.async() {
                         self.spinner.stopAnimating()
                     }
                     // TODO: Handle error
                 })
-            }, fail: { (error: NSError) in
+            }, fail: { (error: Error) in
                 DispatchQueue.main.async() {
                     self.spinner.stopAnimating()
                 }
@@ -100,7 +98,7 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         let weekday = Calendar.current.component(.weekday, from: date)
         let schedule = dateType == .Out ? outSchedule : backSchedule
-        let doesFlightExist: Bool = schedule?.timetable?.contains(where: { (timetable: Timetable) -> Bool in
+        let doesFlightExist: Bool = schedule?.schedule?.contains(where: { (timetable: Timetable) -> Bool in
             return weekday == timetable.day
         }) ?? false
         cell.isUserInteractionEnabled = doesFlightExist
@@ -113,10 +111,10 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let weekday = Calendar.current.component(.weekday, from: date)
-        let timetable = outSchedule?.timetable?.filter({
+        let timetable = outSchedule?.schedule?.filter({
             return $0.day == weekday
         }).first
-        let time = (parseFligtTime(timetable!.departureTime), parseFligtTime(timetable!.arrivalTime))
+        let time = FlightTime(timetable!.departureTime!, timetable!.arrivalTime!)
         if dateType == .Out {
             booking!.outDate = date
             booking!.outTime = time

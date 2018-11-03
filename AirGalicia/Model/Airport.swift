@@ -6,9 +6,10 @@
 //  Copyright © 2018 Yurii Dvornyk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Airport: Decodable {
+class Airport: Codable {
+    
     let code: String
     let city: String
     let country: String
@@ -20,7 +21,7 @@ struct Airport: Decodable {
         case code, city, country, name, location, planes
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         code = try container.decode(String.self, forKey: .code)
         city = try container.decode(String.self, forKey: .city)

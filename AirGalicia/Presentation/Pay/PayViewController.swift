@@ -19,7 +19,7 @@ class PayViewController: BaseViewController {
     var booking: Booking?
     var delegate: BookingUpdateDelegate?
     var user: User?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         totalPriceLabel.text = formatTotalPrice(booking?.totalPrice)
@@ -29,12 +29,19 @@ class PayViewController: BaseViewController {
     
     @IBAction func onPayTapped(_ sender: UIButton) {
         showLoading()
-        // Simulate saving data to remote
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.hideLoading()
-            self.dismiss(animated: true, completion: nil)
-        }
+        DataManager.shared.addTrip(trip: booking!, success: {
+            DispatchQueue.main.async(execute: {
+                self.hideLoading()
+                self.dismiss(animated: true, completion: nil)
+            })
+        }, fail: {_ in
+            DispatchQueue.main.async(execute: {
+                self.hideLoading()
+                self.dismiss(animated: true, completion: nil)
+            })
+        })
     }
+    
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         if delegate != nil {
             delegate?.onBookingUpdated(booking: booking)

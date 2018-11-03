@@ -14,15 +14,15 @@ func formatFlightDate(date: Date?) -> String {
     return formatter.string(from: date!)
 }
 
-func formatFlightDate(date: Date?, time: ((Int, Int), (Int, Int))) -> String {
-    return "\(formatFlightDate(date: date)) \(time.0.0):\(time.0.1)-\(time.1.0):\(time.1.1)"
+func formatFlightDate(date: Date?, time: FlightTime) -> String {
+    return "\(formatFlightDate(date: date)) \(time)"
 }
 
-func parseFligtTime(_ time: String?) -> (Int, Int) {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm"
-    let date = formatter.date(from: time!)
-    let hour = Calendar.current.component(.hour, from: date!)
-    let minutes = Calendar.current.component(.minute, from: date!)
-    return (hour, minutes)
-}
+//func parseFligtTime(_ time: String?) -> ScheduleTime {
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "HH:mm"
+//    let date = formatter.date(from: time!)
+//    let hour = Calendar.current.component(.hour, from: date!)
+//    let minutes = Calendar.current.component(.minute, from: date!)
+//    return ScheduleTime(hour, minutes)
+//}

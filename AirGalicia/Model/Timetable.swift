@@ -8,10 +8,15 @@
 
 import UIKit
 
-class Timetable: NSObject, Decodable {
+class Timetable: Codable {
     let day: Int
-    let departureTime: String
-    let arrivalTime: String
+    let time: [String]?
+    var departureTime: ScheduleTime? {
+        return time != nil && (time?.count)! > 0 ? ScheduleTime(timeString: time![0]) : nil
+    }
+    var arrivalTime: ScheduleTime? {
+        return time != nil && (time?.count)! == 2 ? ScheduleTime(timeString: time![1]) : nil
+    }
     
     private enum CodingKeys: Int, CodingKey, CaseIterable {
         case day, time
@@ -20,8 +25,6 @@ class Timetable: NSObject, Decodable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         day = try container.decode(Int.self, forKey: .day)
-        let timeArr = try container.decode([String].self, forKey: .time)
-        departureTime = timeArr[0]
-        arrivalTime = timeArr[1]
+        time = try container.decode([String].self, forKey: .time)
     }
 }

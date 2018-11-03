@@ -16,6 +16,24 @@ func formatAirportFullString(airport: Airport?) -> String {
     }
 }
 
+func formatTripDestinations(_ trip: Booking) -> String {
+    var result = "\(trip.origin.city), \(trip.origin.country) - \(trip.destination.city), \(trip.destination.country)"
+    if trip.returnDate != nil {
+        result += " - \(trip.origin.city), \(trip.origin.country)"
+    }
+    return result
+}
+
+func formatTripDetails(_ trip: Booking) -> String {
+    var result = formatFlightDate(date: trip.outDate)
+    if trip.returnDate != nil {
+        result += " - \(formatFlightDate(date: trip.returnDate))"
+    }
+    result += ", \(trip.passengers.count) "
+    result += trip.passengers.count == 1 ? "passenger" : "passengers"
+    return result
+}
+
 func formatPassengers(passengers: [Passenger]?) -> String {
     if passengers == nil {
         return ""

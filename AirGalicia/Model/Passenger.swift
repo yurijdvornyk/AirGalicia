@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Passenger {
+class Passenger: Codable {
     let id: String
     var firstName: String?
     var lastName: String?
@@ -21,8 +21,24 @@ class Passenger {
     init() {
         id = generateId()
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, firstName, lastName, gender, passport, email, hasCheckedBaggage, hasPriority
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        firstName = try container.decode(String.self, forKey: .firstName)
+        lastName = try container.decode(String.self, forKey: .lastName)
+        gender = try container.decode(Gender.self, forKey: .gender)
+        passport = try container.decode(String.self, forKey: .passport)
+        email = try container.decode(String.self, forKey: .email)
+        hasCheckedBaggage = try container.decode(Bool.self, forKey: .hasCheckedBaggage)
+        hasPriority = try container.decode(Bool.self, forKey: .hasPriority)
+    }
 }
 
-enum Gender {
+enum Gender: String, Codable {
     case Mr, Ms
 }

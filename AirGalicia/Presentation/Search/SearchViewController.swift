@@ -28,14 +28,12 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var buyTicketsButton: UIButton!
     
-    private var apiManager: ApiManager!
     private var booking: Booking!
     private var outPrice: Double!
     private var backPrice: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiManager = ApiManager()
         originStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOriginStackViewTapped(recognizer:))))
         destinationStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didDestinationStackViewTapped(recognizer:))))
         outDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOutDateViewTapped(recognizer:))))
@@ -156,6 +154,9 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, Booki
         booking.origin = booking.destination
         booking.destination = tempAirport
         updateAirportTextFields()
+        booking.outDate = nil
+        booking.returnDate = nil
+        onBookingUpdated(booking: booking)
     }
     
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {

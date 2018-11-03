@@ -16,7 +16,7 @@ class AirportsViewController: BaseViewController {
     
     var selectionDelegate: AirportsSelectionDelegate?
     var originAirport: Airport?
-    var apiManager: ApiManager?
+    var apiManager: DataManager?
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
@@ -27,11 +27,10 @@ class AirportsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiManager = ApiManager()
         //spinner.startAnimating()
         showLoading()
         if originAirport != nil {
-            apiManager?.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
+            DataManager.shared.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
                 self.allAirports = airports
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
@@ -39,7 +38,7 @@ class AirportsViewController: BaseViewController {
                     //self.spinner.stopAnimating()
                     self.hideLoading()
                 }
-            }, error: { (NSError) in
+            }, error: { (Error) in
                 DispatchQueue.main.async() {
                     //self.spinner.stopAnimating()
                     self.hideLoading()
@@ -47,7 +46,7 @@ class AirportsViewController: BaseViewController {
                 // TODO: Handle error
             })
         } else {
-            apiManager?.loadAirports(success: { (airports: [Airport]) in
+            DataManager.shared.loadAirports(success: { (airports: [Airport]) in
                 self.allAirports = airports
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
@@ -55,7 +54,7 @@ class AirportsViewController: BaseViewController {
                     //self.spinner.stopAnimating()
                     self.hideLoading()
                 }
-            }) { (error: NSError) in
+            }) { (error: Error) in
                 DispatchQueue.main.async() {
                     //self.spinner.stopAnimating()
                     self.hideLoading()
