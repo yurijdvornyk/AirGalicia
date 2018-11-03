@@ -46,17 +46,17 @@ class DataManager {
         passenger0.email = "hsimpson@yahoo.com"
         passenger0.gender = .Mr
         passenger0.hasCheckedBaggage = true
-        passenger0.hasPriority = true
+        passenger0.hasPriority = false
         passengers.append(passenger0)
         
         let passenger1 = Passenger()
-        passenger0.firstName = "Homer"
-        passenger0.lastName = "Simpson"
-        passenger0.passport = "HS0824"
-        passenger0.email = "hsimpson@yahoo.com"
-        passenger0.gender = .Mr
-        passenger0.hasCheckedBaggage = true
-        passenger0.hasPriority = true
+        passenger1.firstName = "Marge"
+        passenger1.lastName = "Simpson"
+        passenger1.passport = "MO2478"
+        passenger1.email = "marge1975@gmail.com"
+        passenger1.gender = .Ms
+        passenger1.hasCheckedBaggage = true
+        passenger1.hasPriority = true
         passengers.append(passenger1)
         
         let trip: Trip = Trip()

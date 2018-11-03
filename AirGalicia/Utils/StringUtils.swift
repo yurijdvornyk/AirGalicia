@@ -34,29 +34,6 @@ func formatTripDetails(_ trip: Trip) -> String {
     return result
 }
 
-func formatPassengers(passengers: [Passenger]?) -> String {
-    if passengers == nil {
-        return ""
-    }
-    var result = ""
-    for passenger in passengers! {
-        if result != "" {
-            result += "\n"
-        }
-        let gender = passenger.gender == .Mr ? "Mr." : "Ms."
-        let firstName = passenger.firstName ?? ""
-        let lastName = passenger.lastName ?? ""
-        let passport = passenger.passport ?? ""
-        let addition = (passenger.hasCheckedBaggage ? " + Baggage " : "") +
-            (passenger.hasPriority ? " + Priority" : "")
-        result += "\(gender) \(firstName) \(lastName) [\(passport)]"
-        if addition != "" {
-            result += " | \(addition)"
-        }
-    }
-    return result
-}
-
 func formatTotalPrice(_ totalPrice: Double?) -> String {
     if totalPrice == nil {
         return ""
