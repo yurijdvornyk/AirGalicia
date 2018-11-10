@@ -5,7 +5,7 @@
         "imageUrl": "a320neo.png",
         "seats": {
             "rows": 30,
-            "seats": ["A", "B", "C", "D", "E", "F"]
+            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
         }
     },
     {
@@ -14,7 +14,7 @@
         "imageUrl": "a320neo.png",
         "seats": {
             "rows": 30,
-            "seats": ["A", "B", "C", "D", "E", "F"]
+            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
         }
     },
     {
@@ -23,7 +23,7 @@
         "imageUrl": "a320neo.png",
         "seats": {
             "rows": 30,
-            "seats": ["A", "B", "C", "D", "E", "F"]
+            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
         }
     },
     {
@@ -32,7 +32,7 @@
         "imageUrl": "e195.png",
         "seats": {
             "rows": 32,
-            "seats": ["A", "B", "C", "D"]
+            "seatsInRow": ["A", "B", "C", "D"]
         }
     }
 ]
