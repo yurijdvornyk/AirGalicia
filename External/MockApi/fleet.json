@@ -3,24 +3,40 @@
         "id": "AG01",
         "model": "Airbus A320neo",
         "seats": 194,
-        "imageUrl": "a320neo.png"
+        "imageUrl": "a320neo.png",
+        "seats": {
+            "rows": 30,
+            "seats": ["A", "B", "C", "D", "E", "F"]
+        }
     },
     {
         "id": "AG02",
         "model": "Airbus A320neo",
         "seats": 194,
-        "imageUrl": "a320neo.png"
+        "imageUrl": "a320neo.png",
+        "seats": {
+            "rows": 30,
+            "seats": ["A", "B", "C", "D", "E", "F"]
+        }
     },
     {
         "id": "AG03",
         "model": "Airbus A320neo",
         "seats": 194,
-        "imageUrl": "a320neo.png"
+        "imageUrl": "a320neo.png",
+        "seats": {
+            "rows": 30,
+            "seats": ["A", "B", "C", "D", "E", "F"]
+        }
     },
     {
         "id": "AG04",
         "model": "Embraer E195",
         "seats": 124,
-        "imageUrl": "e195.png"
+        "imageUrl": "e195.png",
+        "seats": {
+            "rows": 32,
+            "seats": ["A", "B", "C", "D"]
+        }
     }
 ]
