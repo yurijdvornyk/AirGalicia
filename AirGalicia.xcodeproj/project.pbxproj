@@ -29,6 +29,10 @@
 		BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCD2161028A00649D6F /* BoardingPass.swift */; };
 		BC414CD22161036100649D6F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD12161036100649D6F /* Util.swift */; };
 		BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD421611AA000649D6F /* FlightDateViewController.swift */; };
+		BCA0B74221970E0C001B9BFC /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74121970E0C001B9BFC /* CheckInTableViewCell.swift */; };
+		BCA0B74621971E36001B9BFC /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74521971E36001B9BFC /* CheckInViewController.swift */; };
+		BCA0B74821971F4C001B9BFC /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74721971F4C001B9BFC /* Plane.swift */; };
+		BCA0B74C2197357A001B9BFC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74B2197357A001B9BFC /* Navigator.swift */; };
 		BCBEE5A3217C9CCF00CABB5C /* BookingSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE5A2217C9CCF00CABB5C /* BookingSummaryTableViewCell.swift */; };
 		BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE5A5217CA7B600CABB5C /* StringUtils.swift */; };
 		BCBEE5A8217CA95800CABB5C /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEE5A7217CA95800CABB5C /* DateUtils.swift */; };
@@ -94,6 +98,10 @@
 		BC414CCD2161028A00649D6F /* BoardingPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPass.swift; sourceTree = "<group>"; };
 		BC414CD12161036100649D6F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BC414CD421611AA000649D6F /* FlightDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewController.swift; sourceTree = "<group>"; };
+		BCA0B74121970E0C001B9BFC /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
+		BCA0B74521971E36001B9BFC /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		BCA0B74721971F4C001B9BFC /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		BCA0B74B2197357A001B9BFC /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		BCBEE5A2217C9CCF00CABB5C /* BookingSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BCBEE5A5217CA7B600CABB5C /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		BCBEE5A7217CA95800CABB5C /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 				BC414CD12161036100649D6F /* Util.swift */,
 				BC014B8B21825D01005C1DFD /* User.swift */,
 				BC014B8D21825D86005C1DFD /* PaymentInfo.swift */,
+				BCA0B74721971F4C001B9BFC /* Plane.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,12 +241,14 @@
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
 				BC0410BE217BCA9700EE2C01 /* BookingSummary */,
+				BCA0B74021970DC3001B9BFC /* CheckInViewController */,
 				BC414CD32161113000649D6F /* FlightDate */,
 				BCE38231217A32D000C37C21 /* Passengers */,
 				BC014B8821811296005C1DFD /* Pay */,
 				BC201234215D69F900F98B7A /* Search */,
 				BC06567B218663B0005A16A4 /* TripDetails */,
 				BC201236215D6A5F00F98B7A /* Trips */,
+				BCA0B74B2197357A001B9BFC /* Navigator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -290,6 +301,15 @@
 				BC414CD421611AA000649D6F /* FlightDateViewController.swift */,
 			);
 			path = FlightDate;
+			sourceTree = "<group>";
+		};
+		BCA0B74021970DC3001B9BFC /* CheckInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCA0B74121970E0C001B9BFC /* CheckInTableViewCell.swift */,
+				BCA0B74521971E36001B9BFC /* CheckInViewController.swift */,
+			);
+			path = CheckInViewController;
 			sourceTree = "<group>";
 		};
 		BCBEE5A4217CA7A300CABB5C /* Utils */ = {
@@ -598,6 +618,7 @@
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
 				BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */,
 				BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */,
+				BCA0B74821971F4C001B9BFC /* Plane.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* DataManager.swift in Sources */,
 				BC02876E218DC5ED0082F5AB /* FlightTime.swift in Sources */,
 				BCBEE5A8217CA95800CABB5C /* DateUtils.swift in Sources */,
@@ -607,6 +628,7 @@
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
 				BC06567D218663CF005A16A4 /* TripDetailsViewController.swift in Sources */,
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
+				BCA0B74221970E0C001B9BFC /* CheckInTableViewCell.swift in Sources */,
 				BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */,
 				BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
@@ -620,10 +642,12 @@
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
 				BCCB37292154201600114C39 /* AccountViewController.swift in Sources */,
 				BC414CCA2161003900649D6F /* Passenger.swift in Sources */,
+				BCA0B74C2197357A001B9BFC /* Navigator.swift in Sources */,
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
 				BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */,
 				BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */,
 				BC414CCC2161025000649D6F /* Trip.swift in Sources */,
+				BCA0B74621971E36001B9BFC /* CheckInViewController.swift in Sources */,
 				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

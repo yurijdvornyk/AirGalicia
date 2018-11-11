@@ -13,7 +13,9 @@ class ScheduleTime: NSObject, Codable {
     var minutes: Int
     
     public override var description: String {
-        return "\(hours):\(minutes)"
+        let hoursString = hours < 10 ? "0" + String(hours) : String(hours)
+        let minutesString = minutes < 10 ? "0" + String(minutes) : String(minutes)
+        return "\(hoursString):\(minutesString)"
     }
     
     private enum CodingKeys: String, CodingKey {

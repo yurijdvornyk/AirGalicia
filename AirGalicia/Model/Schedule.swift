@@ -9,15 +9,17 @@
 import UIKit
 
 struct Schedule: Codable {
-    let from: String
-    let to: String
-    let plane: String
-    let basicPrice: Double
-    let schedule: [Timetable]?
+    var from: String?
+    var to: String?
+    var plane: String?
+    var basicPrice: Double?
+    var schedule: [Timetable]?
     
     private enum CodingKeys: String, CodingKey {
         case from, to, plane, basicPrice, schedule
     }
+    
+    init() {}
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

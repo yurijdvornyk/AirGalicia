@@ -26,7 +26,12 @@ class DataManager {
         
         let destination = Airport(code: "ZRH", city: "Zurich", country: "Switzerland", name: "Zurich", location: "47.4582201,8.5532815", planes: [])
         
-        let flight: Schedule? = nil
+        var flight = Schedule()
+        flight.from = "LWO"
+        flight.to = "FAO"
+        flight.plane = "AG01"
+        flight.schedule = nil
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -70,7 +75,8 @@ class DataManager {
         trip.outPrice = price
         trip.returnPrice = price
         trip.passengers = passengers
-        trip.boardingPasses = nil
+        trip.outBoardingPasses = nil
+        trip.returnBoardingPasses = nil
         
         trips.append(trip)
     }
@@ -105,7 +111,7 @@ class DataManager {
                 let destinations = schedule.filter({
                     return $0.from == origin?.code
                 }).map({ (schedule: Schedule) -> String in
-                    return schedule.to
+                    return schedule.to!
                 })
                 success(allAirports.filter({ (airport: Airport) -> Bool in
                     return destinations.contains(airport.code)
@@ -164,5 +170,25 @@ class DataManager {
 //        }, fail: { (Error) in
 //            // TODO: Handle
 //        })
+    }
+    
+    func loadPlaneInfo(planeId: String,  success: @escaping (Plane?) -> Void, error: (Error) -> Void) {
+        URLSession.shared.dataTask(with: URL(string: baseDataUrl + "planes.json")!) { (data, response, error) in
+            do {
+                let planes = try JSONDecoder()
+                    .decode([Plane].self, from: data!)
+                    .filter({
+                        return $0.id == planeId
+                    })
+                if planes.count > 0 {
+                    success(planes.first)
+                } else {
+                    success(nil)
+                }
+            } catch {
+                success(nil)
+                // TODO: Handle error
+            }
+            }.resume()
     }
 }

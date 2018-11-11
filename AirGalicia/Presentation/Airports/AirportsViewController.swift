@@ -35,12 +35,10 @@ class AirportsViewController: BaseViewController {
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
                     self.tableView.reloadData()
-                    //self.spinner.stopAnimating()
                     self.hideLoading()
                 }
             }, error: { (Error) in
                 DispatchQueue.main.async() {
-                    //self.spinner.stopAnimating()
                     self.hideLoading()
                 }
                 // TODO: Handle error

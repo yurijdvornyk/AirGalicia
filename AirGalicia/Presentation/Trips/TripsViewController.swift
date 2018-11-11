@@ -49,10 +49,6 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let tripDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "TripDetailsViewController") as! TripDetailsViewController
-        tripDetailsViewController.delegate = self
-        tripDetailsViewController.trip = trips![indexPath.row]
-        present(tripDetailsViewController, animated: true, completion: nil)
+        present(Navigator.instance.tripDetails(trip: trips![indexPath.row], delegate: self), animated: true, completion: nil)
     }
 }

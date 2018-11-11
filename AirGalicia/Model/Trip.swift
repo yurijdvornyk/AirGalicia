@@ -20,7 +20,8 @@ class Trip: Codable {
     var outPrice: Double!
     var returnPrice: Double!
     var passengers: [Passenger]!
-    var boardingPasses: [BoardingPass]!
+    var outBoardingPasses: [BoardingPass]?
+    var returnBoardingPasses: [BoardingPass]?
     
     var singlePrice: Double {
         var result = 0.0
@@ -47,13 +48,22 @@ class Trip: Codable {
         return passengersPrice + priorityPrice + baggagePrice
     }
     
+    var hasPassengerWithPriority: Bool {
+        for passenger in passengers {
+            if passenger.hasPriority {
+                return true
+            }
+        }
+        return false
+    }
+    
     init() {
         id = generateId()
         passengers = [Passenger]()
     }
     
     private enum CodingKeys: String, CodingKey {
-        case id, origin, destination, flight, outDate, outTime, returnDate, returnTime, outPrice, returnPrice, passengers, boardingPasses
+        case id, origin, destination, flight, outDate, outTime, returnDate, returnTime, outPrice, returnPrice, passengers, outBoardingPasses, returnBoardingPasses
     }
     
     required init(from decoder: Decoder) throws {
@@ -73,6 +83,19 @@ class Trip: Codable {
         if passengersArray != nil {
             passengers = passengersArray
         }
-        boardingPasses = try container.decode([BoardingPass]?.self, forKey: .boardingPasses)
+        outBoardingPasses = try container.decode([BoardingPass]?.self, forKey: .outBoardingPasses)
+        returnBoardingPasses = try container.decode([BoardingPass]?.self, forKey: .returnBoardingPasses)
+    }
+    
+    func isOutCheckInAvailable(_ date: Date) -> Bool {
+        return isCheckInAvailable(date: date, flightDate: outDate)
+    }
+    
+    func isReturnCheckInAvailable(_ date: Date) -> Bool {
+        return isCheckInAvailable(date: date, flightDate: returnDate)
+    }
+    
+    private func isCheckInAvailable(date: Date, flightDate: Date) -> Bool {
+        return Calendar.current.dateComponents([.day], from: date, to: flightDate).day! <= 2
     }
 }

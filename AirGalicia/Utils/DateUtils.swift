@@ -17,12 +17,3 @@ func formatFlightDate(date: Date?) -> String {
 func formatFlightDate(date: Date?, time: FlightTime) -> String {
     return "\(formatFlightDate(date: date)) \(time)"
 }
-
-//func parseFligtTime(_ time: String?) -> ScheduleTime {
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "HH:mm"
-//    let date = formatter.date(from: time!)
-//    let hour = Calendar.current.component(.hour, from: date!)
-//    let minutes = Calendar.current.component(.minute, from: date!)
-//    return ScheduleTime(hour, minutes)
-//}

@@ -18,6 +18,10 @@ class Passenger: Codable {
     var hasCheckedBaggage: Bool = false
     var hasPriority: Bool = false
     
+    var shortInfo: String {
+        return "\(gender) \(firstName!) \(lastName!)"
+    }
+    
     init() {
         id = generateId()
     }

@@ -11,6 +11,7 @@ import UIKit
 class BaseViewController: UIViewController {
     
     var activityIndicator: UIActivityIndicatorView?
+    var backgroundView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +19,14 @@ class BaseViewController: UIViewController {
     }
     
     func showLoading() {
-        if activityIndicator == nil {
+        if activityIndicator == nil || backgroundView == nil {
             createLoadingView()
         }
         if (!view.subviews.contains(activityIndicator!)) {
             view.addSubview(activityIndicator!)
+        }
+        if (!view.subviews.contains(backgroundView!)) {
+            view.addSubview(backgroundView!)
         }
         activityIndicator?.startAnimating()
         print("Show loading")
@@ -32,14 +36,23 @@ class BaseViewController: UIViewController {
         if activityIndicator != nil && view.subviews.contains(activityIndicator!) {
             activityIndicator?.stopAnimating()
             activityIndicator?.removeFromSuperview()
-            print("Hide loading")
         }
+        if backgroundView != nil && view.subviews.contains(backgroundView!) {
+            backgroundView?.removeFromSuperview()
+        }
+        print("Hide loading")
     }
 
     func createLoadingView() {
+        let width = Double(view.frame.size.width)
+        let height = Double(view.frame.size.height)
+            
+        backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        backgroundView!.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        
         let size = 50.0
-        let x = (Double(view.frame.size.width) - size) / 2.0
-        let y = (Double(view.frame.size.height) - size) / 2.0
+        let x = (width - size) / 2.0
+        let y = (height - size) / 2.0
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: x, y: y, width: size, height: size))
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.style = UIActivityIndicatorView.Style.gray
