@@ -3,36 +3,28 @@
         "id": "AG01",
         "model": "Airbus A320neo",
         "imageUrl": "a320neo.png",
-        "seats": {
-            "rows": 30,
-            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
-        }
+        "rows": 30,
+        "seatsInRow": ["A", "B", "C", "D", "E", "F"]
     },
     {
         "id": "AG02",
         "model": "Airbus A320neo",
         "imageUrl": "a320neo.png",
-        "seats": {
-            "rows": 30,
-            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
-        }
+        "rows": 30,
+        "seatsInRow": ["A", "B", "C", "D", "E", "F"]
     },
     {
         "id": "AG03",
         "model": "Airbus A320neo",
         "imageUrl": "a320neo.png",
-        "seats": {
-            "rows": 30,
-            "seatsInRow": ["A", "B", "C", "D", "E", "F"]
-        }
+        "rows": 30,
+        "seatsInRow": ["A", "B", "C", "D", "E", "F"]
     },
     {
         "id": "AG04",
         "model": "Embraer E195",
         "imageUrl": "e195.png",
-        "seats": {
-            "rows": 32,
-            "seatsInRow": ["A", "B", "C", "D"]
-        }
+        "rows": 32,
+        "seatsInRow": ["A", "B", "C", "D"]
     }
 ]
