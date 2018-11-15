@@ -19,6 +19,11 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
     var delegate: TripUpdateDelegate?
     var plane: Plane?
     
+    var passenger: Passenger?
+    private var seatRow: String?
+    private var seatInRow: String?
+    private var seatSelectedDelegate: PassengerSeatDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoading()
@@ -35,7 +40,9 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
         })
     }
     
-    func onSelectPassengerSeat(passenger: Passenger) {
+    func onSelectPassengerSeat(passenger: Passenger, delegate: PassengerSeatDelegate) {
+        self.passenger = passenger
+        self.seatSelectedDelegate = delegate
         if plane != nil {
             showSeatPicker(rows: (plane?.rowList)!, seatsInRow: (plane?.seatsInRow)!)
         }
@@ -45,6 +52,22 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
         seatPickerBackground.isHidden = false
         seatPickerView.isHidden = false
         seatPickerToolbar.isHidden = false
+        seatPickerView.reloadAllComponents()
+    }
+    
+    func onSeatSelected(_ seat: String) {
+        if passenger != nil {
+        }
+    }
+    
+    func closeSeatPicker() {
+        seatPickerBackground.isHidden = true
+        seatPickerView.isHidden = true
+        seatPickerToolbar.isHidden = true
+        
+        seatRow = nil
+        seatInRow = nil
+        passenger = nil
     }
     
     @IBAction func onCheckInTapped(_ sender: UIButton) {
@@ -56,12 +79,15 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
     }
     
     @IBAction func onSeatPickerCancelTapped(_ sender: UIBarButtonItem) {
-        seatPickerBackground.isHidden = true
-        seatPickerView.isHidden = true
-        seatPickerToolbar.isHidden = true
+        closeSeatPicker()
     }
     
     @IBAction func onSeatPickerDoneTapped(_ sender: UIBarButtonItem) {
+        if seatSelectedDelegate != nil && seatRow != nil && seatInRow != nil {
+            seatSelectedDelegate?.onSeatSelected("\(seatRow!)\(seatInRow!)")
+        }
+        closeSeatPicker()
+        seatSelectedDelegate = nil
     }
 }
 
@@ -101,15 +127,14 @@ extension CheckInViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
-            print(plane?.rowList[row] as Any)
-            //seatRow = plane?.rowList[row]
+            seatRow = plane?.rowList[row]
         } else {
-            print(plane?.seatsInRow[row] as Any)
-            //seatInRow = plane?.seats?.seatsInRow![row]
+            seatInRow = plane?.seatsInRow[row]
         }
     }
 }
 
 protocol PassengerSeatDelegate {
-    func onSelectPassengerSeat(passenger: Passenger)
+    func onSelectPassengerSeat(passenger: Passenger, delegate: PassengerSeatDelegate)
+    func onSeatSelected(_ seat: String)
 }

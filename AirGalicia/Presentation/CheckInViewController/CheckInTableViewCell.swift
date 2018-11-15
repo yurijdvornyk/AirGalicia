@@ -8,18 +8,15 @@
 
 import UIKit
 
-class CheckInTableViewCell: UITableViewCell {
-    
+class CheckInTableViewCell: UITableViewCell, PassengerSeatDelegate {
 
     @IBOutlet private weak var passengerLabel: UILabel!
-    
     @IBOutlet private weak var selectSeatButton: UIButton!
     
     private var trip: Trip?
     private var passenger: Passenger?
     private var plane: Plane?
-    private var seatRow: String?
-    private var seatInRow: String?
+    private var seat: String?
     private var delegate: PassengerSeatDelegate?
     
     func configureWith(trip: Trip, passenger: Passenger, delegate: PassengerSeatDelegate?) {
@@ -32,9 +29,20 @@ class CheckInTableViewCell: UITableViewCell {
 
     @IBAction func onSelectSeatTapped(_ sender: UIButton) {
         // https://stackoverflow.com/questions/44701199/multiple-columns-in-uipickerview
-        if delegate != nil && passenger != nil {
-            delegate?.onSelectPassengerSeat(passenger: passenger!)
+        if passenger != nil {
+            onSelectPassengerSeat(passenger: passenger!, delegate: self)
         }
+    }
+    
+    func onSelectPassengerSeat(passenger: Passenger,  delegate: PassengerSeatDelegate) {
+        if self.delegate != nil {
+            self.delegate?.onSelectPassengerSeat(passenger: passenger, delegate: self)
+        }
+    }
+    
+    func onSeatSelected(_ seat: String) {
+        self.seat = seat
+        selectSeatButton.setTitle(seat, for: .normal)
     }
 }
 
