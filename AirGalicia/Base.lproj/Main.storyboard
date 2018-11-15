@@ -684,47 +684,69 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6U-SH-bac">
-                                <rect key="frame" x="0.0" y="64" width="375" height="355"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="311"/>
                                 <color key="backgroundColor" red="0.67681234137055846" green="0.67681234137055846" blue="0.67681234137055846" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeM-TZ-Lfw">
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iz-EQ-EYG">
+                                <rect key="frame" x="0.0" y="375" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="T7Y-Tq-dzp">
+                                        <connections>
+                                            <action selector="onSeatPickerCancelTapped:" destination="BjJ-B4-wnt" id="0UT-lc-pOg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Done" id="Qkc-sb-KQQ">
+                                        <connections>
+                                            <action selector="onSeatPickerDoneTapped:" destination="BjJ-B4-wnt" id="H8E-m1-cBR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wA-rJ-7km">
                                 <rect key="frame" x="0.0" y="419" width="375" height="248"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="248" id="OlE-d0-IDo"/>
+                                    <constraint firstAttribute="height" constant="248" id="jjH-62-Hbj"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="dataSource" destination="BjJ-B4-wnt" id="Rdz-wJ-9Ri"/>
-                                    <outlet property="delegate" destination="BjJ-B4-wnt" id="2Dk-z0-P6Z"/>
+                                    <outlet property="dataSource" destination="BjJ-B4-wnt" id="QMf-sY-eKY"/>
+                                    <outlet property="delegate" destination="BjJ-B4-wnt" id="022-S1-wga"/>
                                 </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AeM-TZ-Lfw" firstAttribute="bottom" secondItem="ttq-Yo-Y2m" secondAttribute="bottom" id="8OB-O8-Lqw"/>
+                            <constraint firstItem="4iz-EQ-EYG" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="80w-zd-IeV"/>
                             <constraint firstItem="aBA-t6-CI3" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="8h7-3C-j1t"/>
                             <constraint firstItem="aBA-t6-CI3" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="9kd-pd-2qG"/>
+                            <constraint firstItem="0wA-rJ-7km" firstAttribute="bottom" secondItem="ttq-Yo-Y2m" secondAttribute="bottom" id="BpM-cU-6MY"/>
+                            <constraint firstItem="w6U-SH-bac" firstAttribute="top" secondItem="aBA-t6-CI3" secondAttribute="bottom" id="ENk-YI-FIY"/>
                             <constraint firstItem="7ts-LP-vIe" firstAttribute="top" secondItem="16E-vR-RA1" secondAttribute="bottom" id="GRR-pS-ZqG"/>
+                            <constraint firstItem="4iz-EQ-EYG" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="Q4F-wj-brf"/>
                             <constraint firstItem="w6U-SH-bac" firstAttribute="top" secondItem="aBA-t6-CI3" secondAttribute="bottom" id="R4v-Xr-saU"/>
+                            <constraint firstItem="w6U-SH-bac" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="VAz-78-gn4"/>
                             <constraint firstItem="16E-vR-RA1" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="VdE-Qo-eL8"/>
-                            <constraint firstItem="AeM-TZ-Lfw" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="WYS-Zz-iBC"/>
                             <constraint firstItem="16E-vR-RA1" firstAttribute="top" secondItem="aBA-t6-CI3" secondAttribute="bottom" id="ZoV-CJ-tvD"/>
                             <constraint firstItem="ttq-Yo-Y2m" firstAttribute="trailing" secondItem="7ts-LP-vIe" secondAttribute="trailing" id="ahg-75-J0L"/>
-                            <constraint firstItem="AeM-TZ-Lfw" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="cDi-l0-Kgd"/>
                             <constraint firstItem="7ts-LP-vIe" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="dAz-VT-U8Q"/>
                             <constraint firstItem="16E-vR-RA1" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="dZJ-cs-tjS"/>
                             <constraint firstItem="w6U-SH-bac" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="dxc-37-Tde"/>
+                            <constraint firstItem="4iz-EQ-EYG" firstAttribute="top" secondItem="w6U-SH-bac" secondAttribute="bottom" id="eok-Xb-Rhc"/>
                             <constraint firstItem="aBA-t6-CI3" firstAttribute="top" secondItem="ttq-Yo-Y2m" secondAttribute="top" id="g0l-Tm-ahQ"/>
                             <constraint firstItem="w6U-SH-bac" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="hQr-Tq-G8s"/>
-                            <constraint firstItem="AeM-TZ-Lfw" firstAttribute="top" secondItem="w6U-SH-bac" secondAttribute="bottom" id="kmy-1w-OkQ"/>
+                            <constraint firstItem="0wA-rJ-7km" firstAttribute="trailing" secondItem="ttq-Yo-Y2m" secondAttribute="trailing" id="p4S-cx-bRe"/>
+                            <constraint firstItem="0wA-rJ-7km" firstAttribute="top" secondItem="4iz-EQ-EYG" secondAttribute="bottom" id="qKq-WM-LQc"/>
+                            <constraint firstItem="0wA-rJ-7km" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="qhC-u0-LWz"/>
                             <constraint firstItem="7ts-LP-vIe" firstAttribute="bottom" secondItem="ttq-Yo-Y2m" secondAttribute="bottom" id="szl-Sm-dDK"/>
+                            <constraint firstItem="w6U-SH-bac" firstAttribute="leading" secondItem="ttq-Yo-Y2m" secondAttribute="leading" id="z6d-ML-gaB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ttq-Yo-Y2m"/>
                     </view>
                     <connections>
                         <outlet property="checkInTableView" destination="16E-vR-RA1" id="MrB-N1-9Jl"/>
                         <outlet property="seatPickerBackground" destination="w6U-SH-bac" id="B4P-T1-dN6"/>
-                        <outlet property="seatPickerView" destination="AeM-TZ-Lfw" id="SNe-73-5tG"/>
+                        <outlet property="seatPickerToolbar" destination="4iz-EQ-EYG" id="9p4-td-Sxv"/>
+                        <outlet property="seatPickerView" destination="0wA-rJ-7km" id="Czs-4m-Nna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vd-ei-lzv" userLabel="First Responder" sceneMemberID="firstResponder"/>

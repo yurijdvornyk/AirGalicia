@@ -13,6 +13,7 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
     @IBOutlet private weak var checkInTableView: UITableView!
     @IBOutlet private weak var seatPickerBackground: UIView!
     @IBOutlet private weak var seatPickerView: UIPickerView!
+    @IBOutlet private weak var seatPickerToolbar: UIToolbar!
     
     var trip: Trip?
     var delegate: TripUpdateDelegate?
@@ -43,6 +44,7 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
     func showSeatPicker(rows: [String], seatsInRow: [String]) {
         seatPickerBackground.isHidden = false
         seatPickerView.isHidden = false
+        seatPickerToolbar.isHidden = false
     }
     
     @IBAction func onCheckInTapped(_ sender: UIButton) {
@@ -50,6 +52,16 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         delegate!.onBookingUpdated(booking: trip)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onSeatPickerCancelTapped(_ sender: UIBarButtonItem) {
+        seatPickerBackground.isHidden = true
+        seatPickerView.isHidden = true
+        seatPickerToolbar.isHidden = true
+    }
+    
+    @IBAction func onSeatPickerDoneTapped(_ sender: UIBarButtonItem) {
     }
 }
 
