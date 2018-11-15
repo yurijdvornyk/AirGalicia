@@ -173,7 +173,7 @@ class DataManager {
     }
     
     func loadPlaneInfo(planeId: String,  success: @escaping (Plane?) -> Void, error: (Error) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: baseDataUrl + "planes.json")!) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL(string: baseDataUrl + "fleet.json")!) { (data, response, error) in
             do {
                 let planes = try JSONDecoder()
                     .decode([Plane].self, from: data!)

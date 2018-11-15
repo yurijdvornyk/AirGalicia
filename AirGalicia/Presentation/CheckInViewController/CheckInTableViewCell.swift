@@ -22,11 +22,12 @@ class CheckInTableViewCell: UITableViewCell {
     private var seatInRow: String?
     private var delegate: PassengerSeatDelegate?
     
-    func configureWith(trip: Trip, passenger: Passenger) {
+    func configureWith(trip: Trip, passenger: Passenger, delegate: PassengerSeatDelegate?) {
         self.trip = trip
         self.passenger = passenger
         passengerLabel.text = passenger.shortInfo
         selectSeatButton.isEnabled = passenger.hasPriority
+        self.delegate = delegate
     }
 
     @IBAction func onSelectSeatTapped(_ sender: UIButton) {

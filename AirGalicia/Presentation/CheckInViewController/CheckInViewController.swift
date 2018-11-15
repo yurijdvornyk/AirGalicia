@@ -22,6 +22,7 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
         super.viewDidLoad()
         showLoading()
         DataManager.shared.loadPlaneInfo(planeId: (trip?.flight.plane)!, success: { (plane: Plane?) in
+            self.plane = plane
             DispatchQueue.main.async() {
                 self.hideLoading()
             }
@@ -59,7 +60,7 @@ extension CheckInViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CheckInTableViewCell
-        cell.configureWith(trip: trip!, passenger: (trip?.passengers[indexPath.row])!)
+        cell.configureWith(trip: trip!, passenger: (trip?.passengers[indexPath.row])!, delegate: self)
         return cell
     }
 }
