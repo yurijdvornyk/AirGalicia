@@ -10,21 +10,30 @@ import UIKit
 
 class BoardingPass: Codable {
     let id: String
-    var passenger: Passenger?
+    let boardingPassId: String
+    var fullName: String?
+    var passport: String?
+    var flightDateTime: String?
     var seat: String?
+    var origin: String?
+    var destination: String?
+    var qrCodeBase64Image: String?
     
     init() {
         id = generateId()
+        boardingPassId = generateBoardingPassId()
     }
     
-    private enum CodingKeys: String, CodingKey {
-        case id, passenger, seat
+    func buildQrCodeContent() -> String {
+        return "TestValue" // TODO: Replace with real code
     }
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
-        passenger = try container.decode(Passenger.self, forKey: .passenger)
-        seat = try container.decode(String.self, forKey: .seat)
+    func makeHtmlString() -> String {
+        var result = "<html><header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header>"
+        result += "<body><div align=\"center\">"
+        result += "<img src=\"data:image/png;base64,\(qrCodeBase64Image!)\" width=\"80%\"/></div>"
+        result += "<p>\(fullName!)<p>Passport: \(passport!)<p>\(flightDateTime!)<p>Seat: <b>\(seat!)</b>"
+        result += "</body></html>"
+        return result
     }
 }

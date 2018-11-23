@@ -16,7 +16,7 @@ class CheckInTableViewCell: UITableViewCell, PassengerSeatDelegate {
     private var trip: Trip?
     private var passenger: Passenger?
     private var plane: Plane?
-    private var seat: String?
+    var seat: String?
     private var delegate: PassengerSeatDelegate?
     
     func configureWith(trip: Trip, passenger: Passenger, delegate: PassengerSeatDelegate?) {

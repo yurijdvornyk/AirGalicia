@@ -17,7 +17,7 @@ class TripsViewController: BaseViewController, TripUpdateDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoading()
-        DataManager.shared.loadTrips(success: {
+        DataManager.instance.loadTrips(success: {
             trips in
             self.trips = trips
             self.tripsTableView.reloadData()

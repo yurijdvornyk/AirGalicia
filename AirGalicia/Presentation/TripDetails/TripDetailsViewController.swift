@@ -8,7 +8,7 @@
 
 import WebKit
 
-class TripDetailsViewController: BaseViewController, TripUpdateDelegate {
+class TripDetailsViewController: BaseViewController, TripUpdateDelegate, BoardingPassGenerationDelegate {
     
     @IBOutlet private weak var webView: WKWebView!
     @IBOutlet private weak var outTripButton: UIButton!
@@ -84,11 +84,15 @@ class TripDetailsViewController: BaseViewController, TripUpdateDelegate {
         }
     }
     
+    func onBoardingPassesGenerated(_ boardingPasses: [BoardingPass]) {
+        present(Navigator.instance.boardingPass(boardingPasses: boardingPasses), animated: true)
+    }
+    
     @IBAction func onOutTripButtonTapped(_ sender: UIButton) {
-        present(Navigator.instance.checkIn(trip: trip!, delegate: self as TripUpdateDelegate), animated: true, completion: nil)
+        present(Navigator.instance.checkIn(trip: trip!, isOutTrip: true, tripDelegate: self as TripUpdateDelegate, boardingPassGenerationDelegate: self as BoardingPassGenerationDelegate), animated: true, completion: nil)
     }
     
     @IBAction func onReturnButtonTapped(_ sender: UIButton) {
-        present(Navigator.instance.checkIn(trip: trip!, delegate: self as TripUpdateDelegate), animated: true, completion: nil)
+        present(Navigator.instance.checkIn(trip: trip!, isOutTrip: false, tripDelegate: self as TripUpdateDelegate, boardingPassGenerationDelegate: self as BoardingPassGenerationDelegate), animated: true, completion: nil)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class DataManager {
     
-    static let shared = DataManager()
+    static let instance = DataManager()
     
     let baseDataUrl = "https://raw.githubusercontent.com/yurijdvornyk/AirGalicia/master/External/MockApi/"
     let userDefaults: UserDefaults
@@ -190,5 +190,27 @@ class DataManager {
                 // TODO: Handle error
             }
             }.resume()
+    }
+    
+    func generateQrCode(boardingPass: BoardingPass,  success: @escaping (String?) -> Void, error: (Error) -> Void) {
+        // http://goqr.me/api/
+        // https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
+        let url = URL(string: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=\(boardingPass.buildQrCodeContent())")
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!) // TODO: Add catch block
+            DispatchQueue.main.async {
+                success(data?.base64EncodedString())
+            }
+        }
+    }
+    
+    func addOrUpdateTrip(_ trip: Trip) {
+        for i in 0...trips.count - 1 {
+            if trips[i].id == trip.id {
+                trips[i] = trip
+                return
+            }
+        }
+        trips.append(trip)
     }
 }

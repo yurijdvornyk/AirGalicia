@@ -22,15 +22,21 @@ class Navigator {
         return tripDetailsViewController
     }
     
-    func checkIn(trip: Trip, delegate: TripUpdateDelegate) -> CheckInViewController {
+    func checkIn(trip: Trip, isOutTrip: Bool, tripDelegate: TripUpdateDelegate, boardingPassGenerationDelegate: BoardingPassGenerationDelegate) -> CheckInViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "CheckIn") as! CheckInViewController
-        viewController.delegate = delegate
+        viewController.tripDelegate = tripDelegate
+        viewController.boardingPassGenerationDelegate = boardingPassGenerationDelegate
         viewController.trip = trip
+        viewController.isOutTrip = isOutTrip
+        
         return viewController
     }
     
-    func boardingPassViewController() {
-        
+    func boardingPass(boardingPasses: [BoardingPass]) -> BoardingPassesViewController {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "BoardingPassesViewController") as! BoardingPassesViewController
+        viewController.boardingPasses = boardingPasses
+        return viewController
     }
 }

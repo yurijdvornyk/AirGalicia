@@ -34,8 +34,8 @@ class FlightDateViewController: BaseViewController {
         if origin != nil && destination != nil {
             spinner.isHidden = false
             spinner.startAnimating()
-            DataManager.shared.loadFlight(from: origin!, to: destination!, success: { (outSchedule: Schedule?) in
-                DataManager.shared.loadFlight(from: self.destination!, to: self.origin!, success: { (backSchedule: Schedule?) in
+            DataManager.instance.loadFlight(from: origin!, to: destination!, success: { (outSchedule: Schedule?) in
+                DataManager.instance.loadFlight(from: self.destination!, to: self.origin!, success: { (backSchedule: Schedule?) in
                     DispatchQueue.main.async() {
                         self.onLoadFlight(outSchedule: outSchedule, backSchedule: backSchedule)
                         self.spinner.stopAnimating()

@@ -29,7 +29,7 @@ class PayViewController: BaseViewController {
     
     @IBAction func onPayTapped(_ sender: UIButton) {
         showLoading()
-        DataManager.shared.addTrip(trip: booking!, success: {
+        DataManager.instance.addTrip(trip: booking!, success: {
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
                 self.dismiss(animated: true, completion: nil)

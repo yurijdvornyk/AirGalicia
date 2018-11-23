@@ -30,7 +30,7 @@ class AirportsViewController: BaseViewController {
         //spinner.startAnimating()
         showLoading()
         if originAirport != nil {
-            DataManager.shared.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
+            DataManager.instance.findDestinations(origin: originAirport, success: { (airports: [Airport]) in
                 self.allAirports = airports
                 self.foundAirports = airports
                 DispatchQueue.main.async() {
@@ -44,7 +44,7 @@ class AirportsViewController: BaseViewController {
                 // TODO: Handle error
             })
         } else {
-            DataManager.shared.loadAirports(success: { (airports: [Airport]) in
+            DataManager.instance.loadAirports(success: { (airports: [Airport]) in
                 self.allAirports = airports
                 self.foundAirports = airports
                 DispatchQueue.main.async() {

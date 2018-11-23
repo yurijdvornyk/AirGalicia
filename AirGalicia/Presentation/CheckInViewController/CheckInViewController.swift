@@ -9,25 +9,27 @@
 import UIKit
 
 class CheckInViewController: BaseViewController, PassengerSeatDelegate {
-
+    
     @IBOutlet private weak var checkInTableView: UITableView!
     @IBOutlet private weak var seatPickerBackground: UIView!
     @IBOutlet private weak var seatPickerView: UIPickerView!
     @IBOutlet private weak var seatPickerToolbar: UIToolbar!
     
     var trip: Trip?
-    var delegate: TripUpdateDelegate?
+    var isOutTrip: Bool?
+    var tripDelegate: TripUpdateDelegate?
     var plane: Plane?
     
     var passenger: Passenger?
     private var seatRow: String?
     private var seatInRow: String?
-    private var seatSelectedDelegate: PassengerSeatDelegate?
+    var seatSelectedDelegate: PassengerSeatDelegate?
+    var boardingPassGenerationDelegate: BoardingPassGenerationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoading()
-        DataManager.shared.loadPlaneInfo(planeId: (trip?.flight.plane)!, success: { (plane: Plane?) in
+        DataManager.instance.loadPlaneInfo(planeId: (trip?.flight.plane)!, success: { (plane: Plane?) in
             self.plane = plane
             DispatchQueue.main.async() {
                 self.hideLoading()
@@ -53,11 +55,14 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
         seatPickerView.isHidden = false
         seatPickerToolbar.isHidden = false
         seatPickerView.reloadAllComponents()
+        if seatPickerView.numberOfRows(inComponent: 0) > 0 && seatPickerView.numberOfRows(inComponent: 1) > 0 {
+            seatPickerView.selectRow(0, inComponent: 0, animated: true)
+            seatPickerView.selectRow(0, inComponent: 1, animated: true)
+        }
     }
     
     func onSeatSelected(_ seat: String) {
-        if passenger != nil {
-        }
+        // ???
     }
     
     func closeSeatPicker() {
@@ -70,24 +75,84 @@ class CheckInViewController: BaseViewController, PassengerSeatDelegate {
         passenger = nil
     }
     
+    func generateRandomSeat() -> String {
+        if let rows = plane?.rows, let seats = plane?.seatsInRow {
+            let row = Int.random(in: 1...rows)
+            let seat = Int.random(in: 0...seats.count - 1)
+            return "\(row)\(seats[seat])"
+        }
+        return ""
+    }
+    
+    fileprivate func proceedOrFinishGeneratingBoardingPasses(boardingPass: BoardingPass, boardingPasses: [BoardingPass], passengerPosition: Int, completed: @escaping () -> Void) {
+        var updatedBoardingPasses = boardingPasses
+        updatedBoardingPasses.append(boardingPass)
+        if passengerPosition < (self.trip?.passengers.count)! - 1 {
+            self.createBoardingPasses(completed: completed, forPassanger: passengerPosition + 1, withBoardingPasses: updatedBoardingPasses)
+        } else {
+            if self.isOutTrip! {
+                self.trip?.outBoardingPasses = updatedBoardingPasses
+            } else {
+                self.trip?.returnBoardingPasses = updatedBoardingPasses
+            }
+            DataManager.instance.addOrUpdateTrip(self.trip!)
+            completed()
+        }
+    }
+    
+    func createBoardingPasses(completed: @escaping () -> Void, forPassanger passengerPosition: Int = 0, withBoardingPasses boardingPasses: [BoardingPass] = []) {
+        // https://stackoverflow.com/questions/2329364/how-to-embed-images-in-a-single-html-php-file
+        if passengerPosition < (trip?.passengers.count)! {
+            let boardingPass = BoardingPass()
+            
+            boardingPass.fullName = trip!.passengers[passengerPosition].shortInfo
+            boardingPass.passport = trip!.passengers[passengerPosition].passport
+            boardingPass.flightDateTime = isOutTrip! ? formatFlightDate(date: trip?.outDate, time: (trip?.outTime)!) : formatFlightDate(date: trip?.returnDate, time: (trip?.returnTime)!)
+            boardingPass.seat = (checkInTableView.cellForRow(at: IndexPath(row: passengerPosition, section: 0)) as! CheckInTableViewCell).seat
+            if boardingPass.seat == nil {
+                boardingPass.seat = generateRandomSeat()
+            }
+            boardingPass.origin = trip?.origin.code
+            boardingPass.destination = trip?.destination.code
+            DataManager.instance.generateQrCode(boardingPass: boardingPass, success: { (image: String?) in
+                boardingPass.qrCodeBase64Image = image
+                self.proceedOrFinishGeneratingBoardingPasses(boardingPass: boardingPass, boardingPasses: boardingPasses, passengerPosition: passengerPosition, completed: completed)
+            }) { (error: Error) in
+                boardingPass.qrCodeBase64Image = ":"
+                self.proceedOrFinishGeneratingBoardingPasses(boardingPass: boardingPass, boardingPasses: boardingPasses, passengerPosition: passengerPosition, completed: completed)
+            }
+        }
+    }
+    
     @IBAction func onCheckInTapped(_ sender: UIButton) {
+        showLoading()
+        createBoardingPasses(completed: {
+            self.hideLoading()
+            self.dismiss(animated: true, completion: {
+                self.boardingPassGenerationDelegate?.onBoardingPassesGenerated((self.isOutTrip! ? self.trip?.outBoardingPasses : self.trip?.returnBoardingPasses)!)
+            })
+        })
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
-        delegate!.onBookingUpdated(booking: trip)
+        tripDelegate!.onBookingUpdated(booking: trip)
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onSeatPickerCancelTapped(_ sender: UIBarButtonItem) {
-        closeSeatPicker()
+        DispatchQueue.main.async() {
+            self.closeSeatPicker()
+        }
     }
     
     @IBAction func onSeatPickerDoneTapped(_ sender: UIBarButtonItem) {
-        if seatSelectedDelegate != nil && seatRow != nil && seatInRow != nil {
-            seatSelectedDelegate?.onSeatSelected("\(seatRow!)\(seatInRow!)")
+        DispatchQueue.main.async() {
+            if self.seatSelectedDelegate != nil && self.seatRow != nil && self.seatInRow != nil {
+                self.seatSelectedDelegate?.onSeatSelected("\(self.seatRow!)\(self.seatInRow!)")
+            }
+            self.closeSeatPicker()
+            self.seatSelectedDelegate = nil
         }
-        closeSeatPicker()
-        seatSelectedDelegate = nil
     }
 }
 

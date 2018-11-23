@@ -418,18 +418,42 @@
         <!--Boarding Passes-->
         <scene sceneID="0Rk-Ze-myM">
             <objects>
-                <viewController id="egp-JS-U0m" customClass="BoardingPassesViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BoardingPassesViewController" id="egp-JS-U0m" customClass="BoardingPassesViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kkg-7F-sba">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huj-Gw-ggi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GKd-7H-OYE">
+                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="1lU-yf-CNW"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="huj-Gw-ggi" firstAttribute="trailing" secondItem="TTk-lP-2IG" secondAttribute="trailing" id="81W-4X-vE9"/>
+                            <constraint firstItem="GKd-7H-OYE" firstAttribute="bottom" secondItem="TTk-lP-2IG" secondAttribute="bottom" id="Hsu-lt-CNr"/>
+                            <constraint firstItem="GKd-7H-OYE" firstAttribute="leading" secondItem="TTk-lP-2IG" secondAttribute="leading" id="KSw-l4-sn7"/>
+                            <constraint firstItem="GKd-7H-OYE" firstAttribute="top" secondItem="huj-Gw-ggi" secondAttribute="bottom" id="Mar-Fa-oLD"/>
+                            <constraint firstItem="huj-Gw-ggi" firstAttribute="top" secondItem="kkg-7F-sba" secondAttribute="top" id="Tmr-yr-BMt"/>
+                            <constraint firstItem="GKd-7H-OYE" firstAttribute="trailing" secondItem="TTk-lP-2IG" secondAttribute="trailing" id="dDy-Fs-RLv"/>
+                            <constraint firstItem="huj-Gw-ggi" firstAttribute="leading" secondItem="TTk-lP-2IG" secondAttribute="leading" id="jM8-cC-pLY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TTk-lP-2IG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Boarding Passes" image="boarding_passes" selectedImage="boarding_passes" id="bzh-qY-Wff"/>
+                    <connections>
+                        <outlet property="pageControl" destination="GKd-7H-OYE" id="leQ-fR-ytJ"/>
+                        <outlet property="scrollView" destination="huj-Gw-ggi" id="CD1-EY-ZPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIE-um-cUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="358"/>
+            <point key="canvasLocation" x="784.79999999999995" y="357.57121439280365"/>
         </scene>
         <!--Trips-->
         <scene sceneID="wg7-f3-ORb">
@@ -765,7 +789,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="egp-JS-U0m" kind="relationship" relationship="viewControllers" id="TqK-Sc-xvI"/>
                         <segue destination="OPa-95-BSM" kind="relationship" relationship="viewControllers" id="0DI-uI-fCB"/>
                     </connections>
                 </tabBarController>
