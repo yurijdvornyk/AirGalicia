@@ -31,6 +31,9 @@ class BoardingPassesViewController: BaseViewController {
         scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(boardingPasses!.count), height: scrollView.frame.size.height)
         scrollView.delegate = self
     }
+    @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension BoardingPassesViewController: UIScrollViewDelegate {

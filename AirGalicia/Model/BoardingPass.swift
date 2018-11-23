@@ -32,7 +32,7 @@ class BoardingPass: Codable {
         var result = "<html><header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header>"
         result += "<body><div align=\"center\">"
         result += "<img src=\"data:image/png;base64,\(qrCodeBase64Image!)\" width=\"80%\"/></div>"
-        result += "<p>\(fullName!)<p>Passport: \(passport!)<p>\(flightDateTime!)<p>Seat: <b>\(seat!)</b>"
+        result += "<p>\(origin!) - \(destination!)<p>\(fullName!)<p>Passport: \(passport!)<p>\(flightDateTime!)<p>Seat: <b>\(seat!)</b>"
         result += "</body></html>"
         return result
     }
