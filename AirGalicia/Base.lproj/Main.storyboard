@@ -266,8 +266,6 @@
                         <outlet property="swapDestinationsButton" destination="d1y-Re-edf" id="53x-4L-Fzc"/>
                         <outlet property="ticketsCountLabel" destination="PCp-LL-dkC" id="Rtu-zE-8Z0"/>
                         <outlet property="tripTypeSwitch" destination="9dx-mz-m0A" id="5O4-Fo-AWG"/>
-                        <segue destination="v3A-Oh-Tdc" kind="showDetail" identifier="airportSearchSegue" id="tYS-oG-YKf"/>
-                        <segue destination="YoP-ON-Lfi" kind="show" identifier="flightDateSearchSegue" id="GwW-Dc-aeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
