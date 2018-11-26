@@ -46,7 +46,7 @@
 		BCCB371721541BD000114C39 /* AirGaliciaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB371621541BD000114C39 /* AirGaliciaUITests.swift */; };
 		BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB372421541C9000114C39 /* BaseViewController.swift */; };
 		BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */; };
-		BCCB37292154201600114C39 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* AccountViewController.swift */; };
+		BCCB37292154201600114C39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* ProfileViewController.swift */; };
 		BCCB372B215425F600114C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB372A215425F600114C39 /* Assets.xcassets */; };
 		BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE38232217A32F700C37C21 /* PassengersViewController.swift */; };
 		BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4178E21545570001A71D2 /* AirportsViewController.swift */; };
@@ -121,7 +121,7 @@
 		BCCB371821541BD000114C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCCB372421541C9000114C39 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BCCB372621541F1C00114C39 /* BoardingPassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassesViewController.swift; sourceTree = "<group>"; };
-		BCCB37282154201600114C39 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BCCB37282154201600114C39 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCCB372A215425F600114C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE38232217A32F700C37C21 /* PassengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
 		BCE4178E21545570001A71D2 /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BC201238215D6AB200F98B7A /* Account */,
+				BC201238215D6AB200F98B7A /* Profile */,
 				BC201235215D6A4700F98B7A /* Airports */,
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
@@ -286,12 +286,12 @@
 			path = BoardingPasses;
 			sourceTree = "<group>";
 		};
-		BC201238215D6AB200F98B7A /* Account */ = {
+		BC201238215D6AB200F98B7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB37282154201600114C39 /* AccountViewController.swift */,
+				BCCB37282154201600114C39 /* ProfileViewController.swift */,
 			);
-			path = Account;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		BC414CD32161113000649D6F /* FlightDate */ = {
@@ -640,7 +640,7 @@
 				BC0410C0217BCADC00EE2C01 /* BookingSummaryViewController.swift in Sources */,
 				BCBEE5AA217CC90C00CABB5C /* PriceUtils.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
-				BCCB37292154201600114C39 /* AccountViewController.swift in Sources */,
+				BCCB37292154201600114C39 /* ProfileViewController.swift in Sources */,
 				BC414CCA2161003900649D6F /* Passenger.swift in Sources */,
 				BCA0B74C2197357A001B9BFC /* Navigator.swift in Sources */,
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
