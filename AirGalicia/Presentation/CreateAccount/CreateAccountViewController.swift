@@ -1,17 +1,18 @@
 //
-//  AccountViewController.swift
+//  CreateAccountViewController.swift
 //  AirGalicia
 //
-//  Created by Yurii Dvornyk on 9/20/18.
+//  Created by Yurii Dvornyk on 11/26/18.
 //  Copyright © 2018 Yurii Dvornyk. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
-    
+class CreateAccountViewController: BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     

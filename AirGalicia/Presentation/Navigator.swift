@@ -14,6 +14,28 @@ class Navigator {
     
     private init() {}
     
+    func BookingFlow() {
+        
+    }
+    
+    func bookingSummary(bookingDelegate: BookingDelegate) -> BookingSummaryViewController {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "BookingSummaryViewController") as! BookingSummaryViewController
+        return viewController
+    }
+    
+    func passengers(bookingDelegate: BookingDelegate) -> PassengersViewController {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "PassengersViewController") as! PassengersViewController
+        return viewController
+    }
+    
+    func payment(bookingDelegate: BookingDelegate) -> PayViewController {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "PayViewController") as! PayViewController
+        return viewController
+    }
+    
     func tripDetails(trip: Trip, delegate: TripUpdateDelegate) -> TripDetailsViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let tripDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "TripDetailsViewController") as! TripDetailsViewController

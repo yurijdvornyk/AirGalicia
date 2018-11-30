@@ -29,6 +29,14 @@
 		BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CCD2161028A00649D6F /* BoardingPass.swift */; };
 		BC414CD22161036100649D6F /* IdUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD12161036100649D6F /* IdUtils.swift */; };
 		BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC414CD421611AA000649D6F /* FlightDateViewController.swift */; };
+		BC5956A021AC2789004EBC30 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC59569F21AC2789004EBC30 /* ProfileDetailsViewController.swift */; };
+		BC5956A321AC2C08004EBC30 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5956A221AC2C08004EBC30 /* NewsViewController.swift */; };
+		BC5956A621AC2C38004EBC30 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5956A521AC2C38004EBC30 /* AboutViewController.swift */; };
+		BC5956A921AC34C5004EBC30 /* htmlstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = BC5956A821AC34C5004EBC30 /* htmlstyle.css */; };
+		BC5956AB21AC36F5004EBC30 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC5956AA21AC36F5004EBC30 /* Settings.bundle */; };
+		BC5956AE21AC3FF7004EBC30 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5956AD21AC3FF7004EBC30 /* CreateAccountViewController.swift */; };
+		BC93AFF221B01CA10078EC41 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93AFF121B01CA10078EC41 /* BookingViewController.swift */; };
+		BC93AFF421B032750078EC41 /* BookingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93AFF321B032750078EC41 /* BookingPageViewController.swift */; };
 		BCA0B74221970E0C001B9BFC /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74121970E0C001B9BFC /* CheckInTableViewCell.swift */; };
 		BCA0B74621971E36001B9BFC /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74521971E36001B9BFC /* CheckInViewController.swift */; };
 		BCA0B74821971F4C001B9BFC /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0B74721971F4C001B9BFC /* Plane.swift */; };
@@ -98,6 +106,14 @@
 		BC414CCD2161028A00649D6F /* BoardingPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPass.swift; sourceTree = "<group>"; };
 		BC414CD12161036100649D6F /* IdUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdUtils.swift; sourceTree = "<group>"; };
 		BC414CD421611AA000649D6F /* FlightDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewController.swift; sourceTree = "<group>"; };
+		BC59569F21AC2789004EBC30 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		BC5956A221AC2C08004EBC30 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		BC5956A521AC2C38004EBC30 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BC5956A821AC34C5004EBC30 /* htmlstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = htmlstyle.css; sourceTree = "<group>"; };
+		BC5956AA21AC36F5004EBC30 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BC5956AD21AC3FF7004EBC30 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		BC93AFF121B01CA10078EC41 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		BC93AFF321B032750078EC41 /* BookingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPageViewController.swift; sourceTree = "<group>"; };
 		BCA0B74121970E0C001B9BFC /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
 		BCA0B74521971E36001B9BFC /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		BCA0B74721971F4C001B9BFC /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
@@ -235,19 +251,24 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BC201238215D6AB200F98B7A /* Profile */,
+				BC93AFF021B01C310078EC41 /* BookingViewController */,
+				BC5956AC21AC3FE1004EBC30 /* CreateAccount */,
+				BC5956A421AC2C2A004EBC30 /* About */,
 				BC201235215D6A4700F98B7A /* Airports */,
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
 				BC0410BE217BCA9700EE2C01 /* BookingSummary */,
 				BCA0B74021970DC3001B9BFC /* CheckInViewController */,
 				BC414CD32161113000649D6F /* FlightDate */,
+				BCA0B74B2197357A001B9BFC /* Navigator.swift */,
+				BC5956A121AC2BF4004EBC30 /* News */,
 				BCE38231217A32D000C37C21 /* Passengers */,
 				BC014B8821811296005C1DFD /* Pay */,
+				BC201238215D6AB200F98B7A /* Profile */,
+				BC59569C21AC2740004EBC30 /* ProfileDetails */,
 				BC201234215D69F900F98B7A /* Search */,
 				BC06567B218663B0005A16A4 /* TripDetails */,
 				BC201236215D6A5F00F98B7A /* Trips */,
-				BCA0B74B2197357A001B9BFC /* Navigator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -302,6 +323,55 @@
 			path = FlightDate;
 			sourceTree = "<group>";
 		};
+		BC59569C21AC2740004EBC30 /* ProfileDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BC59569F21AC2789004EBC30 /* ProfileDetailsViewController.swift */,
+			);
+			path = ProfileDetails;
+			sourceTree = "<group>";
+		};
+		BC5956A121AC2BF4004EBC30 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BC5956A221AC2C08004EBC30 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		BC5956A421AC2C2A004EBC30 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BC5956A521AC2C38004EBC30 /* AboutViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		BC5956A721AC2D0B004EBC30 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BC5956A821AC34C5004EBC30 /* htmlstyle.css */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BC5956AC21AC3FE1004EBC30 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				BC5956AD21AC3FF7004EBC30 /* CreateAccountViewController.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		BC93AFF021B01C310078EC41 /* BookingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC93AFF121B01CA10078EC41 /* BookingViewController.swift */,
+				BC93AFF321B032750078EC41 /* BookingPageViewController.swift */,
+			);
+			path = BookingViewController;
+			sourceTree = "<group>";
+		};
 		BCA0B74021970DC3001B9BFC /* CheckInViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +402,7 @@
 				BC268BB8215F9A1800FE9FD4 /* Podfile */,
 				8F9F5DF392D2168B1EE61F8C /* Pods */,
 				BCCB36F221541BCF00114C39 /* Products */,
+				BC5956AA21AC36F5004EBC30 /* Settings.bundle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				BCCB36F421541BCF00114C39 /* AppDelegate.swift */,
+				BC5956A721AC2D0B004EBC30 /* Assets */,
 				BCCB372A215425F600114C39 /* Assets.xcassets */,
 				BCCB370221541BD000114C39 /* Info.plist */,
 				BCCB36FF21541BD000114C39 /* LaunchScreen.storyboard */,
@@ -495,9 +567,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5956A921AC34C5004EBC30 /* htmlstyle.css in Resources */,
 				BCCB370121541BD000114C39 /* LaunchScreen.storyboard in Resources */,
 				BCCB372B215425F600114C39 /* Assets.xcassets in Resources */,
 				BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */,
+				BC5956AB21AC36F5004EBC30 /* Settings.bundle in Resources */,
 				BCCB36FC21541BCF00114C39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC93AFF421B032750078EC41 /* BookingPageViewController.swift in Sources */,
 				BC014B8C21825D01005C1DFD /* User.swift in Sources */,
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
 				BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */,
@@ -627,10 +702,12 @@
 				BC414CD22161036100649D6F /* IdUtils.swift in Sources */,
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
 				BC06567D218663CF005A16A4 /* TripDetailsViewController.swift in Sources */,
+				BC5956A321AC2C08004EBC30 /* NewsViewController.swift in Sources */,
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
 				BCA0B74221970E0C001B9BFC /* CheckInTableViewCell.swift in Sources */,
 				BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */,
 				BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */,
+				BC5956AE21AC3FF7004EBC30 /* CreateAccountViewController.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
 				BC02876C218DC4A80082F5AB /* ScheduleTime.swift in Sources */,
 				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
@@ -641,6 +718,7 @@
 				BCBEE5AA217CC90C00CABB5C /* PriceUtils.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
 				BCCB37292154201600114C39 /* ProfileViewController.swift in Sources */,
+				BC5956A621AC2C38004EBC30 /* AboutViewController.swift in Sources */,
 				BC414CCA2161003900649D6F /* Passenger.swift in Sources */,
 				BCA0B74C2197357A001B9BFC /* Navigator.swift in Sources */,
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
@@ -649,6 +727,8 @@
 				BC414CCC2161025000649D6F /* Trip.swift in Sources */,
 				BCA0B74621971E36001B9BFC /* CheckInViewController.swift in Sources */,
 				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
+				BC93AFF221B01CA10078EC41 /* BookingViewController.swift in Sources */,
+				BC5956A021AC2789004EBC30 /* ProfileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

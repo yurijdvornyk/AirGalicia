@@ -9,10 +9,10 @@
 import UIKit
 import WebKit
 
-class BookingSummaryViewController: BaseViewController, TripUpdateDelegate {
+class BookingSummaryViewController: BookingPageViewController, TripUpdateDelegate {
     
     @IBOutlet private weak var webView: WKWebView!
-    var booking: Trip?
+    //var booking: Trip?
     var delegate: TripUpdateDelegate?
     var content: [String]?
 

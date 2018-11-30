@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PayViewController: BaseViewController {
+class PayViewController: BookingPageViewController {
     
     @IBOutlet private weak var totalPriceLabel: UILabel!
     @IBOutlet private weak var cardToggle: UISegmentedControl!
@@ -16,7 +16,6 @@ class PayViewController: BaseViewController {
     @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var cvvTextField: UITextField!
     
-    var booking: Trip?
     var delegate: TripUpdateDelegate?
     var user: User?
     
