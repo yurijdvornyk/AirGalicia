@@ -57,11 +57,17 @@ class BaseViewController: UIViewController {
         activityIndicator?.hidesWhenStopped = true
     }
     
-    func showMessage(title: String?, message: String?, button buttonText: String?, action buttonAction: @escaping () -> Void) {
+    func showMessage(title: String?, message: String?, button buttonText: String?, action buttonAction: (() -> Void)?) {
         let alert = UIAlertController(title: title, message: message == nil ? "" : message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: buttonText == nil ? "OK" : buttonText, style: UIAlertAction.Style.default, handler: { action in
-                buttonAction()
+                if buttonAction != nil {
+                    buttonAction!()
+                }
             }))
             self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showNetworkError() {
+        showMessage(title: "Network error", message: "Sorry, looks like there is no Internet connection. Check again in a moment.", button: "OK", action: nil)
     }
 }

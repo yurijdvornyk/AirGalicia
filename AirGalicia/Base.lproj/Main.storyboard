@@ -894,7 +894,11 @@
                                                 <action selector="onBackTapped:" destination="dnb-jR-Jke" id="hJH-TF-dpw"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Zp5-5U-pyl"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Zp5-5U-pyl">
+                                            <connections>
+                                                <action selector="onShareTapped:" destination="dnb-jR-Jke" id="jyo-on-BdY"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

@@ -21,43 +21,15 @@ class TripDetailsViewController: BaseViewController, TripUpdateDelegate, Boardin
         super.viewDidLoad()
         defaultButtonHeight = Double(returnTripButton.frame.height)
         if trip != nil {
-            webView.loadHTMLString(createTripHtml(), baseURL: nil)
+            webView.loadHTMLString((trip?.summaryHtml)!, baseURL: nil)
         }
         configureBottomButtons()
     }
     
-    func createTripHtml() -> String {
-        let imageUrl = "https://raw.githubusercontent.com/yurijdvornyk/AirGalicia/master/External/Images/booking_title.png"
-        var content = "<html><header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'></header><body><div align=\"center\"><img src=\"\(imageUrl)\" width=\"80%\"/></div>"
-        content += "<p>From: <b>\(formatAirportFullString(airport: trip?.origin))</b>"
-        content += "<p>To: <b>\(formatAirportFullString(airport: trip?.destination))</b>"
-        content += "<p><b>\(trip?.returnDate != nil && trip?.returnTime != nil ? "Return trip" : "One-Way trip")</b>"
-        content += "<p>Date: \(formatFlightDate(date: trip?.outDate, time: (trip?.outTime)!))"
-        if trip?.returnDate != nil && trip?.returnTime != nil {
-            content += " - \(formatFlightDate(date: trip?.returnDate, time: (trip?.returnTime)!))"
-        }
-        content += "<p>Passengers:"
-        content += "<ul>"
-        for passenger in (trip?.passengers!)! {
-            content += "<li>\(passenger.firstName ?? "") \(passenger.lastName ?? "") [\(passenger.passport ?? "")]"
-            if passenger.hasPriority || passenger.hasCheckedBaggage {
-                content += " + "
-            }
-            if passenger.hasPriority {
-                content += "Priority boarding"
-            }
-            if passenger.hasPriority && passenger.hasCheckedBaggage {
-                content += ", "
-            }
-            if passenger.hasCheckedBaggage {
-                content += "Checked baggage"
-            }
-        }
-        content += "</ul><hr>"
-        content += "<p>You totally paid: \(trip?.totalPrice ?? 0) €"
-        content += "<hr>"
-        content += "</body></html>"
-        return content
+    @IBAction func onShareTapped(_ sender: UIBarButtonItem) {
+        let items = [trip?.summaryHtml]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
