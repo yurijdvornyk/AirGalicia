@@ -37,7 +37,9 @@ class PayViewController: BookingPageViewController {
         }, fail: {_ in
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
-                // TODO: Show error message
+                self.showMessage(title: "Error", message: "Unfortunately, something went wrong.\nTry submitting your booking again please.", button: "OK", action: {
+                    self.dismiss(animated: true, completion: nil)
+                })
             })
         })
     }
