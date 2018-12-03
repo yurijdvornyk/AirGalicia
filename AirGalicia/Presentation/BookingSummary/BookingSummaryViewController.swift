@@ -13,11 +13,11 @@ class BookingSummaryViewController: BookingPageViewController, TripUpdateDelegat
     
     @IBOutlet private weak var webView: WKWebView!
     //var booking: Trip?
-    var delegate: TripUpdateDelegate?
+    //var delegate: TripUpdateDelegate?
     var content: [String]?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         updateBookingView()
     }
     
@@ -68,14 +68,10 @@ class BookingSummaryViewController: BookingPageViewController, TripUpdateDelegat
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        bookingDelegate?.goBack()
     }
     
     @IBAction func onConfirmTapped(_ sender: UIBarItem) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "PayViewController") as! PayViewController
-        viewController.booking = booking
-        viewController.delegate = self
-        present(viewController, animated: true, completion: nil)
+        bookingDelegate?.goNext()
     }
 }

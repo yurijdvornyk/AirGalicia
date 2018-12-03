@@ -19,8 +19,8 @@ class PayViewController: BookingPageViewController {
     var delegate: TripUpdateDelegate?
     var user: User?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         totalPriceLabel.text = formatTotalPrice(booking?.totalPrice)
         cardToggle.selectedSegmentIndex = user != nil && user?.paymentInfo != nil ? 0 : 1
         cardToggle.setEnabled(user != nil && user?.paymentInfo != nil, forSegmentAt: 0)
@@ -31,12 +31,13 @@ class PayViewController: BookingPageViewController {
         DataManager.instance.addTrip(trip: booking!, success: {
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
-                self.dismiss(animated: true, completion: nil)
+                self.bookingDelegate?.goNext()
             })
         }, fail: {_ in
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
+                // TODO: Show error message
             })
         })
     }

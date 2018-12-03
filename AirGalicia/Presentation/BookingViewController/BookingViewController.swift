@@ -13,6 +13,7 @@ class BookingViewController: UIPageViewController, BookingDelegate {
     var pages: [BookingPageViewController] = []
     var currentPage: Int = 0
     var booking: Trip?
+    var tripUpdateDelegate: TripUpdateDelegate?
     
     override func viewDidLoad() {
         if booking == nil {
@@ -25,46 +26,34 @@ class BookingViewController: UIPageViewController, BookingDelegate {
                 Navigator.instance.payment(bookingDelegate: self)
             ]
         }
-        addUIButton()
-        addSecondUIButton()
+        dataSource = self
+        setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if tripUpdateDelegate != nil {
+            tripUpdateDelegate!.onBookingUpdated(booking: booking)
+        }
     }
     
     func goNext() {
+        if currentPage < pages.count - 1 {
+            currentPage += 1
+            setViewControllers([pages[currentPage]], direction: .forward, animated: true, completion: nil)
+        } else {
+            tripUpdateDelegate?.onBookingUpdated(booking: booking)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     func goBack() {
-    }
-    
-    func addNavigationBar() {
-//        let navigationBar = UINavigationBar()
-//        navigationBar.backItem = UINavigationItem(title: "Back")
-//        navigationBar.items = [
-//            UINavigationItem(title: "Back"),
-//            UINavigationItem(title: "Continue")
-//        ]
-//        navigationBar.title
-    }
-    
-    func addUIButton(){
-        //next button
-        let myButton = UIButton()
-        myButton.setTitle("Next", for: UIControl.State.normal)
-        myButton.setTitleColor(UIColor.red, for: .normal)
-        myButton.frame = CGRect(x: self.view.frame.size.width - 50, y: self.view.frame.size.height/2 - 50, width: 50, height: 50)
-        //myButton.addTarget(self, action: #selector(pagesViewController.pressed(sender:)), for: .touchUpInside)
-        self.view.addSubview(myButton)
-        self.view.bringSubviewToFront(myButton)
-    }
-    
-    func addSecondUIButton(){
-        //previous button
-        let myButton = UIButton()
-        myButton.setTitle("Previous", for: UIControl.State.normal)
-        myButton.setTitleColor(UIColor.red, for: .normal)
-        myButton.frame = CGRect(x: 20, y: self.view.frame.size.height/2 - 50, width: 100, height: 50)
-        //myButton.addTarget(self, action: #selector(pagesViewController.Secondpressed(sender:)), for: .touchUpInside)
-        self.view.addSubview(myButton)
-        self.view.bringSubviewToFront(myButton)
+        if currentPage > 0 {
+            currentPage -= 1
+            setViewControllers([pages[currentPage]], direction: .reverse, animated: true, completion: nil)
+        } else {
+            tripUpdateDelegate?.onBookingUpdated(booking: booking)
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 

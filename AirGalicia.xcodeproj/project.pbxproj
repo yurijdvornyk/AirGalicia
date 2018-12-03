@@ -251,14 +251,14 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BC93AFF021B01C310078EC41 /* BookingViewController */,
-				BC5956AC21AC3FE1004EBC30 /* CreateAccount */,
 				BC5956A421AC2C2A004EBC30 /* About */,
 				BC201235215D6A4700F98B7A /* Airports */,
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
 				BC201237215D6A7B00F98B7A /* BoardingPasses */,
 				BC0410BE217BCA9700EE2C01 /* BookingSummary */,
+				BC93AFF021B01C310078EC41 /* BookingViewController */,
 				BCA0B74021970DC3001B9BFC /* CheckInViewController */,
+				BC5956AC21AC3FE1004EBC30 /* CreateAccount */,
 				BC414CD32161113000649D6F /* FlightDate */,
 				BCA0B74B2197357A001B9BFC /* Navigator.swift */,
 				BC5956A121AC2BF4004EBC30 /* News */,

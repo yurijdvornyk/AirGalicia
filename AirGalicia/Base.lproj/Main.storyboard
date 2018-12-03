@@ -219,7 +219,6 @@
                                         <state key="normal" title="Buy"/>
                                         <connections>
                                             <action selector="onBuyTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Yk5-eb-c9D"/>
-                                            <segue destination="lFA-Xl-N0s" kind="show" id="kde-2n-bh5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -284,7 +283,7 @@
         <!--Booking View Controller-->
         <scene sceneID="IHQ-tY-I9r">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="lFA-Xl-N0s" customClass="BookingViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="BookingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="lFA-Xl-N0s" customClass="BookingViewController" customModule="AirGalicia" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv8-Rf-cFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1516" y="-1750"/>

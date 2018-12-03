@@ -198,11 +198,7 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
     }
     
     @IBAction func onBuyTapped(_ sender: UIButton) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let passengersViewController = storyBoard.instantiateViewController(withIdentifier: "PassengersViewController") as! PassengersViewController
-        passengersViewController.booking = booking
-        passengersViewController.delegate = self
-        present(passengersViewController, animated: true, completion: nil)
+        present(Navigator.instance.bookingFlow(tripUpdateDelegate: self, booking: booking), animated: true, completion: nil)
     }
     
     @IBAction func onResetTapped(_ sender: UIButton) {

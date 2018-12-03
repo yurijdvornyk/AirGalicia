@@ -11,22 +11,20 @@ import UIKit
 class PassengersViewController: BookingPageViewController, TripUpdateDelegate {
     
     @IBOutlet private weak var passengersTableView: UITableView!
-
-    var delegate: TripUpdateDelegate?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        passengersTableView.reloadData()
+    }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
         updatePassangers()
-        delegate?.onBookingUpdated(booking: booking)
-        dismiss(animated: true, completion: nil)
+        bookingDelegate?.goBack()
     }
     
     @IBAction func onProceedTapped(_ sender: UIBarButtonItem) {
         updatePassangers()
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "BookingSummaryViewController") as! BookingSummaryViewController
-        viewController.booking = booking
-        viewController.delegate = self
-        present(viewController, animated: true, completion: nil)
+        bookingDelegate?.goNext()
     }
     
     func onBookingUpdated(booking: Trip?) {

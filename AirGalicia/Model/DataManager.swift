@@ -160,16 +160,9 @@ class DataManager {
     func addTrip(trip: Trip, success: @escaping () -> Void, fail: (Error) -> Void) {
         // TODO: Use real data source
         trips.append(trip)
-//        if (userDefaults.array(forKey: "trips") == nil) {
-//            userDefaults.set([], forKey: "trips")
-//        }
-//        var trips = userDefaults.array(forKey: "trips") as! [Trip]?
-//        trips?.append(trip)
-//        updateTrips(value: trips!, success: {
-//            success()
-//        }, fail: { (Error) in
-//            // TODO: Handle
-//        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            success()
+        })
     }
     
     func loadPlaneInfo(planeId: String,  success: @escaping (Plane?) -> Void, error: (Error) -> Void) {
