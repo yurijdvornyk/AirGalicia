@@ -49,6 +49,6 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        present(Navigator.instance.tripDetails(trip: trips![indexPath.row], delegate: self), animated: true, completion: nil)
+        present(Navigator.instance.tripDetails(trip: trips![indexPath.row]), animated: true, completion: nil)
     }
 }

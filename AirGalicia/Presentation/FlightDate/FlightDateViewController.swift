@@ -81,7 +81,7 @@ extension FlightDateViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
         if dateType == .Back {
-            return booking!.outDate != nil ? booking!.outDate : Date()
+            return booking?.outDate == nil ? Date() : Calendar.current.date(byAdding: .day, value: 1, to: Date())!
         } else {
             return Date()
         }

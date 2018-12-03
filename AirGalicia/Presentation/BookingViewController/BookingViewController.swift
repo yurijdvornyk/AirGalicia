@@ -14,6 +14,7 @@ class BookingViewController: UIPageViewController, BookingDelegate {
     var currentPage: Int = 0
     var booking: Trip?
     var tripUpdateDelegate: TripUpdateDelegate?
+    var bookingCompleteDelegate: BookingCompleteDelegate?
     
     override func viewDidLoad() {
         if booking == nil {
@@ -42,7 +43,9 @@ class BookingViewController: UIPageViewController, BookingDelegate {
             setViewControllers([pages[currentPage]], direction: .forward, animated: true, completion: nil)
         } else {
             tripUpdateDelegate?.onBookingUpdated(booking: booking)
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: {
+                self.bookingCompleteDelegate?.onBookingCompleted(booking: self.booking!)
+            })
         }
     }
     

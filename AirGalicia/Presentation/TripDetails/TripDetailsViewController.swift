@@ -14,7 +14,6 @@ class TripDetailsViewController: BaseViewController, TripUpdateDelegate, Boardin
     @IBOutlet private weak var outTripButton: UIButton!
     @IBOutlet private weak var returnTripButton: UIButton!
     
-    var delegate: TripUpdateDelegate?
     var trip: Trip?
     var defaultButtonHeight = 48.0
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PassengersViewController: BookingPageViewController, TripUpdateDelegate {
+class PassengersViewController: BookingPageViewController {
     
     @IBOutlet private weak var passengersTableView: UITableView!
     
@@ -25,10 +25,6 @@ class PassengersViewController: BookingPageViewController, TripUpdateDelegate {
     @IBAction func onProceedTapped(_ sender: UIBarButtonItem) {
         updatePassangers()
         bookingDelegate?.goNext()
-    }
-    
-    func onBookingUpdated(booking: Trip?) {
-        self.booking = booking
     }
     
     func updatePassangers() {
@@ -48,7 +44,7 @@ extension PassengersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PassengerTableViewCell
         if indexPath.row < booking!.passengers.count {
-            cell.configureWith(passenger: booking!.passengers[indexPath.row], passengerPosition: indexPath.row + 1, baggagePrice: CHECKED_BAGGAGE_PRICE, priorityPrice: PRIORITY_BOARDING_PRICE, bookingUpdateDelegate: self)
+            cell.configureWith(passenger: booking!.passengers[indexPath.row], passengerPosition: indexPath.row + 1, baggagePrice: CHECKED_BAGGAGE_PRICE, priorityPrice: PRIORITY_BOARDING_PRICE)
         }
         return cell
     }

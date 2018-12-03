@@ -88,11 +88,11 @@ class Trip: Codable {
     }
     
     func isOutCheckInAvailable(_ date: Date) -> Bool {
-        return isCheckInAvailable(date: date, flightDate: outDate)
+        return outDate == nil ? false : isCheckInAvailable(date: date, flightDate: outDate)
     }
     
     func isReturnCheckInAvailable(_ date: Date) -> Bool {
-        return isCheckInAvailable(date: date, flightDate: returnDate)
+        return returnDate == nil ? false : isCheckInAvailable(date: date, flightDate: returnDate)
     }
     
     private func isCheckInAvailable(date: Date, flightDate: Date) -> Bool {

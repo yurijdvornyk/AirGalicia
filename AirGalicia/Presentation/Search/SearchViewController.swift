@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripUpdateDelegate {
+class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripUpdateDelegate, BookingCompleteDelegate {
     
     // TODO: Implementing search bar https://www.youtube.com/watch?v=bWQhhKwPMo4
     // https://www.youtube.com/watch?v=wVeX68Iu43E
@@ -198,7 +198,8 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
     }
     
     @IBAction func onBuyTapped(_ sender: UIButton) {
-        present(Navigator.instance.bookingFlow(tripUpdateDelegate: self, booking: booking), animated: true, completion: nil)
+        let bookingViewController = Navigator.instance.bookingFlow(tripUpdateDelegate: self, bookingCompleteDelegate: self, booking: booking)
+        present(bookingViewController, animated: true, completion: nil)
     }
     
     @IBAction func onResetTapped(_ sender: UIButton) {
@@ -210,8 +211,16 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
         updateTripDateFields()
         updateTotalPrice()
     }
+    
+    func onBookingCompleted(booking: Trip) {
+        Navigator.instance.navigate(trip: booking, root: tabBarController!)
+    }
 }
 
 protocol TripUpdateDelegate {
     func onBookingUpdated(booking: Trip?)
+}
+
+protocol BookingCompleteDelegate {
+    func onBookingCompleted(booking: Trip)
 }

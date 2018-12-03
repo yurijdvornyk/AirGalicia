@@ -16,7 +16,6 @@ class PayViewController: BookingPageViewController {
     @IBOutlet weak var expireDateTextField: UITextField!
     @IBOutlet weak var cvvTextField: UITextField!
     
-    var delegate: TripUpdateDelegate?
     var user: User?
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,9 +42,6 @@ class PayViewController: BookingPageViewController {
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {
-        if delegate != nil {
-            delegate?.onBookingUpdated(booking: booking)
-        }
         dismiss(animated: true, completion: nil)
     }
 }

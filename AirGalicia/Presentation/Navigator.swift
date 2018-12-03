@@ -14,10 +14,11 @@ class Navigator {
     
     private init() {}
     
-    func bookingFlow(tripUpdateDelegate: TripUpdateDelegate, booking: Trip?) -> BookingViewController {
+    func bookingFlow(tripUpdateDelegate: TripUpdateDelegate, bookingCompleteDelegate: BookingCompleteDelegate, booking: Trip?) -> BookingViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "BookingViewController") as! BookingViewController
         viewController.tripUpdateDelegate = tripUpdateDelegate
+        viewController.bookingCompleteDelegate = bookingCompleteDelegate
         viewController.booking = booking
         return viewController
     }
@@ -43,10 +44,9 @@ class Navigator {
         return viewController
     }
     
-    func tripDetails(trip: Trip, delegate: TripUpdateDelegate) -> TripDetailsViewController {
+    func tripDetails(trip: Trip) -> TripDetailsViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let tripDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "TripDetailsViewController") as! TripDetailsViewController
-        tripDetailsViewController.delegate = delegate
         tripDetailsViewController.trip = trip
         return tripDetailsViewController
     }
@@ -67,5 +67,10 @@ class Navigator {
         let viewController = storyBoard.instantiateViewController(withIdentifier: "BoardingPassesViewController") as! BoardingPassesViewController
         viewController.boardingPasses = boardingPasses
         return viewController
+    }
+    
+    func navigate(trip: Trip, root: UITabBarController) {
+        root.selectedIndex = 1
+        root.selectedViewController!.present(tripDetails(trip: trip), animated: true, completion: nil)
     }
 }

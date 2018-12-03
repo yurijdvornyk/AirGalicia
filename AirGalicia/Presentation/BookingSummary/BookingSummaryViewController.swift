@@ -9,19 +9,13 @@
 import UIKit
 import WebKit
 
-class BookingSummaryViewController: BookingPageViewController, TripUpdateDelegate {
+class BookingSummaryViewController: BookingPageViewController {
     
     @IBOutlet private weak var webView: WKWebView!
-    //var booking: Trip?
-    //var delegate: TripUpdateDelegate?
     var content: [String]?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateBookingView()
-    }
-    
-    func updateBookingView() {
         webView.loadHTMLString(createBookingSummaryHtml(), baseURL: nil)
     }
     
@@ -60,11 +54,6 @@ class BookingSummaryViewController: BookingPageViewController, TripUpdateDelegat
         content += "Total price: <h3>\(booking?.totalPrice ?? 0) €</h3>"
         content += "</body></html>"
         return content
-    }
-    
-    func onBookingUpdated(booking: Trip?) {
-        self.booking = booking
-        updateBookingView()
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {

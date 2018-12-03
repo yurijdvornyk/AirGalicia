@@ -22,14 +22,12 @@ class PassengerTableViewCell: UITableViewCell {
     @IBOutlet private weak var prioritySwitch: UISwitch!
     
     private var passenger: Passenger!
-    private var bookingUpdateDelegate: TripUpdateDelegate?
     
-    func configureWith(passenger: Passenger?, passengerPosition: Int, baggagePrice: Double, priorityPrice: Double, bookingUpdateDelegate: TripUpdateDelegate?) {
+    func configureWith(passenger: Passenger?, passengerPosition: Int, baggagePrice: Double, priorityPrice: Double) {
         self.passenger = passenger
         passengerLabel.text = "Passenger #\(passengerPosition)"
         baggageLabel.text = "Additional baggage (+\(Int(baggagePrice)) €)"
         priorityLabel.text = "Priority boarding (+\(Int(priorityPrice)) €)"
-        self.bookingUpdateDelegate = bookingUpdateDelegate
         showData()
     }
     
