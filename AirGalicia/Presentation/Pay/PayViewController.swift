@@ -30,12 +30,13 @@ class PayViewController: BookingPageViewController {
         DataManager.instance.addTrip(trip: booking!, success: {
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
-                self.bookingDelegate?.goNext()
+                self.showMessage(title: "Congratulations!", message: "You booked your Air Galicia trip!\nThank you for choosing us!", button: "Got it", action: {
+                    self.bookingDelegate?.goNext()
+                })
             })
         }, fail: {_ in
             DispatchQueue.main.async(execute: {
                 self.hideLoading()
-                //self.dismiss(animated: true, completion: nil)
                 // TODO: Show error message
             })
         })

@@ -29,7 +29,6 @@ class BaseViewController: UIViewController {
             view.addSubview(backgroundView!)
         }
         activityIndicator?.startAnimating()
-        print("Show loading")
     }
 
     func hideLoading() {
@@ -40,7 +39,6 @@ class BaseViewController: UIViewController {
         if backgroundView != nil && view.subviews.contains(backgroundView!) {
             backgroundView?.removeFromSuperview()
         }
-        print("Hide loading")
     }
 
     func createLoadingView() {
@@ -57,5 +55,13 @@ class BaseViewController: UIViewController {
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.style = UIActivityIndicatorView.Style.gray
         activityIndicator?.hidesWhenStopped = true
+    }
+    
+    func showMessage(title: String?, message: String?, button buttonText: String?, action buttonAction: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message == nil ? "" : message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: buttonText == nil ? "OK" : buttonText, style: UIAlertAction.Style.default, handler: { action in
+                buttonAction()
+            }))
+            self.present(alert, animated: true, completion: nil)
     }
 }
