@@ -206,4 +206,9 @@ class DataManager {
         }
         trips.append(trip)
     }
+    
+    func exportTrip(trip: Trip, printFormatter: UIPrintFormatter, success: @escaping (String) -> Void) {
+        let filename = exportToPDF(trip: trip, printFormatter: printFormatter)
+        success(filename)
+    }
 }

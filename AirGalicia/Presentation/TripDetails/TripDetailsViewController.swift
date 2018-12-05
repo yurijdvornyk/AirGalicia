@@ -27,9 +27,13 @@ class TripDetailsViewController: BaseViewController, TripUpdateDelegate, Boardin
     }
     
     @IBAction func onShareTapped(_ sender: UIBarButtonItem) {
-        let items = [trip?.summaryHtml]
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
+        // https://www.appcoda.com/pdf-generation-ios/
+        DataManager.instance.exportTrip(trip: trip!, printFormatter: webView.viewPrintFormatter(), success: {
+            filepath in
+            let data = URL(fileURLWithPath: filepath)
+            let shareController = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+            self.present(shareController, animated: true)
+        })
     }
     
     @IBAction func onBackTapped(_ sender: UIBarButtonItem) {

@@ -18,6 +18,8 @@
 		BC0410C0217BCADC00EE2C01 /* BookingSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0410BF217BCADC00EE2C01 /* BookingSummaryViewController.swift */; };
 		BC06567D218663CF005A16A4 /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06567C218663CF005A16A4 /* TripDetailsViewController.swift */; };
 		BC06567F218663F8005A16A4 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06567E218663F8005A16A4 /* TripTableViewCell.swift */; };
+		BC08C7F821B5889000AB91CC /* PdfPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08C7F721B5889000AB91CC /* PdfPageRenderer.swift */; };
+		BC08C7FA21B58B7500AB91CC /* DocumentUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */; };
 		BC20122F215AE21D00F98B7A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* DataManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
 		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
@@ -95,6 +97,8 @@
 		BC0410BF217BCADC00EE2C01 /* BookingSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSummaryViewController.swift; sourceTree = "<group>"; };
 		BC06567C218663CF005A16A4 /* TripDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
 		BC06567E218663F8005A16A4 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		BC08C7F721B5889000AB91CC /* PdfPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfPageRenderer.swift; sourceTree = "<group>"; };
+		BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUtils.swift; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				BC014B8B21825D01005C1DFD /* User.swift */,
 				BC014B8D21825D86005C1DFD /* PaymentInfo.swift */,
 				BCA0B74721971F4C001B9BFC /* Plane.swift */,
+				BC08C7F721B5889000AB91CC /* PdfPageRenderer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				BCBEE5A5217CA7B600CABB5C /* StringUtils.swift */,
 				BCBEE5A7217CA95800CABB5C /* DateUtils.swift */,
 				BCBEE5A9217CC90C00CABB5C /* PriceUtils.swift */,
+				BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -710,11 +716,13 @@
 				BC5956AE21AC3FF7004EBC30 /* CreateAccountViewController.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
 				BC02876C218DC4A80082F5AB /* ScheduleTime.swift in Sources */,
+				BC08C7F821B5889000AB91CC /* PdfPageRenderer.swift in Sources */,
 				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
 				BC06567F218663F8005A16A4 /* TripTableViewCell.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,
 				BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */,
 				BC0410C0217BCADC00EE2C01 /* BookingSummaryViewController.swift in Sources */,
+				BC08C7FA21B58B7500AB91CC /* DocumentUtils.swift in Sources */,
 				BCBEE5AA217CC90C00CABB5C /* PriceUtils.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
 				BCCB37292154201600114C39 /* ProfileViewController.swift in Sources */,
