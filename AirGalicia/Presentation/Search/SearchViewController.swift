@@ -156,12 +156,15 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
         updateAirportTextFields()
         booking.outDate = nil
         booking.returnDate = nil
+        booking.outPrice = nil
+        booking.returnPrice = nil
         onBookingUpdated(booking: booking)
     }
     
     @IBAction func onTripTypeSwitchValueChanged(_ sender: UISwitch) {
         if !sender.isOn {
             booking.returnDate = nil
+            booking.returnPrice = nil
             backPrice = nil
         }
         updateTripDateFields()
