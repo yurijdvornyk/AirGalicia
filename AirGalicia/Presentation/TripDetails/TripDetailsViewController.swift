@@ -64,18 +64,18 @@ class TripDetailsViewController: BaseViewController, TripUpdateDelegate, Boardin
     }
     
     @IBAction func onOutTripButtonTapped(_ sender: UIButton) {
-        if trip?.outBoardingPasses != nil {
+        if trip?.outBoardingPasses == nil {
             present(Navigator.instance.checkIn(trip: trip!, isOutTrip: true, tripDelegate: self as TripUpdateDelegate, boardingPassGenerationDelegate: self as BoardingPassGenerationDelegate), animated: true, completion: nil)
         } else {
-            present(Navigator.instance.boardingPass(boardingPasses: (trip?.outBoardingPasses)!), animated: true)
+            present(Navigator.instance.boardingPass(boardingPasses: trip?.outBoardingPasses), animated: true)
         }
     }
     
     @IBAction func onReturnButtonTapped(_ sender: UIButton) {
-        if trip?.returnBoardingPasses != nil {
+        if trip?.returnBoardingPasses == nil {
             present(Navigator.instance.checkIn(trip: trip!, isOutTrip: false, tripDelegate: self as TripUpdateDelegate, boardingPassGenerationDelegate: self as BoardingPassGenerationDelegate), animated: true, completion: nil)
         } else {
-            present(Navigator.instance.boardingPass(boardingPasses: (trip?.returnBoardingPasses)!), animated: true)
+            present(Navigator.instance.boardingPass(boardingPasses: trip?.returnBoardingPasses), animated: true)
         }
     }
 }

@@ -62,7 +62,7 @@ class Navigator {
         return viewController
     }
     
-    func boardingPass(boardingPasses: [BoardingPass]) -> BoardingPassesViewController {
+    func boardingPass(boardingPasses: [BoardingPass]?) -> BoardingPassesViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "BoardingPassesViewController") as! BoardingPassesViewController
         viewController.boardingPasses = boardingPasses
