@@ -682,15 +682,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-Vl-z5C" customClass="BankCardView" customModule="AirGalicia" customModuleProvider="target">
-                                <rect key="frame" x="67" y="64" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvj-37-baQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-i5-FxJ" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Eg4-nR-ThI">
+                                                <rect key="frame" x="16" y="8" width="75" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="JKw-mA-gjY"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Mr"/>
+                                                    <segment title="Ms"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cJD-pN-QIG">
+                                                <rect key="frame" x="99" y="8" width="260" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8E5-Mf-Xzz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLz-WY-GUk">
+                                                        <rect key="frame" x="134" y="0.0" width="126" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anS-X8-L3i">
+                                                <rect key="frame" x="16" y="46" width="343" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X1f-B6-OVa">
+                                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ODj-qb-2tR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFG-0s-quC">
+                                                        <rect key="frame" x="175.5" y="0.0" width="167.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVl-8t-Osn">
+                                                <rect key="frame" x="16" y="122" width="343" height="1"/>
+                                                <color key="backgroundColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="0RE-bv-TYc"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7T8-3c-Ilx" customClass="BankCardView" customModule="AirGalicia" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="139" width="343" height="112"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="anS-X8-L3i" firstAttribute="leading" secondItem="Eg4-nR-ThI" secondAttribute="leading" id="031-0U-O2S"/>
+                                            <constraint firstAttribute="trailing" secondItem="EVl-8t-Osn" secondAttribute="trailing" constant="16" id="08s-1Y-xfJ"/>
+                                            <constraint firstItem="7T8-3c-Ilx" firstAttribute="top" secondItem="EVl-8t-Osn" secondAttribute="bottom" constant="16" id="Ai8-GS-Acr"/>
+                                            <constraint firstItem="Eg4-nR-ThI" firstAttribute="top" secondItem="b7h-i5-FxJ" secondAttribute="top" constant="8" id="DfZ-JZ-jeR"/>
+                                            <constraint firstAttribute="trailing" secondItem="X1f-B6-OVa" secondAttribute="trailing" constant="16" id="Mou-QO-YR4"/>
+                                            <constraint firstItem="X1f-B6-OVa" firstAttribute="leading" secondItem="b7h-i5-FxJ" secondAttribute="leading" constant="16" id="PQh-eE-DYJ"/>
+                                            <constraint firstItem="anS-X8-L3i" firstAttribute="trailing" secondItem="cJD-pN-QIG" secondAttribute="trailing" id="RWv-dI-rTb"/>
+                                            <constraint firstItem="X1f-B6-OVa" firstAttribute="top" secondItem="anS-X8-L3i" secondAttribute="bottom" constant="8" id="VPd-y7-D3b"/>
+                                            <constraint firstAttribute="bottom" secondItem="7T8-3c-Ilx" secondAttribute="bottom" constant="303" id="XhQ-g8-Lqw"/>
+                                            <constraint firstItem="EVl-8t-Osn" firstAttribute="leading" secondItem="b7h-i5-FxJ" secondAttribute="leading" constant="16" id="a6B-q3-oxB"/>
+                                            <constraint firstItem="cJD-pN-QIG" firstAttribute="leading" secondItem="Eg4-nR-ThI" secondAttribute="trailing" constant="8" id="eAG-d9-srR"/>
+                                            <constraint firstItem="EVl-8t-Osn" firstAttribute="top" secondItem="X1f-B6-OVa" secondAttribute="bottom" constant="8" id="hOC-aq-YRL"/>
+                                            <constraint firstAttribute="trailing" secondItem="7T8-3c-Ilx" secondAttribute="trailing" constant="16" id="jnD-so-ajx"/>
+                                            <constraint firstAttribute="trailing" secondItem="cJD-pN-QIG" secondAttribute="trailing" constant="16" id="lY7-lD-f3H"/>
+                                            <constraint firstItem="Eg4-nR-ThI" firstAttribute="leading" secondItem="b7h-i5-FxJ" secondAttribute="leading" constant="16" id="nue-Bf-doT"/>
+                                            <constraint firstItem="anS-X8-L3i" firstAttribute="top" secondItem="cJD-pN-QIG" secondAttribute="bottom" constant="8" symbolic="YES" id="oA7-m7-oXm"/>
+                                            <constraint firstItem="cJD-pN-QIG" firstAttribute="top" secondItem="b7h-i5-FxJ" secondAttribute="top" constant="8" id="oCV-ZH-PqN"/>
+                                            <constraint firstItem="7T8-3c-Ilx" firstAttribute="leading" secondItem="b7h-i5-FxJ" secondAttribute="leading" constant="16" id="xF5-lo-DaM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="b7h-i5-FxJ" firstAttribute="leading" secondItem="zvj-37-baQ" secondAttribute="leading" id="CFG-Wc-Ir5"/>
+                                    <constraint firstAttribute="trailing" secondItem="b7h-i5-FxJ" secondAttribute="trailing" id="G00-O0-Qwv"/>
+                                    <constraint firstItem="b7h-i5-FxJ" firstAttribute="top" secondItem="zvj-37-baQ" secondAttribute="top" id="NUt-uC-axb"/>
+                                    <constraint firstItem="b7h-i5-FxJ" firstAttribute="centerX" secondItem="zvj-37-baQ" secondAttribute="centerX" id="WJV-yY-hoo"/>
+                                    <constraint firstItem="b7h-i5-FxJ" firstAttribute="height" secondItem="zvj-37-baQ" secondAttribute="height" priority="250" id="Zwh-tx-vNV"/>
+                                    <constraint firstItem="b7h-i5-FxJ" firstAttribute="width" secondItem="zvj-37-baQ" secondAttribute="width" priority="250" id="o8i-Sl-utd"/>
+                                    <constraint firstAttribute="bottom" secondItem="b7h-i5-FxJ" secondAttribute="bottom" id="pCc-GF-o4K"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zvj-37-baQ" firstAttribute="top" secondItem="gRt-ze-Srd" secondAttribute="top" id="0AA-4c-feY"/>
+                            <constraint firstItem="zvj-37-baQ" firstAttribute="bottom" secondItem="gRt-ze-Srd" secondAttribute="bottom" id="DjS-Oa-9ye"/>
+                            <constraint firstItem="zvj-37-baQ" firstAttribute="leading" secondItem="gRt-ze-Srd" secondAttribute="leading" id="EPp-is-x5P"/>
+                            <constraint firstItem="zvj-37-baQ" firstAttribute="trailing" secondItem="gRt-ze-Srd" secondAttribute="trailing" id="G5Q-Vq-pYn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gRt-ze-Srd"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="bankCardView" destination="7T8-3c-Ilx" id="Nux-mZ-ZUi"/>
+                        <outlet property="emailTextField" destination="anS-X8-L3i" id="xO8-ra-SdZ"/>
+                        <outlet property="firstNameTextField" destination="8E5-Mf-Xzz" id="DCU-aD-ULF"/>
+                        <outlet property="genderToggle" destination="Eg4-nR-ThI" id="1zR-M5-X5P"/>
+                        <outlet property="lastNameTextField" destination="xLz-WY-GUk" id="4aK-JO-EXO"/>
+                        <outlet property="passportTextField" destination="jFG-0s-quC" id="E0G-PJ-Bf2"/>
+                        <outlet property="phoneNumberTextField" destination="ODj-qb-2tR" id="b7D-Cb-UK8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnu-et-aCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

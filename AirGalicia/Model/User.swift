@@ -13,8 +13,8 @@ class User {
     var email: String?
     var firstName: String?
     var lastName: String?
+    var gender: Gender = .Mr
     var passport: String?
-    var dateOfBirth: Date?
     var phoneNumber: String?
     var paymentInfo: PaymentInfo?
     var bookiongs: [Trip]?
