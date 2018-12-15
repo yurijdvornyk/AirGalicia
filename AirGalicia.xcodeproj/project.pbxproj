@@ -20,6 +20,8 @@
 		BC06567F218663F8005A16A4 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06567E218663F8005A16A4 /* TripTableViewCell.swift */; };
 		BC08C7F821B5889000AB91CC /* PdfPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08C7F721B5889000AB91CC /* PdfPageRenderer.swift */; };
 		BC08C7FA21B58B7500AB91CC /* DocumentUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */; };
+		BC10B40521C2C6AE00BE2AB5 /* BankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */; };
+		BC10B40721C2C6C100BE2AB5 /* BankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */; };
 		BC20122F215AE21D00F98B7A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* DataManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
 		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
@@ -99,6 +101,8 @@
 		BC06567E218663F8005A16A4 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		BC08C7F721B5889000AB91CC /* PdfPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfPageRenderer.swift; sourceTree = "<group>"; };
 		BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUtils.swift; sourceTree = "<group>"; };
+		BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCardView.xib; sourceTree = "<group>"; };
+		BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardView.swift; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
@@ -234,6 +238,24 @@
 			path = TripDetails;
 			sourceTree = "<group>";
 		};
+		BC10B40221C2C65F00BE2AB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC10B40321C2C69F00BE2AB5 /* BankCard */,
+			);
+			name = View;
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		BC10B40321C2C69F00BE2AB5 /* BankCard */ = {
+			isa = PBXGroup;
+			children = (
+				BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */,
+				BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */,
+			);
+			path = BankCard;
+			sourceTree = "<group>";
+		};
 		BC20122D215AE20D00F98B7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +278,7 @@
 		BC201233215D69E600F98B7A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BC10B40221C2C65F00BE2AB5 /* View */,
 				BC5956A421AC2C2A004EBC30 /* About */,
 				BC201235215D6A4700F98B7A /* Airports */,
 				BCCB372421541C9000114C39 /* BaseViewController.swift */,
@@ -574,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5956A921AC34C5004EBC30 /* htmlstyle.css in Resources */,
+				BC10B40521C2C6AE00BE2AB5 /* BankCardView.xib in Resources */,
 				BCCB370121541BD000114C39 /* LaunchScreen.storyboard in Resources */,
 				BCCB372B215425F600114C39 /* Assets.xcassets in Resources */,
 				BC268BB9215F9A1800FE9FD4 /* Podfile in Resources */,
@@ -712,6 +736,7 @@
 				BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */,
 				BCA0B74221970E0C001B9BFC /* CheckInTableViewCell.swift in Sources */,
 				BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */,
+				BC10B40721C2C6C100BE2AB5 /* BankCardView.swift in Sources */,
 				BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */,
 				BC5956AE21AC3FF7004EBC30 /* CreateAccountViewController.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
