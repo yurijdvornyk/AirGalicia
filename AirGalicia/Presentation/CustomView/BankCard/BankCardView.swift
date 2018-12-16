@@ -35,20 +35,19 @@ class BankCardView: UIView {
     }
     
     @objc func didChangeValue(textField: UITextField) {
+        let range = textField.selectedTextRange
         textField.text = modifyCreditCardString(creditCardString: textField.text!)
+        textField.selectedTextRange = range
     }
     
     func modifyCreditCardString(creditCardString : String) -> String {
         let trimmedString = creditCardString.components(separatedBy: .whitespaces).joined()
-        
-        let arrOfCharacters = Array(trimmedString.characters)
-        
         var modifiedCreditCardString = ""
-        
-        if(arrOfCharacters.count > 0) {
-            for i in 0...arrOfCharacters.count - 1{
-                modifiedCreditCardString.append(arrOfCharacters[i])
-                if ((i + 1) % 4 == 0 && i + 1 != arrOfCharacters.count) {
+        if trimmedString.count > 0 {
+            for i in 0...trimmedString.count - 1 {
+                let index = trimmedString.index(trimmedString.startIndex, offsetBy: i)
+                modifiedCreditCardString.append(trimmedString[index])
+                if (i + 1) % 4 == 0 && i + 1 != trimmedString.count {
                     modifiedCreditCardString.append(" ")
                 }
             }
@@ -72,7 +71,7 @@ extension UIView {
 extension BankCardView: UITextFieldDelegate {
         
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLength = textField.text!.characters.count + string.characters.count - range.length
+        let newLength = textField.text!.count + string.count - range.length
         return textField == cardNumberField ? newLength <= 19 : true
     }
 }
