@@ -27,6 +27,9 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="xSG-Hn-0Kc"/>
+                    </connections>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="g50-tA-aVp">
                     <rect key="frame" x="103.5" y="38" width="168" height="30"/>
