@@ -40,7 +40,7 @@ class BankCardView: UIView {
     @objc func didChangeValue(textField: UITextField) {
         let range = textField.selectedTextRange
         textField.text = modifyCreditCardString(creditCardString: textField.text!)
-        textField.s3electedTextRange = range
+        textField.selectedTextRange = range
         
 //        let location = textField.offset(from: textField.beginningOfDocument, to: range.start)
 //        let length = textField.offset(from: range.start, to: range.end)
