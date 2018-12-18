@@ -14,9 +14,9 @@ class BankCardView: UIView {
     
     @IBOutlet private var contentView: BankCardView!
     @IBOutlet private weak var cardNumberField: UITextField!
+    @IBOutlet weak var expireDateView: UIStackView!
     @IBOutlet private weak var expireDateTextField: UITextField!
     @IBOutlet private weak var cvvTextField: UITextField!
-    private var initCalled = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,12 +32,37 @@ class BankCardView: UIView {
         Bundle.main.loadNibNamed(BANK_CARD_VIEW_NIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
         cardNumberField.addTarget(self, action: #selector(didChangeValue(textField:)), for: .editingChanged)
+//        expireDateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onExpireViewTapped(recognizer:))))
+        let datePicker = CardExpireDatePickerView()
+        expireDateTextField.inputView = datePicker
     }
     
     @objc func didChangeValue(textField: UITextField) {
         let range = textField.selectedTextRange
         textField.text = modifyCreditCardString(creditCardString: textField.text!)
-        textField.selectedTextRange = range
+        textField.s3electedTextRange = range
+        
+//        let location = textField.offset(from: textField.beginningOfDocument, to: range.start)
+//        let length = textField.offset(from: range.start, to: range.end)
+//        let rrange = NSRange(location: location, length: length)
+//
+//        let previousText = textField.text!
+//        if (textField.text?.count)! > previousText.count {
+//            let beginning = textField.beginningOfDocument
+//            let start = textField.position(from: beginning, offset: rrange.location)
+//            let end = textField.position(from: start!, offset: range.length)
+//            let textRange = textField.textRange(from: start!, to: end!)
+//            let cursorOffset = textField.offset(from: beginning, to: start!) + difference
+//
+//            //        // just used same text, use whatever you want :)3
+//            //        textField.text = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+//
+//            let newCursorPosition = textField.position(from: textField.beginningOfDocument, offset: cursorOffset)
+//            if newCursorPosition != nil {
+//                let newSelectedRange = textField.textRange(from: newCursorPosition!, to: newCursorPosition!)
+//                textField.selectedTextRange = newSelectedRange
+//            }
+//        }
     }
     
     func modifyCreditCardString(creditCardString : String) -> String {
@@ -53,6 +78,10 @@ class BankCardView: UIView {
             }
         }
         return modifiedCreditCardString
+    }
+    
+    @objc func onExpireViewTapped(recognizer: UIGestureRecognizer) {
+        print("Expire date tapped")
     }
 }
 
@@ -71,6 +100,7 @@ extension UIView {
 extension BankCardView: UITextFieldDelegate {
         
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
         let newLength = textField.text!.count + string.count - range.length
         return textField == cardNumberField ? newLength <= 19 : true
     }

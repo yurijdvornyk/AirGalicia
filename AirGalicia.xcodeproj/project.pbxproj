@@ -12,6 +12,7 @@
 		BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B89218112C0005C1DFD /* PayViewController.swift */; };
 		BC014B8C21825D01005C1DFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B8B21825D01005C1DFD /* User.swift */; };
 		BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC014B8D21825D86005C1DFD /* PaymentInfo.swift */; };
+		BC027C5921C9409900CFA70A /* CardExpireDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC027C5821C9409900CFA70A /* CardExpireDatePickerView.swift */; };
 		BC02876C218DC4A80082F5AB /* ScheduleTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02876B218DC4A80082F5AB /* ScheduleTime.swift */; };
 		BC02876E218DC5ED0082F5AB /* FlightTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC02876D218DC5ED0082F5AB /* FlightTime.swift */; };
 		BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */; };
@@ -93,6 +94,7 @@
 		BC014B89218112C0005C1DFD /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BC014B8B21825D01005C1DFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC014B8D21825D86005C1DFD /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
+		BC027C5821C9409900CFA70A /* CardExpireDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpireDatePickerView.swift; sourceTree = "<group>"; };
 		BC02876B218DC4A80082F5AB /* ScheduleTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTime.swift; sourceTree = "<group>"; };
 		BC02876D218DC5ED0082F5AB /* FlightTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTime.swift; sourceTree = "<group>"; };
 		BC0410BC217B620300EE2C01 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */,
 				BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */,
+				BC027C5821C9409900CFA70A /* CardExpireDatePickerView.swift */,
 			);
 			path = BankCard;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */,
 				BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */,
 				BCA0B74821971F4C001B9BFC /* Plane.swift in Sources */,
+				BC027C5921C9409900CFA70A /* CardExpireDatePickerView.swift in Sources */,
 				BC20122F215AE21D00F98B7A /* DataManager.swift in Sources */,
 				BC02876E218DC5ED0082F5AB /* FlightTime.swift in Sources */,
 				BCBEE5A8217CA95800CABB5C /* DateUtils.swift in Sources */,

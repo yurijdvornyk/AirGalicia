@@ -15,6 +15,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="9Tr-Ud-Maz"/>
                 <outlet property="cvvTextField" destination="ZJ7-gZ-tBR" id="Eqv-Fc-TeI"/>
                 <outlet property="expireDateTextField" destination="HTD-4M-lw7" id="dXV-oH-tBr"/>
+                <outlet property="expireDateView" destination="Zzz-pX-6R1" id="8cN-kP-RjD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
