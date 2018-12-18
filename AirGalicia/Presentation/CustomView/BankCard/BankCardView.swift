@@ -32,37 +32,32 @@ class BankCardView: UIView {
         Bundle.main.loadNibNamed(BANK_CARD_VIEW_NIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
         cardNumberField.addTarget(self, action: #selector(didChangeValue(textField:)), for: .editingChanged)
-//        expireDateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onExpireViewTapped(recognizer:))))
         let datePicker = CardExpireDatePickerView()
         expireDateTextField.inputView = datePicker
     }
     
     @objc func didChangeValue(textField: UITextField) {
-        let range = textField.selectedTextRange
+        let textRange = textField.selectedTextRange
+        let previousText = textField.text!
         textField.text = modifyCreditCardString(creditCardString: textField.text!)
-        textField.selectedTextRange = range
         
-//        let location = textField.offset(from: textField.beginningOfDocument, to: range.start)
-//        let length = textField.offset(from: range.start, to: range.end)
-//        let rrange = NSRange(location: location, length: length)
-//
-//        let previousText = textField.text!
-//        if (textField.text?.count)! > previousText.count {
-//            let beginning = textField.beginningOfDocument
-//            let start = textField.position(from: beginning, offset: rrange.location)
-//            let end = textField.position(from: start!, offset: range.length)
-//            let textRange = textField.textRange(from: start!, to: end!)
-//            let cursorOffset = textField.offset(from: beginning, to: start!) + difference
-//
-//            //        // just used same text, use whatever you want :)3
-//            //        textField.text = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-//
-//            let newCursorPosition = textField.position(from: textField.beginningOfDocument, offset: cursorOffset)
-//            if newCursorPosition != nil {
-//                let newSelectedRange = textField.textRange(from: newCursorPosition!, to: newCursorPosition!)
-//                textField.selectedTextRange = newSelectedRange
-//            }
-//        }
+        let location = textField.offset(from: textField.beginningOfDocument, to: textRange!.start)
+        let length = textField.offset(from: textRange!.start, to: textRange!.end)
+        let range = NSRange(location: location, length: length)
+        
+        if (textField.text?.count)! > previousText.count {
+            let beginning = textField.beginningOfDocument
+            let start = textField.position(from: beginning, offset: range.location)
+            let cursorOffset = textField.offset(from: beginning, to: start!) + abs(previousText.count - textField.text!.count)
+
+            let newCursorPosition = textField.position(from: textField.beginningOfDocument, offset: cursorOffset)
+            if newCursorPosition != nil {
+                let newSelectedRange = textField.textRange(from: newCursorPosition!, to: newCursorPosition!)
+                textField.selectedTextRange = newSelectedRange
+            }
+        } else {
+            textField.selectedTextRange = textRange
+        }
     }
     
     func modifyCreditCardString(creditCardString : String) -> String {
