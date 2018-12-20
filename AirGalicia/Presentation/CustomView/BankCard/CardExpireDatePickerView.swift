@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
+class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource, CardExpireDateDelegate {
     
-    var months: [String]!
-    var years: [Int]!
+    private var months: [String]!
+    private var years: [Int]!
     
     var month = Calendar.current.component(.month, from: Date()) {
         didSet {
@@ -24,8 +24,6 @@ class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerView
             selectRow(years.index(of: year)!, inComponent: 1, animated: true)
         }
     }
-    
-    var onDateSelected: ((_ month: Int, _ year: Int) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,14 +92,14 @@ class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let month = self.selectedRow(inComponent: 0)+1
+        let month = self.selectedRow(inComponent: 0) + 1
         let year = years[self.selectedRow(inComponent: 1)]
-        if let block = onDateSelected {
-            block(month, year)
-        }
-        
         self.month = month
         self.year = year
     }
     
+    
+    func getExpireDate() -> (Int, Int) {
+        return (month, year)
+    }
 }
