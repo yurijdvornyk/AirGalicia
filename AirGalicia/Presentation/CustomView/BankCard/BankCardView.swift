@@ -14,7 +14,6 @@ class BankCardView: UIView {
     
     @IBOutlet private var contentView: BankCardView!
     @IBOutlet private weak var cardNumberField: UITextField!
-    @IBOutlet weak var expireDateView: UIStackView!
     @IBOutlet private weak var expireDateTextField: UITextField!
     @IBOutlet private weak var cvvTextField: UITextField!
     

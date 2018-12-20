@@ -36,7 +36,6 @@ class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerView
     }
     
     func commonSetup() {
-        // population years
         var years: [Int] = []
         if years.count == 0 {
             var year = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
@@ -47,7 +46,6 @@ class CardExpireDatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerView
         }
         self.years = years
         
-        // population months with localized names
         var months: [String] = []
         var month = 0
         for _ in 1...12 {
