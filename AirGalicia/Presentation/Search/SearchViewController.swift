@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FSCalendar
+import CoreLocation
 
 class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripUpdateDelegate, BookingCompleteDelegate {
     
@@ -28,6 +28,11 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var buyTicketsButton: UIButton!
     
+    private var locationManager = CLLocationManager()
+    private var isUpdatingLocation = false
+    private var location: CLLocation?
+    private var lastLocationError: Error?
+    
     private var booking: Trip!
     private var outPrice: Double!
     private var backPrice: Double!
@@ -39,6 +44,48 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
         outDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didOutDateViewTapped(recognizer:))))
         backDateStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didBackDateViewTapped(recognizer:))))
         setUpDefaultScreenData()
+        getDefaultOriginAirport()
+    }
+    
+    func getDefaultOriginAirport() {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        if authorizationStatus == .denied || authorizationStatus == .restricted {
+            reportLocationServiceDeniedError()
+            return
+        }
+        
+        if isUpdatingLocation {
+            stopLocationManager()
+        } else {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
+    }
+    
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+            isUpdatingLocation = true
+        }
+    }
+    
+    func stopLocationManager() {
+        if isUpdatingLocation {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            isUpdatingLocation = false
+        }
+    }
+    
+    func reportLocationServiceDeniedError() {
+        showMessage(title: "Unable to find the airport nearby!", message: "Please enable location tracking feature for AirGalicia. You can do this by going to Settings > Privacy.", button: "OK", action: nil)
     }
     
     @objc func didOriginStackViewTapped(recognizer: UIGestureRecognizer) {
@@ -217,6 +264,51 @@ class SearchViewController: BaseViewController, AirportsSelectionDelegate, TripU
     
     func onBookingCompleted(booking: Trip) {
         Navigator.instance.navigate(trip: booking, root: tabBarController!)
+    }
+    
+    func updateLocation() {
+        if let location = location {
+            DataManager.instance.loadAirports(success: { (airports: [Airport]) in
+                if airports.count > 0 {
+                    var minAirport = airports[0]
+                    var minDistance = distance(from: location, toAirport: minAirport)
+                    airports.forEach({ (airport: Airport) in
+                        let newDistance = distance(from: location, toAirport: airport)
+                        if newDistance < minDistance {
+                            minDistance = newDistance
+                            minAirport = airport
+                        }
+                    })
+                    DispatchQueue.main.async() {
+                        self.onAirportSelected(isUserSelectingOrigin: true, airport: minAirport)
+                    }
+                }
+            }) { (error: Error) in
+                DispatchQueue.main.async() {
+                    //self.spinner.stopAnimating()
+                    self.hideLoading()
+                }
+                // TODO: Handle error
+            }
+        }
+    }
+}
+
+extension SearchViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if (error as NSError).code == CLError.locationUnknown.rawValue {
+            return
+        }
+        lastLocationError = error
+        stopLocationManager()
+        updateLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.last
+        stopLocationManager()
+        updateLocation()
     }
 }
 
