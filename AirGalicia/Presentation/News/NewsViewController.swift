@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
 class NewsViewController: BaseViewController {
 
+    @IBOutlet private weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        webView.load(URLRequest(url: URL(string: "https://htmlpreview.github.io/?https://raw.githubusercontent.com/yurijdvornyk/AirGalicia/master/External/MockApi/news.html")!))
     }
 }
