@@ -63,6 +63,7 @@
 		BCCB37292154201600114C39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB37282154201600114C39 /* ProfileViewController.swift */; };
 		BCCB372B215425F600114C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB372A215425F600114C39 /* Assets.xcassets */; };
 		BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE38232217A32F700C37C21 /* PassengersViewController.swift */; };
+		BCE3B8E421D141C0002AC622 /* AirGaliciaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCE3B8E221D141C0002AC622 /* AirGaliciaModel.xcdatamodeld */; };
 		BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4178E21545570001A71D2 /* AirportsViewController.swift */; };
 		CEECBF18A1308B2F4A787422 /* Pods_AirGalicia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CB9D546F387E9F872080B4 /* Pods_AirGalicia.framework */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		BCCB37282154201600114C39 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCCB372A215425F600114C39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCE38232217A32F700C37C21 /* PassengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
+		BCE3B8E321D141C0002AC622 /* AirGaliciaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirGaliciaModel.xcdatamodel; sourceTree = "<group>"; };
 		BCE4178E21545570001A71D2 /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
 		C3CCC14D9DBC62C66540F0AB /* Pods_AirGaliciaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirGaliciaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D77605D15EEF7DAAF362B1 /* Pods-AirGaliciaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirGaliciaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirGaliciaTests/Pods-AirGaliciaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				BC20122D215AE20D00F98B7A /* Model */,
 				BC201233215D69E600F98B7A /* Presentation */,
 				BCBEE5A4217CA7A300CABB5C /* Utils */,
+				BCE3B8E221D141C0002AC622 /* AirGaliciaModel.xcdatamodeld */,
 			);
 			path = AirGalicia;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				BC02876C218DC4A80082F5AB /* ScheduleTime.swift in Sources */,
 				BC08C7F821B5889000AB91CC /* PdfPageRenderer.swift in Sources */,
 				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
+				BCE3B8E421D141C0002AC622 /* AirGaliciaModel.xcdatamodeld in Sources */,
 				BC06567F218663F8005A16A4 /* TripTableViewCell.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,
 				BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */,
@@ -1104,6 +1108,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCE3B8E221D141C0002AC622 /* AirGaliciaModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCE3B8E321D141C0002AC622 /* AirGaliciaModel.xcdatamodel */,
+			);
+			currentVersion = BCE3B8E321D141C0002AC622 /* AirGaliciaModel.xcdatamodel */;
+			path = AirGaliciaModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCCB36E921541BCF00114C39 /* Project object */;
 }
