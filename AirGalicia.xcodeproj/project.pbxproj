@@ -24,6 +24,14 @@
 		BC08C7FA21B58B7500AB91CC /* DocumentUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */; };
 		BC10B40521C2C6AE00BE2AB5 /* BankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */; };
 		BC10B40721C2C6C100BE2AB5 /* BankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */; };
+		BC1C4B9821D3E3B700EAFF28 /* TripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4B9721D3E3B700EAFF28 /* TripData.swift */; };
+		BC1C4B9A21D3E44900EAFF28 /* AirportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4B9921D3E44900EAFF28 /* AirportData.swift */; };
+		BC1C4B9C21D3E58A00EAFF28 /* ScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4B9B21D3E58A00EAFF28 /* ScheduleData.swift */; };
+		BC1C4B9E21D3E5FD00EAFF28 /* TimetableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4B9D21D3E5FD00EAFF28 /* TimetableData.swift */; };
+		BC1C4BA021D3E64800EAFF28 /* PassengerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4B9F21D3E64800EAFF28 /* PassengerData.swift */; };
+		BC1C4BA221D3E6F800EAFF28 /* BoardingPassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4BA121D3E6F800EAFF28 /* BoardingPassData.swift */; };
+		BC1C4BA421D3E7CD00EAFF28 /* FlightTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4BA321D3E7CD00EAFF28 /* FlightTimeData.swift */; };
+		BC1C4BA621D538C100EAFF28 /* PlaneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1C4BA521D538C100EAFF28 /* PlaneData.swift */; };
 		BC20122F215AE21D00F98B7A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20122E215AE21D00F98B7A /* DataManager.swift */; };
 		BC201231215AE24F00F98B7A /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201230215AE24F00F98B7A /* Airport.swift */; };
 		BC20123A215D6B4200F98B7A /* AirportSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC201239215D6B4200F98B7A /* AirportSearchCell.swift */; };
@@ -108,6 +116,14 @@
 		BC08C7F921B58B7500AB91CC /* DocumentUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUtils.swift; sourceTree = "<group>"; };
 		BC10B40421C2C6AE00BE2AB5 /* BankCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCardView.xib; sourceTree = "<group>"; };
 		BC10B40621C2C6C100BE2AB5 /* BankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardView.swift; sourceTree = "<group>"; };
+		BC1C4B9721D3E3B700EAFF28 /* TripData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripData.swift; sourceTree = "<group>"; };
+		BC1C4B9921D3E44900EAFF28 /* AirportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportData.swift; sourceTree = "<group>"; };
+		BC1C4B9B21D3E58A00EAFF28 /* ScheduleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleData.swift; sourceTree = "<group>"; };
+		BC1C4B9D21D3E5FD00EAFF28 /* TimetableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableData.swift; sourceTree = "<group>"; };
+		BC1C4B9F21D3E64800EAFF28 /* PassengerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerData.swift; sourceTree = "<group>"; };
+		BC1C4BA121D3E6F800EAFF28 /* BoardingPassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassData.swift; sourceTree = "<group>"; };
+		BC1C4BA321D3E7CD00EAFF28 /* FlightTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTimeData.swift; sourceTree = "<group>"; };
+		BC1C4BA521D538C100EAFF28 /* PlaneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneData.swift; sourceTree = "<group>"; };
 		BC20122E215AE21D00F98B7A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BC201230215AE24F00F98B7A /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		BC201239215D6B4200F98B7A /* AirportSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchCell.swift; sourceTree = "<group>"; };
@@ -263,9 +279,25 @@
 			path = BankCard;
 			sourceTree = "<group>";
 		};
+		BC1C4B9621D3E3A000EAFF28 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C4B9721D3E3B700EAFF28 /* TripData.swift */,
+				BC1C4B9921D3E44900EAFF28 /* AirportData.swift */,
+				BC1C4B9B21D3E58A00EAFF28 /* ScheduleData.swift */,
+				BC1C4B9D21D3E5FD00EAFF28 /* TimetableData.swift */,
+				BC1C4B9F21D3E64800EAFF28 /* PassengerData.swift */,
+				BC1C4BA121D3E6F800EAFF28 /* BoardingPassData.swift */,
+				BC1C4BA321D3E7CD00EAFF28 /* FlightTimeData.swift */,
+				BC1C4BA521D538C100EAFF28 /* PlaneData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		BC20122D215AE20D00F98B7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC1C4B9621D3E3A000EAFF28 /* Data */,
 				BC02876A218DC4920082F5AB /* Time */,
 				BC20122E215AE21D00F98B7A /* DataManager.swift */,
 				BC201230215AE24F00F98B7A /* Airport.swift */,
@@ -729,6 +761,7 @@
 			files = (
 				BC93AFF421B032750078EC41 /* BookingPageViewController.swift in Sources */,
 				BC014B8C21825D01005C1DFD /* User.swift in Sources */,
+				BC1C4B9821D3E3B700EAFF28 /* TripData.swift in Sources */,
 				BC201231215AE24F00F98B7A /* Airport.swift in Sources */,
 				BC014B8A218112C0005C1DFD /* PayViewController.swift in Sources */,
 				BCE38233217A32F700C37C21 /* PassengersViewController.swift in Sources */,
@@ -738,6 +771,7 @@
 				BC02876E218DC5ED0082F5AB /* FlightTime.swift in Sources */,
 				BCBEE5A8217CA95800CABB5C /* DateUtils.swift in Sources */,
 				BCBEE5A3217C9CCF00CABB5C /* BookingSummaryTableViewCell.swift in Sources */,
+				BC1C4B9C21D3E58A00EAFF28 /* ScheduleData.swift in Sources */,
 				BC20123C215D7E2900F98B7A /* Schedule.swift in Sources */,
 				BC414CD22161036100649D6F /* IdUtils.swift in Sources */,
 				BCCB372721541F1C00114C39 /* BoardingPassesViewController.swift in Sources */,
@@ -749,16 +783,20 @@
 				BCBEE5A6217CA7B600CABB5C /* StringUtils.swift in Sources */,
 				BC10B40721C2C6C100BE2AB5 /* BankCardView.swift in Sources */,
 				BC014B8E21825D86005C1DFD /* PaymentInfo.swift in Sources */,
+				BC1C4BA021D3E64800EAFF28 /* PassengerData.swift in Sources */,
 				BC5956AE21AC3FF7004EBC30 /* CreateAccountViewController.swift in Sources */,
+				BC1C4BA621D538C100EAFF28 /* PlaneData.swift in Sources */,
 				BC414CCE2161028A00649D6F /* BoardingPass.swift in Sources */,
 				BC02876C218DC4A80082F5AB /* ScheduleTime.swift in Sources */,
 				BC08C7F821B5889000AB91CC /* PdfPageRenderer.swift in Sources */,
 				BC0410BD217B620300EE2C01 /* PassengerTableViewCell.swift in Sources */,
 				BCE3B8E421D141C0002AC622 /* AirGaliciaModel.xcdatamodeld in Sources */,
+				BC1C4B9A21D3E44900EAFF28 /* AirportData.swift in Sources */,
 				BC06567F218663F8005A16A4 /* TripTableViewCell.swift in Sources */,
 				BC20123E215D7F8900F98B7A /* Timetable.swift in Sources */,
 				BC414CD521611AA000649D6F /* FlightDateViewController.swift in Sources */,
 				BC0410C0217BCADC00EE2C01 /* BookingSummaryViewController.swift in Sources */,
+				BC1C4BA421D3E7CD00EAFF28 /* FlightTimeData.swift in Sources */,
 				BC08C7FA21B58B7500AB91CC /* DocumentUtils.swift in Sources */,
 				BCBEE5AA217CC90C00CABB5C /* PriceUtils.swift in Sources */,
 				BCCB36F921541BCF00114C39 /* TripsViewController.swift in Sources */,
@@ -769,9 +807,11 @@
 				BCE4178F21545570001A71D2 /* AirportsViewController.swift in Sources */,
 				BCCB372521541C9000114C39 /* BaseViewController.swift in Sources */,
 				BCCB36F521541BCF00114C39 /* AppDelegate.swift in Sources */,
+				BC1C4B9E21D3E5FD00EAFF28 /* TimetableData.swift in Sources */,
 				BC414CCC2161025000649D6F /* Trip.swift in Sources */,
 				BCA0B74621971E36001B9BFC /* CheckInViewController.swift in Sources */,
 				BCCB36F721541BCF00114C39 /* SearchViewController.swift in Sources */,
+				BC1C4BA221D3E6F800EAFF28 /* BoardingPassData.swift in Sources */,
 				BC93AFF221B01CA10078EC41 /* BookingViewController.swift in Sources */,
 				BC5956A021AC2789004EBC30 /* ProfileDetailsViewController.swift in Sources */,
 			);
